@@ -1,0 +1,304 @@
+<pb_type xmlns:xi="http://www.w3.org/2001/XInclude" name="CLBLL_L" num_pb="1">
+  <!-- Tile Inputs -->
+  <input name="BYP                 " num_pins="8"/>
+  <clock name="CLK                 " num_pins="2"/>
+  <input name="CTRL                " num_pins="2"/>
+  <input name="FAN6                " num_pins="1"/>
+  <input name="FAN7                " num_pins="1"/>
+  <input name="IMUX                " num_pins="48"/>
+  <input name="LL_CIN_N            " num_pins="1"/>
+  <input name="L_CIN_N             " num_pins="1"/>
+  <!-- Tile Outputs -->
+  <output name="LL_COUT_N           " num_pins="1"/>
+  <output name="LOGIC_OUTS          " num_pins="24"/>
+  <output name="L_COUT_N            " num_pins="1"/>
+  <!-- Internal Slices -->
+  <pb_type name="SLICE_X0" num_pb="1">
+    <xi:include href="../../primitives/slicel/pb_type.xml"/>
+    <input name=" A1    " num_pins="1"/>
+    <input name=" A2    " num_pins="1"/>
+    <input name=" A3    " num_pins="1"/>
+    <input name=" A4    " num_pins="1"/>
+    <input name=" A5    " num_pins="1"/>
+    <input name=" A6    " num_pins="1"/>
+    <input name=" AX    " num_pins="1"/>
+    <input name=" B1    " num_pins="1"/>
+    <input name=" B2    " num_pins="1"/>
+    <input name=" B3    " num_pins="1"/>
+    <input name=" B4    " num_pins="1"/>
+    <input name=" B5    " num_pins="1"/>
+    <input name=" B6    " num_pins="1"/>
+    <input name=" BX    " num_pins="1"/>
+    <input name=" C1    " num_pins="1"/>
+    <input name=" C2    " num_pins="1"/>
+    <input name=" C3    " num_pins="1"/>
+    <input name=" C4    " num_pins="1"/>
+    <input name=" C5    " num_pins="1"/>
+    <input name=" C6    " num_pins="1"/>
+    <input name=" CE    " num_pins="1"/>
+    <input name=" CIN   " num_pins="1"/>
+    <clock name=" CLK   " num_pins="1"/>
+    <input name=" CX    " num_pins="1"/>
+    <input name=" D1    " num_pins="1"/>
+    <input name=" D2    " num_pins="1"/>
+    <input name=" D3    " num_pins="1"/>
+    <input name=" D4    " num_pins="1"/>
+    <input name=" D5    " num_pins="1"/>
+    <input name=" D6    " num_pins="1"/>
+    <input name=" DX    " num_pins="1"/>
+    <input name=" SR    " num_pins="1"/>
+    <output name="A     " num_pins="1"/>
+    <output name="AMUX  " num_pins="1"/>
+    <output name="AQ    " num_pins="1"/>
+    <output name="B     " num_pins="1"/>
+    <output name="BMUX  " num_pins="1"/>
+    <output name="BQ    " num_pins="1"/>
+    <output name="C     " num_pins="1"/>
+    <output name="CMUX  " num_pins="1"/>
+    <output name="COUT  " num_pins="1"/>
+    <output name="CQ    " num_pins="1"/>
+    <output name="D     " num_pins="1"/>
+    <output name="DMUX  " num_pins="1"/>
+    <output name="DQ    " num_pins="1"/>
+    <interconnect>
+      <!-- Slice->Cell -->
+      <direct input="SLICE_X0.A1                    " name="SLICEL.A1                     " output="SLICEL.A1                     "/>
+      <direct input="SLICE_X0.A2                    " name="SLICEL.A2                     " output="SLICEL.A2                     "/>
+      <direct input="SLICE_X0.A3                    " name="SLICEL.A3                     " output="SLICEL.A3                     "/>
+      <direct input="SLICE_X0.A4                    " name="SLICEL.A4                     " output="SLICEL.A4                     "/>
+      <direct input="SLICE_X0.A5                    " name="SLICEL.A5                     " output="SLICEL.A5                     "/>
+      <direct input="SLICE_X0.A6                    " name="SLICEL.A6                     " output="SLICEL.A6                     "/>
+      <direct input="SLICE_X0.AX                    " name="SLICEL.AX                     " output="SLICEL.AX                     "/>
+      <direct input="SLICE_X0.B1                    " name="SLICEL.B1                     " output="SLICEL.B1                     "/>
+      <direct input="SLICE_X0.B2                    " name="SLICEL.B2                     " output="SLICEL.B2                     "/>
+      <direct input="SLICE_X0.B3                    " name="SLICEL.B3                     " output="SLICEL.B3                     "/>
+      <direct input="SLICE_X0.B4                    " name="SLICEL.B4                     " output="SLICEL.B4                     "/>
+      <direct input="SLICE_X0.B5                    " name="SLICEL.B5                     " output="SLICEL.B5                     "/>
+      <direct input="SLICE_X0.B6                    " name="SLICEL.B6                     " output="SLICEL.B6                     "/>
+      <direct input="SLICE_X0.BX                    " name="SLICEL.BX                     " output="SLICEL.BX                     "/>
+      <direct input="SLICE_X0.C1                    " name="SLICEL.C1                     " output="SLICEL.C1                     "/>
+      <direct input="SLICE_X0.C2                    " name="SLICEL.C2                     " output="SLICEL.C2                     "/>
+      <direct input="SLICE_X0.C3                    " name="SLICEL.C3                     " output="SLICEL.C3                     "/>
+      <direct input="SLICE_X0.C4                    " name="SLICEL.C4                     " output="SLICEL.C4                     "/>
+      <direct input="SLICE_X0.C5                    " name="SLICEL.C5                     " output="SLICEL.C5                     "/>
+      <direct input="SLICE_X0.C6                    " name="SLICEL.C6                     " output="SLICEL.C6                     "/>
+      <direct input="SLICE_X0.CE                    " name="SLICEL.CE                     " output="SLICEL.CE                     "/>
+      <direct input="SLICE_X0.CIN                   " name="SLICEL.CIN                    " output="SLICEL.CIN                    "/>
+      <direct input="SLICE_X0.CLK                   " name="SLICEL.CLK                    " output="SLICEL.CLK                    "/>
+      <direct input="SLICE_X0.CX                    " name="SLICEL.CX                     " output="SLICEL.CX                     "/>
+      <direct input="SLICE_X0.D1                    " name="SLICEL.D1                     " output="SLICEL.D1                     "/>
+      <direct input="SLICE_X0.D2                    " name="SLICEL.D2                     " output="SLICEL.D2                     "/>
+      <direct input="SLICE_X0.D3                    " name="SLICEL.D3                     " output="SLICEL.D3                     "/>
+      <direct input="SLICE_X0.D4                    " name="SLICEL.D4                     " output="SLICEL.D4                     "/>
+      <direct input="SLICE_X0.D5                    " name="SLICEL.D5                     " output="SLICEL.D5                     "/>
+      <direct input="SLICE_X0.D6                    " name="SLICEL.D6                     " output="SLICEL.D6                     "/>
+      <direct input="SLICE_X0.DX                    " name="SLICEL.DX                     " output="SLICEL.DX                     "/>
+      <direct input="SLICE_X0.SR                    " name="SLICEL.SR                     " output="SLICEL.SR                     "/>
+      <!-- Cell->Slice -->
+      <direct input="SLICEL.A                      " name="SLICE_X0.A                     " output="SLICE_X0.A                     "/>
+      <direct input="SLICEL.AMUX                   " name="SLICE_X0.AMUX                  " output="SLICE_X0.AMUX                  "/>
+      <direct input="SLICEL.AQ                     " name="SLICE_X0.AQ                    " output="SLICE_X0.AQ                    "/>
+      <direct input="SLICEL.B                      " name="SLICE_X0.B                     " output="SLICE_X0.B                     "/>
+      <direct input="SLICEL.BMUX                   " name="SLICE_X0.BMUX                  " output="SLICE_X0.BMUX                  "/>
+      <direct input="SLICEL.BQ                     " name="SLICE_X0.BQ                    " output="SLICE_X0.BQ                    "/>
+      <direct input="SLICEL.C                      " name="SLICE_X0.C                     " output="SLICE_X0.C                     "/>
+      <direct input="SLICEL.CMUX                   " name="SLICE_X0.CMUX                  " output="SLICE_X0.CMUX                  "/>
+      <direct input="SLICEL.COUT                   " name="SLICE_X0.COUT                  " output="SLICE_X0.COUT                  "/>
+      <direct input="SLICEL.CQ                     " name="SLICE_X0.CQ                    " output="SLICE_X0.CQ                    "/>
+      <direct input="SLICEL.D                      " name="SLICE_X0.D                     " output="SLICE_X0.D                     "/>
+      <direct input="SLICEL.DMUX                   " name="SLICE_X0.DMUX                  " output="SLICE_X0.DMUX                  "/>
+      <direct input="SLICEL.DQ                     " name="SLICE_X0.DQ                    " output="SLICE_X0.DQ                    "/>
+    </interconnect>
+  </pb_type>
+  <pb_type name="SLICE_X1" num_pb="1">
+    <xi:include href="../../primitives/slicel/pb_type.xml"/>
+    <input name=" A1    " num_pins="1"/>
+    <input name=" A2    " num_pins="1"/>
+    <input name=" A3    " num_pins="1"/>
+    <input name=" A4    " num_pins="1"/>
+    <input name=" A5    " num_pins="1"/>
+    <input name=" A6    " num_pins="1"/>
+    <input name=" AX    " num_pins="1"/>
+    <input name=" B1    " num_pins="1"/>
+    <input name=" B2    " num_pins="1"/>
+    <input name=" B3    " num_pins="1"/>
+    <input name=" B4    " num_pins="1"/>
+    <input name=" B5    " num_pins="1"/>
+    <input name=" B6    " num_pins="1"/>
+    <input name=" BX    " num_pins="1"/>
+    <input name=" C1    " num_pins="1"/>
+    <input name=" C2    " num_pins="1"/>
+    <input name=" C3    " num_pins="1"/>
+    <input name=" C4    " num_pins="1"/>
+    <input name=" C5    " num_pins="1"/>
+    <input name=" C6    " num_pins="1"/>
+    <input name=" CE    " num_pins="1"/>
+    <input name=" CIN   " num_pins="1"/>
+    <clock name=" CLK   " num_pins="1"/>
+    <input name=" CX    " num_pins="1"/>
+    <input name=" D1    " num_pins="1"/>
+    <input name=" D2    " num_pins="1"/>
+    <input name=" D3    " num_pins="1"/>
+    <input name=" D4    " num_pins="1"/>
+    <input name=" D5    " num_pins="1"/>
+    <input name=" D6    " num_pins="1"/>
+    <input name=" DX    " num_pins="1"/>
+    <input name=" SR    " num_pins="1"/>
+    <output name="A     " num_pins="1"/>
+    <output name="AMUX  " num_pins="1"/>
+    <output name="AQ    " num_pins="1"/>
+    <output name="B     " num_pins="1"/>
+    <output name="BMUX  " num_pins="1"/>
+    <output name="BQ    " num_pins="1"/>
+    <output name="C     " num_pins="1"/>
+    <output name="CMUX  " num_pins="1"/>
+    <output name="COUT  " num_pins="1"/>
+    <output name="CQ    " num_pins="1"/>
+    <output name="D     " num_pins="1"/>
+    <output name="DMUX  " num_pins="1"/>
+    <output name="DQ    " num_pins="1"/>
+    <interconnect>
+      <!-- Slice->Cell -->
+      <direct input="SLICE_X1.A1                   " name="SLICEL.A1                     " output="SLICEL.A1                     "/>
+      <direct input="SLICE_X1.A2                   " name="SLICEL.A2                     " output="SLICEL.A2                     "/>
+      <direct input="SLICE_X1.A3                   " name="SLICEL.A3                     " output="SLICEL.A3                     "/>
+      <direct input="SLICE_X1.A4                   " name="SLICEL.A4                     " output="SLICEL.A4                     "/>
+      <direct input="SLICE_X1.A5                   " name="SLICEL.A5                     " output="SLICEL.A5                     "/>
+      <direct input="SLICE_X1.A6                   " name="SLICEL.A6                     " output="SLICEL.A6                     "/>
+      <direct input="SLICE_X1.AX                   " name="SLICEL.AX                     " output="SLICEL.AX                     "/>
+      <direct input="SLICE_X1.B1                   " name="SLICEL.B1                     " output="SLICEL.B1                     "/>
+      <direct input="SLICE_X1.B2                   " name="SLICEL.B2                     " output="SLICEL.B2                     "/>
+      <direct input="SLICE_X1.B3                   " name="SLICEL.B3                     " output="SLICEL.B3                     "/>
+      <direct input="SLICE_X1.B4                   " name="SLICEL.B4                     " output="SLICEL.B4                     "/>
+      <direct input="SLICE_X1.B5                   " name="SLICEL.B5                     " output="SLICEL.B5                     "/>
+      <direct input="SLICE_X1.B6                   " name="SLICEL.B6                     " output="SLICEL.B6                     "/>
+      <direct input="SLICE_X1.BX                   " name="SLICEL.BX                     " output="SLICEL.BX                     "/>
+      <direct input="SLICE_X1.C1                   " name="SLICEL.C1                     " output="SLICEL.C1                     "/>
+      <direct input="SLICE_X1.C2                   " name="SLICEL.C2                     " output="SLICEL.C2                     "/>
+      <direct input="SLICE_X1.C3                   " name="SLICEL.C3                     " output="SLICEL.C3                     "/>
+      <direct input="SLICE_X1.C4                   " name="SLICEL.C4                     " output="SLICEL.C4                     "/>
+      <direct input="SLICE_X1.C5                   " name="SLICEL.C5                     " output="SLICEL.C5                     "/>
+      <direct input="SLICE_X1.C6                   " name="SLICEL.C6                     " output="SLICEL.C6                     "/>
+      <direct input="SLICE_X1.CE                   " name="SLICEL.CE                     " output="SLICEL.CE                     "/>
+      <direct input="SLICE_X1.CIN                  " name="SLICEL.CIN                    " output="SLICEL.CIN                    "/>
+      <direct input="SLICE_X1.CLK                  " name="SLICEL.CLK                    " output="SLICEL.CLK                    "/>
+      <direct input="SLICE_X1.CX                   " name="SLICEL.CX                     " output="SLICEL.CX                     "/>
+      <direct input="SLICE_X1.D1                   " name="SLICEL.D1                     " output="SLICEL.D1                     "/>
+      <direct input="SLICE_X1.D2                   " name="SLICEL.D2                     " output="SLICEL.D2                     "/>
+      <direct input="SLICE_X1.D3                   " name="SLICEL.D3                     " output="SLICEL.D3                     "/>
+      <direct input="SLICE_X1.D4                   " name="SLICEL.D4                     " output="SLICEL.D4                     "/>
+      <direct input="SLICE_X1.D5                   " name="SLICEL.D5                     " output="SLICEL.D5                     "/>
+      <direct input="SLICE_X1.D6                   " name="SLICEL.D6                     " output="SLICEL.D6                     "/>
+      <direct input="SLICE_X1.DX                   " name="SLICEL.DX                     " output="SLICEL.DX                     "/>
+      <direct input="SLICE_X1.SR                   " name="SLICEL.SR                     " output="SLICEL.SR                     "/>
+      <!-- Cell->Slice -->
+      <direct input="SLICEL.A                      " name="SLICE_X1.A                    " output="SLICE_X1.A                    "/>
+      <direct input="SLICEL.AMUX                   " name="SLICE_X1.AMUX                 " output="SLICE_X1.AMUX                 "/>
+      <direct input="SLICEL.AQ                     " name="SLICE_X1.AQ                   " output="SLICE_X1.AQ                   "/>
+      <direct input="SLICEL.B                      " name="SLICE_X1.B                    " output="SLICE_X1.B                    "/>
+      <direct input="SLICEL.BMUX                   " name="SLICE_X1.BMUX                 " output="SLICE_X1.BMUX                 "/>
+      <direct input="SLICEL.BQ                     " name="SLICE_X1.BQ                   " output="SLICE_X1.BQ                   "/>
+      <direct input="SLICEL.C                      " name="SLICE_X1.C                    " output="SLICE_X1.C                    "/>
+      <direct input="SLICEL.CMUX                   " name="SLICE_X1.CMUX                 " output="SLICE_X1.CMUX                 "/>
+      <direct input="SLICEL.COUT                   " name="SLICE_X1.COUT                 " output="SLICE_X1.COUT                 "/>
+      <direct input="SLICEL.CQ                     " name="SLICE_X1.CQ                   " output="SLICE_X1.CQ                   "/>
+      <direct input="SLICEL.D                      " name="SLICE_X1.D                    " output="SLICE_X1.D                    "/>
+      <direct input="SLICEL.DMUX                   " name="SLICE_X1.DMUX                 " output="SLICE_X1.DMUX                 "/>
+      <direct input="SLICEL.DQ                     " name="SLICE_X1.DQ                   " output="SLICE_X1.DQ                   "/>
+    </interconnect>
+  </pb_type>
+  <interconnect>
+    <!-- Tile->Slice -->
+    <direct input="CLBLL_L.BYP[0]           " name="SLICE_X0.AX                    " output="SLICE_X0.AX                    "/>
+    <direct input="CLBLL_L.BYP[1]           " name="SLICE_X1.AX                    " output="SLICE_X1.AX                    "/>
+    <direct input="CLBLL_L.BYP[2]           " name="SLICE_X0.CX                    " output="SLICE_X0.CX                    "/>
+    <direct input="CLBLL_L.BYP[3]           " name="SLICE_X1.CX                    " output="SLICE_X1.CX                    "/>
+    <direct input="CLBLL_L.BYP[4]           " name="SLICE_X1.BX                    " output="SLICE_X1.BX                    "/>
+    <direct input="CLBLL_L.BYP[5]           " name="SLICE_X0.BX                    " output="SLICE_X0.BX                    "/>
+    <direct input="CLBLL_L.BYP[6]           " name="SLICE_X1.DX                    " output="SLICE_X1.DX                    "/>
+    <direct input="CLBLL_L.BYP[7]           " name="SLICE_X0.DX                    " output="SLICE_X0.DX                    "/>
+    <direct input="CLBLL_L.CLK[0]           " name="SLICE_X0.CLK                   " output="SLICE_X0.CLK                   "/>
+    <direct input="CLBLL_L.CLK[1]           " name="SLICE_X1.CLK                   " output="SLICE_X1.CLK                   "/>
+    <direct input="CLBLL_L.CTRL[0]          " name="SLICE_X0.SR                    " output="SLICE_X0.SR                    "/>
+    <direct input="CLBLL_L.CTRL[1]          " name="SLICE_X1.SR                    " output="SLICE_X1.SR                    "/>
+    <direct input="CLBLL_L.FAN6             " name="SLICE_X0.CE                    " output="SLICE_X0.CE                    "/>
+    <direct input="CLBLL_L.FAN7             " name="SLICE_X1.CE                    " output="SLICE_X1.CE                    "/>
+    <direct input="CLBLL_L.IMUX[0]          " name="SLICE_X0.A3                    " output="SLICE_X0.A3                    "/>
+    <direct input="CLBLL_L.IMUX[1]          " name="SLICE_X1.A3                    " output="SLICE_X1.A3                    "/>
+    <direct input="CLBLL_L.IMUX[2]          " name="SLICE_X1.A2                    " output="SLICE_X1.A2                    "/>
+    <direct input="CLBLL_L.IMUX[3]          " name="SLICE_X0.A2                    " output="SLICE_X0.A2                    "/>
+    <direct input="CLBLL_L.IMUX[4]          " name="SLICE_X1.A6                    " output="SLICE_X1.A6                    "/>
+    <direct input="CLBLL_L.IMUX[5]          " name="SLICE_X0.A6                    " output="SLICE_X0.A6                    "/>
+    <direct input="CLBLL_L.IMUX[6]          " name="SLICE_X0.A1                    " output="SLICE_X0.A1                    "/>
+    <direct input="CLBLL_L.IMUX[7]          " name="SLICE_X1.A1                    " output="SLICE_X1.A1                    "/>
+    <direct input="CLBLL_L.IMUX[8]          " name="SLICE_X1.A5                    " output="SLICE_X1.A5                    "/>
+    <direct input="CLBLL_L.IMUX[9]          " name="SLICE_X0.A5                    " output="SLICE_X0.A5                    "/>
+    <direct input="CLBLL_L.IMUX[10]         " name="SLICE_X0.A4                    " output="SLICE_X0.A4                    "/>
+    <direct input="CLBLL_L.IMUX[11]         " name="SLICE_X1.A4                    " output="SLICE_X1.A4                    "/>
+    <direct input="CLBLL_L.IMUX[12]         " name="SLICE_X1.B6                    " output="SLICE_X1.B6                    "/>
+    <direct input="CLBLL_L.IMUX[13]         " name="SLICE_X0.B6                    " output="SLICE_X0.B6                    "/>
+    <direct input="CLBLL_L.IMUX[14]         " name="SLICE_X0.B1                    " output="SLICE_X0.B1                    "/>
+    <direct input="CLBLL_L.IMUX[15]         " name="SLICE_X1.B1                    " output="SLICE_X1.B1                    "/>
+    <direct input="CLBLL_L.IMUX[16]         " name="SLICE_X0.B3                    " output="SLICE_X0.B3                    "/>
+    <direct input="CLBLL_L.IMUX[17]         " name="SLICE_X1.B3                    " output="SLICE_X1.B3                    "/>
+    <direct input="CLBLL_L.IMUX[18]         " name="SLICE_X1.B2                    " output="SLICE_X1.B2                    "/>
+    <direct input="CLBLL_L.IMUX[19]         " name="SLICE_X0.B2                    " output="SLICE_X0.B2                    "/>
+    <direct input="CLBLL_L.IMUX[20]         " name="SLICE_X0.C2                    " output="SLICE_X0.C2                    "/>
+    <direct input="CLBLL_L.IMUX[21]         " name="SLICE_X0.C4                    " output="SLICE_X0.C4                    "/>
+    <direct input="CLBLL_L.IMUX[22]         " name="SLICE_X1.C3                    " output="SLICE_X1.C3                    "/>
+    <direct input="CLBLL_L.IMUX[23]         " name="SLICE_X0.C3                    " output="SLICE_X0.C3                    "/>
+    <direct input="CLBLL_L.IMUX[24]         " name="SLICE_X1.B5                    " output="SLICE_X1.B5                    "/>
+    <direct input="CLBLL_L.IMUX[25]         " name="SLICE_X0.B5                    " output="SLICE_X0.B5                    "/>
+    <direct input="CLBLL_L.IMUX[26]         " name="SLICE_X0.B4                    " output="SLICE_X0.B4                    "/>
+    <direct input="CLBLL_L.IMUX[27]         " name="SLICE_X1.B4                    " output="SLICE_X1.B4                    "/>
+    <direct input="CLBLL_L.IMUX[28]         " name="SLICE_X1.C4                    " output="SLICE_X1.C4                    "/>
+    <direct input="CLBLL_L.IMUX[29]         " name="SLICE_X1.C2                    " output="SLICE_X1.C2                    "/>
+    <direct input="CLBLL_L.IMUX[30]         " name="SLICE_X0.C5                    " output="SLICE_X0.C5                    "/>
+    <direct input="CLBLL_L.IMUX[31]         " name="SLICE_X1.C5                    " output="SLICE_X1.C5                    "/>
+    <direct input="CLBLL_L.IMUX[32]         " name="SLICE_X1.C1                    " output="SLICE_X1.C1                    "/>
+    <direct input="CLBLL_L.IMUX[33]         " name="SLICE_X0.C1                    " output="SLICE_X0.C1                    "/>
+    <direct input="CLBLL_L.IMUX[34]         " name="SLICE_X0.C6                    " output="SLICE_X0.C6                    "/>
+    <direct input="CLBLL_L.IMUX[35]         " name="SLICE_X1.C6                    " output="SLICE_X1.C6                    "/>
+    <direct input="CLBLL_L.IMUX[36]         " name="SLICE_X0.D2                    " output="SLICE_X0.D2                    "/>
+    <direct input="CLBLL_L.IMUX[37]         " name="SLICE_X0.D4                    " output="SLICE_X0.D4                    "/>
+    <direct input="CLBLL_L.IMUX[38]         " name="SLICE_X1.D3                    " output="SLICE_X1.D3                    "/>
+    <direct input="CLBLL_L.IMUX[39]         " name="SLICE_X0.D3                    " output="SLICE_X0.D3                    "/>
+    <direct input="CLBLL_L.IMUX[40]         " name="SLICE_X1.D1                    " output="SLICE_X1.D1                    "/>
+    <direct input="CLBLL_L.IMUX[41]         " name="SLICE_X0.D1                    " output="SLICE_X0.D1                    "/>
+    <direct input="CLBLL_L.IMUX[42]         " name="SLICE_X0.D6                    " output="SLICE_X0.D6                    "/>
+    <direct input="CLBLL_L.IMUX[43]         " name="SLICE_X1.D6                    " output="SLICE_X1.D6                    "/>
+    <direct input="CLBLL_L.IMUX[44]         " name="SLICE_X1.D4                    " output="SLICE_X1.D4                    "/>
+    <direct input="CLBLL_L.IMUX[45]         " name="SLICE_X1.D2                    " output="SLICE_X1.D2                    "/>
+    <direct input="CLBLL_L.IMUX[46]         " name="SLICE_X0.D5                    " output="SLICE_X0.D5                    "/>
+    <direct input="CLBLL_L.IMUX[47]         " name="SLICE_X1.D5                    " output="SLICE_X1.D5                    "/>
+    <direct input="CLBLL_L.LL_CIN_N         " name="SLICE_X1.CIN                   " output="SLICE_X1.CIN                   "/>
+    <direct input="CLBLL_L.L_CIN_N          " name="SLICE_X0.CIN                   " output="SLICE_X0.CIN                   "/>
+    <!-- Slice->Tile -->
+    <direct input="SLICE_X0.A                     " name="CLBLL_L.LOGIC_OUTS[8]    " output="CLBLL_L.LOGIC_OUTS[8]    "/>
+    <direct input="SLICE_X0.AMUX                  " name="CLBLL_L.LOGIC_OUTS[16]   " output="CLBLL_L.LOGIC_OUTS[16]   "/>
+    <direct input="SLICE_X0.AQ                    " name="CLBLL_L.LOGIC_OUTS[0]    " output="CLBLL_L.LOGIC_OUTS[0]    "/>
+    <direct input="SLICE_X0.B                     " name="CLBLL_L.LOGIC_OUTS[9]    " output="CLBLL_L.LOGIC_OUTS[9]    "/>
+    <direct input="SLICE_X0.BMUX                  " name="CLBLL_L.LOGIC_OUTS[17]   " output="CLBLL_L.LOGIC_OUTS[17]   "/>
+    <direct input="SLICE_X0.BQ                    " name="CLBLL_L.LOGIC_OUTS[1]    " output="CLBLL_L.LOGIC_OUTS[1]    "/>
+    <direct input="SLICE_X0.C                     " name="CLBLL_L.LOGIC_OUTS[10]   " output="CLBLL_L.LOGIC_OUTS[10]   "/>
+    <direct input="SLICE_X0.CMUX                  " name="CLBLL_L.LOGIC_OUTS[18]   " output="CLBLL_L.LOGIC_OUTS[18]   "/>
+    <direct input="SLICE_X0.COUT                  " name="CLBLL_L.L_COUT_N         " output="CLBLL_L.L_COUT_N         "/>
+    <direct input="SLICE_X0.CQ                    " name="CLBLL_L.LOGIC_OUTS[2]    " output="CLBLL_L.LOGIC_OUTS[2]    "/>
+    <direct input="SLICE_X0.D                     " name="CLBLL_L.LOGIC_OUTS[11]   " output="CLBLL_L.LOGIC_OUTS[11]   "/>
+    <direct input="SLICE_X0.DMUX                  " name="CLBLL_L.LOGIC_OUTS[19]   " output="CLBLL_L.LOGIC_OUTS[19]   "/>
+    <direct input="SLICE_X0.DQ                    " name="CLBLL_L.LOGIC_OUTS[3]    " output="CLBLL_L.LOGIC_OUTS[3]    "/>
+    <direct input="SLICE_X1.A                     " name="CLBLL_L.LOGIC_OUTS[12]   " output="CLBLL_L.LOGIC_OUTS[12]   "/>
+    <direct input="SLICE_X1.AMUX                  " name="CLBLL_L.LOGIC_OUTS[20]   " output="CLBLL_L.LOGIC_OUTS[20]   "/>
+    <direct input="SLICE_X1.AQ                    " name="CLBLL_L.LOGIC_OUTS[4]    " output="CLBLL_L.LOGIC_OUTS[4]    "/>
+    <direct input="SLICE_X1.B                     " name="CLBLL_L.LOGIC_OUTS[13]   " output="CLBLL_L.LOGIC_OUTS[13]   "/>
+    <direct input="SLICE_X1.BMUX                  " name="CLBLL_L.LOGIC_OUTS[21]   " output="CLBLL_L.LOGIC_OUTS[21]   "/>
+    <direct input="SLICE_X1.BQ                    " name="CLBLL_L.LOGIC_OUTS[5]    " output="CLBLL_L.LOGIC_OUTS[5]    "/>
+    <direct input="SLICE_X1.C                     " name="CLBLL_L.LOGIC_OUTS[14]   " output="CLBLL_L.LOGIC_OUTS[14]   "/>
+    <direct input="SLICE_X1.CMUX                  " name="CLBLL_L.LOGIC_OUTS[22]   " output="CLBLL_L.LOGIC_OUTS[22]   "/>
+    <direct input="SLICE_X1.COUT                  " name="CLBLL_L.LL_COUT_N        " output="CLBLL_L.LL_COUT_N        "/>
+    <direct input="SLICE_X1.CQ                    " name="CLBLL_L.LOGIC_OUTS[6]    " output="CLBLL_L.LOGIC_OUTS[6]    "/>
+    <direct input="SLICE_X1.D                     " name="CLBLL_L.LOGIC_OUTS[15]   " output="CLBLL_L.LOGIC_OUTS[15]   "/>
+    <direct input="SLICE_X1.DMUX                  " name="CLBLL_L.LOGIC_OUTS[23]   " output="CLBLL_L.LOGIC_OUTS[23]   "/>
+    <direct input="SLICE_X1.DQ                    " name="CLBLL_L.LOGIC_OUTS[7]    " output="CLBLL_L.LOGIC_OUTS[7]    "/>
+  </interconnect>
+</pb_type>

@@ -258,9 +258,9 @@
 
     <!-- Carry -->
     <!-- FIXME! -->
-    <direct name="PRECYINIT_MUX.CYINIT"    input="SLICEL.AX"         output="PRECYINIT_MUX.CYINIT" />
-    <direct name="PRECYINIT_MUX.CI"        input="SLICEL.CIN"        output="PRECYINIT_MUX.CI"     />
-    <direct name="PRECYINIT_MUX.OUT"       input="PRECYINIT_MUX.OUT" output="CARRY4.CIN"            />
+    <direct name="PRECYINIT_MUX.CYINIT"    input="SLICEL.AX"         output="PRECYINIT_MUX.CYINIT" ><!-- <pack_pattern name="chain" in_port="SLICEL.AX"         out_port="PRECYINIT_MUX.CYINIT"  /> --></direct>
+    <direct name="PRECYINIT_MUX.CI"        input="SLICEL.CIN"        output="PRECYINIT_MUX.CI"     ><!-- <pack_pattern name="chain" in_port="SLICEL.CIN"        out_port="PRECYINIT_MUX.CI"      /> --></direct>
+    <direct name="PRECYINIT_MUX.OUT"       input="PRECYINIT_MUX.OUT" output="CARRY4.CIN"           ><!-- <pack_pattern name="chain" in_port="PRECYINIT_MUX.OUT" out_port="CARRY4.CIN"            /> --></direct>
 
     <direct name="DCY0_O5" input="DLUT.O5"   output="DCY0.O5"      />
     <direct name="DCY0_DX" input="SLICEL.DX" output="DCY0.DX"      />
