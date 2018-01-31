@@ -100,11 +100,11 @@ def process_wire(wire_name):
     if wire_name.endswith("_N"):
         pass
     elif wire_name.startswith("L_"):
-        wire_name = "SLICEL_X0."+wire_name[2:]
+        wire_name = "CLBLL_L."+wire_name[2:]
     elif wire_name.startswith("M_"):
         wire_name = "CLBLL_M."+wire_name[2:]
     elif wire_name.startswith("LL_"):
-        wire_name = "SLICEL_X1."+wire_name[3:]
+        wire_name = "CLBLL_LL."+wire_name[3:]
 
     # Special case the LUT inputs as they look like a bus but we don't want to
     # treat them like one.
@@ -255,7 +255,7 @@ args.output_model.close()
 def add_direct(xml, input, output):
     ET.SubElement(xml, 'direct', {'name': '%-30s' % output, 'input': '%-30s' % input, 'output': '%-30s' % output})
 
-tile_name = "TILE_%s_%s" % (tile_type, tile_dir)
+tile_name = "%s_%s" % (tile_type, tile_dir)
 
 pb_type_xml = ET.Element(
     'pb_type', {
@@ -335,13 +335,13 @@ for name, pins in sorted(clbll_outputs):
 pb_type_xml.append(ET.Comment(" Internal Slices "))
 
 # Internal pb_type definition for the first slice
-slice0_xml = ET.SubElement(pb_type_xml, 'pb_type', {'name': "SLICE_X0", 'num_pb': '1'})
+slice0_xml = ET.SubElement(pb_type_xml, 'pb_type', {'name': slice0_name, 'num_pb': '1'})
 ET.SubElement(slice0_xml, xi_include, {'href': slice_pbtype % slice0_type.lower()})
 slice0_interconnect_xml = ET.Element('interconnect')
 slice0_interconnect_xml.append(ET.Comment(" Slice->Cell "))
 
 # Internal pb_type definition for the second slice
-slice1_xml = ET.SubElement(pb_type_xml, 'pb_type', {'name': "SLICE_X1", 'num_pb': '1'})
+slice1_xml = ET.SubElement(pb_type_xml, 'pb_type', {'name': slice1_name, 'num_pb': '1'})
 ET.SubElement(slice1_xml, xi_include, {'href': slice_pbtype % slice0_type.lower()})
 slice1_interconnect_xml = ET.Element('interconnect')
 slice1_interconnect_xml.append(ET.Comment(" Slice->Cell "))
@@ -378,12 +378,10 @@ interconnect_xml.append(ET.Comment(" Slice->Tile "))
 
 for name, pins in sorted(slice_outputs):
     if name.startswith(slice0_name+'.'):
-        slice_name = "SLICE_X0"
         slice_type = slice0_type
         slice_xml = slice0_xml
         slice_interconnect_xml = slice0_interconnect_xml
     elif name.startswith(slice1_name+'.'):
-        slice_name = "SLICE_X1"
         slice_type = slice1_type
         slice_xml = slice1_xml
         slice_interconnect_xml = slice1_interconnect_xml
