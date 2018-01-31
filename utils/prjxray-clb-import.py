@@ -178,7 +178,6 @@ clbll_outputs = set()
 for name, pins in wires_internal.items():
     #if "COUT" in name:
     #    continue
-
     if name.startswith("CLBLL_"):
         inputs = slice_outputs
         outputs = slice_inputs
@@ -198,6 +197,11 @@ for name, pins in wires_internal.items():
         inputs.add(wire)
     else:
         outputs.add(wire)
+
+
+import pprint
+pprint.pprint(sorted(slice_inputs))
+pprint.pprint(sorted(slice_outputs))
 
 ##########################################################################
 # Hard code some settings                                                #
@@ -255,7 +259,7 @@ args.output_model.close()
 def add_direct(xml, input, output):
     ET.SubElement(xml, 'direct', {'name': '%-30s' % output, 'input': '%-30s' % input, 'output': '%-30s' % output})
 
-tile_name = "%s_%s" % (tile_type, tile_dir)
+tile_name = "TILE_%s_%s" % (tile_type, tile_dir)
 
 pb_type_xml = ET.Element(
     'pb_type', {

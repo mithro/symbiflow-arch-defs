@@ -1,4 +1,4 @@
-<pb_type name="CARRY4_{W}MUX" num_pb="1" blif_model=".subckt MUXCY">
+<pb_type xmlns:xi="http://www.w3.org/2001/XInclude" name="CARRY4_{W}MUX" num_pb="1" blif_model=".subckt MUXCY">
   <!--
 Generated with ../../../../../../utils/mux_gen.py
 -->

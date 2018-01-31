@@ -74,7 +74,7 @@
 	<!-- <single type="HCLK_CLB"     x="10" y="26" priority="20"/> --><single type="EMPTY" x="10" y="26" priority="20"/>
 	<!-- <single type="NULL"         x="10" y="56" priority="20"/> --><single type="EMPTY" x="10" y="56" priority="20"/>
 
-   <!-- <col type="TILE_INT_L"      startx="15" priority="10" /> -->
+   <col type="BLOCK_CLBLL_L_INT_L"    startx="11" priority="10" /><!-- <col type="TILE_INT_L"      startx="11" priority="10" /> -->
 	<!-- <single type="BRKH_B TINT"  x="11" y="0"  priority="20"/> --><single type="EMPTY" x="11" y="0"  priority="20"/>
 	<single type="HCLK_L"       x="11" y="26" priority="20"/>
 	<!-- <single type="T_TINT"       x="11" y="56" priority="20"/> --><single type="EMPTY" x="11" y="56" priority="20"/>
@@ -96,7 +96,7 @@
 	<!-- <single type="HCLK_CLB"     x="14" y="26" priority="20"/> --><single type="EMPTY" x="14" y="26" priority="20"/>
 	<!-- <single type="NULL"         x="14" y="56" priority="20"/> --><single type="EMPTY" x="14" y="56" priority="20"/>
 
-   <!-- <col type="TILE_INT_L"      startx="15" priority="10" /> -->
+   <col type="BLOCK_CLBLL_L_INT_L"    startx="15" priority="10" /><!-- <col type="TILE_INT_L"      startx="15" priority="10" /> -->
 	<!-- <single type="BRKH_B TINT"  x="15" y="0"  priority="20"/> --><single type="EMPTY" x="15" y="0"  priority="20"/>
 	<single type="HCLK_L"       x="15" y="26" priority="20"/>
 	<!-- <single type="T_TINT"       x="15" y="56" priority="20"/> --><single type="EMPTY" x="15" y="56" priority="20"/>
@@ -118,7 +118,7 @@
 	<!-- <single type="HCLK_CLB"     x="18" y="26" priority="20"/> --><single type="EMPTY" x="18" y="26" priority="20"/>
 	<!-- <single type="NULL"         x="18" y="56" priority="20"/> --><single type="EMPTY" x="18" y="56" priority="20"/>
 
-   <col type="TILE_INT_L"      startx="19" priority="10" />
+   <col type="BLOCK_CLBLL_L_INT_L"    startx="19" priority="10" /><!-- <col type="TILE_INT_L"      startx="19" priority="10" /> -->
 	<!-- <single type="BRKH_TINT"    x="19" y="0"  priority="20"/> --><single type="EMPTY" x="19" y="0"  priority="20"/>
 	<single type="HCLK_L"       x="19" y="26" priority="20"/>
 	<!-- <single type="T_TINT"       x="19" y="56" priority="20"/> --><single type="EMPTY" x="19" y="56" priority="20"/>
@@ -139,6 +139,7 @@
    <!-- Start RIO -->
 
    <col type="BLOCK_CLBLL_L_INT_L"    startx="3" priority="10" />
+   <col type="BLOCK_CLBLL_L_INT_L"    startx="4" priority="10" />
 
    <!-- End RIO -->
    <row type="EMPTY"           starty="0" priority="11" />
