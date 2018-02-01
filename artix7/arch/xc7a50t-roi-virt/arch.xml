@@ -130,24 +130,26 @@
    <col type="EMPTY"      startx="25" priority="10" />
 
   </fixed_layout>
-  <fixed_layout name="xc7a50t-test" width="8" height="16">
+
+  <fixed_layout name="xc7a50t-test" width="16" height="16">
 
    <col type="EMPTY"      startx="0"  priority="10" />
-   <!-- <col type="LIOB"       startx="0"   priority="10" /> --><col type="PAD"        startx="1"  priority="10" />
+   <!-- <col type="LIOB"       startx="1"   priority="10" /> --><col type="PAD"        startx="1"  priority="10" />
    <col type="EMPTY"      startx="2"  priority="10" />
 
    <!-- Start RIO -->
 
    <col type="BLOCK_CLBLL_L_INT_L"    startx="3" priority="10" />
-   <col type="BLOCK_CLBLL_L_INT_L"    startx="4" priority="10" />
+   <!--<col type="BLOCK_CLBLL_L_INT_L"    startx="4" priority="10" /> -->
 
    <!-- End RIO -->
-   <row type="EMPTY"           starty="0" priority="11" />
-   <row type="EMPTY"           starty="15" priority="11" />
 
    <col type="EMPTY"      startx="5" priority="10" />
-   <!-- <col type="RIOB"       startx="24"  priority="10" /> --><col type="PAD"        startx="6" priority="10" />
-   <col type="EMPTY"      startx="15" priority="10" />
+   <!-- <col type="RIOB"       startx="6"  priority="10" /> --><col type="PAD"        startx="6" priority="10" />
+   <col type="EMPTY"      startx="7" priority="10" />
+
+   <row type="EMPTY"           starty="0" priority="11" />
+   <row type="EMPTY"           starty="15" priority="11" />
 
   </fixed_layout>
  </layout>
