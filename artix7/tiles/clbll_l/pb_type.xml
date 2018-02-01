@@ -3,8 +3,7 @@
   <input name="BYP                 " num_pins="8"/>
   <clock name="CLK                 " num_pins="2"/>
   <input name="CTRL                " num_pins="2"/>
-  <input name="FAN6                " num_pins="1"/>
-  <input name="FAN7                " num_pins="1"/>
+  <input name="FAN                 " num_pins="8"/>
   <input name="IMUX                " num_pins="48"/>
   <input name="LL_CIN_N            " num_pins="1"/>
   <input name="L_CIN_N             " num_pins="1"/>
@@ -221,8 +220,8 @@
     <direct input="TILE_CLBLL_L.CLK[1]           " name="CLBLL_LL.CLK                  " output="CLBLL_LL.CLK                  "/>
     <direct input="TILE_CLBLL_L.CTRL[0]          " name="CLBLL_L.SR                    " output="CLBLL_L.SR                    "/>
     <direct input="TILE_CLBLL_L.CTRL[1]          " name="CLBLL_LL.SR                   " output="CLBLL_LL.SR                   "/>
-    <direct input="TILE_CLBLL_L.FAN6             " name="CLBLL_L.CE                    " output="CLBLL_L.CE                    "/>
-    <direct input="TILE_CLBLL_L.FAN7             " name="CLBLL_LL.CE                   " output="CLBLL_LL.CE                   "/>
+    <direct input="TILE_CLBLL_L.FAN[6]           " name="CLBLL_L.CE                    " output="CLBLL_L.CE                    "/>
+    <direct input="TILE_CLBLL_L.FAN[7]           " name="CLBLL_LL.CE                   " output="CLBLL_LL.CE                   "/>
     <direct input="TILE_CLBLL_L.IMUX[0]          " name="CLBLL_L.A3                    " output="CLBLL_L.A3                    "/>
     <direct input="TILE_CLBLL_L.IMUX[1]          " name="CLBLL_LL.A3                   " output="CLBLL_LL.A3                   "/>
     <direct input="TILE_CLBLL_L.IMUX[2]          " name="CLBLL_LL.A2                   " output="CLBLL_LL.A2                   "/>
