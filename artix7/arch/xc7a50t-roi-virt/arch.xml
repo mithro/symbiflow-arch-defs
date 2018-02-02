@@ -139,7 +139,7 @@
 
    <!-- Start RIO -->
 
-   <col type="TILE_INT_L"    startx="3" priority="10" />
+   <col type="BLOCK_CLBLL_L_INT_L"    startx="3" priority="10" />
    <!--<col type="BLOCK_CLBLL_L_INT_L"    startx="4" priority="10" /> -->
 
    <!-- End RIO -->
@@ -202,7 +202,8 @@
 
   <xi:include href="../../../vpr/pad/pb_type.xml"/>
 
-  <xi:include href="../../tiles/int_l/pb_type.xml"/>
+  <!-- <xi:include href="../../tiles/int_l/pb_type.xml"/> -->
+  <xi:include href="../../blocks/pb_type.xml"/>
 
   <xi:include href="dummy/CLBLL_R.xml" />
 
@@ -217,7 +218,7 @@
 
  <directlist>
   <!-- CLBX_L -->
-  <direct name="BLOCK_CLBLL_L_INT_L_CARRY" from_pin="TILE_INT_L.COUT_N"  to_pin="TILE_INT_L.CIN_N"  x_offset="0"  y_offset="1" z_offset="0"/>
+  <direct name="BLOCK_CLBLL_L_INT_L_CARRY" from_pin="BLOCK_CLBLL_L_INT_L.COUT_N"  to_pin="BLOCK_CLBLL_L_INT_L.CIN_N"  x_offset="0"  y_offset="1" z_offset="0"/>
   <!--
   <direct name="TILE_CLBLM_L_M_CARRY"  from_pin="TILE_CLBLM_L.M_COUT_N"  to_pin="TILE_CLBLM_L.M_CIN_N"  x_offset="0"  y_offset="1" z_offset="0"/>
   <direct name="TILE_CLBLM_L_L_CARRY"  from_pin="TILE_CLBLM_L.L_COUT_N"  to_pin="TILE_CLBLM_L.L_CIN_N"  x_offset="0"  y_offset="1" z_offset="0"/>

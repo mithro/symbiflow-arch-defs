@@ -382,6 +382,9 @@ for span_wire, pins in sorted(wires_by_type['span'].items(), key=lambda i: (i[0]
             mux_names.add(mux_name)
 
             dest = connections_map['mux'][(span_wire, pin)]
+
+            dest = [d for d in dest if isinstance(d[0], str)]
+            print(span_wire, pin, dest)
             if not dest:
                 print("WARNING: No connections for %s" % mux_name)
                 continue
@@ -462,6 +465,7 @@ for local_wire, pins in sorted(wires_by_type['local'].items()):
         has_direct = (local_wire, pin) in connections_map['direct']
         found = found or (has_mux or has_direct)
 
+
     if found:
         wire_type = "output"
     else:
@@ -469,7 +473,10 @@ for local_wire, pins in sorted(wires_by_type['local'].items()):
         if "CLK" in local_wire:
             wire_type = "clock"
 
+    print(local_wire, pins, wire_type)
+
     continous = (set(range(len(pins))) == pins)
+    assert continous, "{} != {}".format(set(range(len(pins))), pins)
 
     ET.SubElement(
         pb_type_xml,
