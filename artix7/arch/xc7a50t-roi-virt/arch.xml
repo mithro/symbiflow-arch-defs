@@ -203,7 +203,7 @@
   <xi:include href="../../../vpr/pad/pb_type.xml"/>
 
   <!-- <xi:include href="../../tiles/int_l/pb_type.xml"/> -->
-  <xi:include href="../../blocks/pb_type.xml"/>
+  <xi:include href="../../blocks/clbll_l_int_l/pb_type.xml"/>
 
   <xi:include href="dummy/CLBLL_R.xml" />
 
