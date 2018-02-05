@@ -75,7 +75,7 @@ parser.add_argument(
 
 args = parser.parse_args()
 
-buf_dir = os.path.relpath(os.path.abspath(os.path.join(mydir, '..', 'vpr', 'buf')), os.path.dirname(args.output_pb_type.name))
+buf_dir = os.path.relpath(os.path.abspath(os.path.join(mydir, '..', '..', 'vpr', 'buf')), os.path.dirname(args.output_pb_type.name))
 
 prjxray_part_db = os.path.join(prjxray_db, args.part)
 
