@@ -131,7 +131,7 @@
 
   </fixed_layout>
 
-  <fixed_layout name="xc7a50t-test" width="16" height="16">
+  <fixed_layout name="xc7a50t-test" width="8" height="8">
 
    <col type="EMPTY"      startx="0"  priority="10" />
    <!-- <col type="LIOB"       startx="1"   priority="10" /> --><col type="PAD"        startx="1"  priority="10" />
@@ -149,7 +149,7 @@
    <col type="EMPTY"      startx="7" priority="10" />
 
    <row type="EMPTY"           starty="0" priority="11" />
-   <row type="EMPTY"           starty="15" priority="11" />
+   <row type="EMPTY"           starty="7" priority="11" />
 
   </fixed_layout>
  </layout>
@@ -173,28 +173,24 @@
  </switchlist>
  <segmentlist>
   <!-- Global networks -->
-  <segment name="global" length="longline" freq="0.010000" type="bidir" Rmetal="101" Cmetal="22.5e-15">
-   <sb type="pattern">1 1</sb>
-   <cb type="pattern">1</cb>
-   <wire_switch name="1"/>
-   <opin_switch name="2"/>
-  </segment>
 
   <!-- Span 12 vertical   tracks -->
   <!-- Span 12 horizontal tracks -->
-  <segment name="long-span" length="11" freq="0.250000" type="bidir" Rmetal="101" Cmetal="22.5e-15">
+  <segment name="long-span" length="11" freq="0.250000" type="unidir" Rmetal="101" Cmetal="22.5e-15">
    <sb type="pattern">1 1 1 1 1 1 1 1 1 1 1 1</sb>
    <cb type="pattern">1 1 1 1 1 1 1 1 1 1 1</cb>
+   <mux name="1"/>
    <wire_switch name="1"/>
-   <opin_switch name="2"/>
+   <opin_switch name="1"/>
   </segment>
 
   <!-- Span 4 vertical   tracks -->
   <!-- Span 4 horizontal tracks -->
-  <segment name="short-span" length="4" freq="0.750000" type="bidir" Rmetal="101" Cmetal="22.5e-15">
+  <segment name="short-span" length="4" freq="0.750000" type="unidir" Rmetal="101" Cmetal="22.5e-15">
    <sb type="pattern">1 1 1 1 1</sb>
    <cb type="pattern">1 1 1 1</cb>
-   <wire_switch name="1"/>
+   <mux name="2"/>
+   <wire_switch name="2"/>
    <opin_switch name="2"/>
   </segment>
  </segmentlist>
