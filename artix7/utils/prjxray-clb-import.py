@@ -254,7 +254,7 @@ args.output_model.close()
 def add_direct(xml, input, output):
     ET.SubElement(xml, 'direct', {'name': '%-30s' % output, 'input': '%-30s' % input, 'output': '%-30s' % output})
 
-tile_name = "TILE_%s_%s" % (tile_type, tile_dir)
+tile_name = "TILE-%s_%s" % (tile_type, tile_dir)
 
 pb_type_xml = ET.Element(
     'pb_type', {
@@ -344,7 +344,7 @@ for name, pins in sorted(slice_inputs):
     # Connections from CLBLL_X type to the contained SLICEL/SLICEM
     for p in pins:
         input_name = fmt(name, p)
-        add_direct(slice_interconnect_xml, input_name, '%s.%s' % (slice_type, input_name.split('.')[-1]))
+        add_direct(slice_interconnect_xml, input_name, 'BLOCK-%s.%s' % (slice_type, input_name.split('.')[-1]))
 
 slice0_interconnect_xml.append(ET.Comment(" Cell->Slice "))
 slice1_interconnect_xml.append(ET.Comment(" Cell->Slice "))
@@ -371,7 +371,7 @@ for name, pins in sorted(slice_outputs):
     for p in pins:
         output_name = fmt(name, p)
         # Connections from SLICEL/SLICEM to the containing CLBLL_X type
-        add_direct(slice_interconnect_xml, ('%s.%s' % (slice_type, output_name.split('.')[-1])), output_name)
+        add_direct(slice_interconnect_xml, ('BLOCK-%s.%s' % (slice_type, output_name.split('.')[-1])), output_name)
         # Connections from the CLBLL_XX to the TILE
         add_direct(interconnect_xml, output_name, '%s.%s' % (tile_name, fmt(*connections[(name, p)])))
 

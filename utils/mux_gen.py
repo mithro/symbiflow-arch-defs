@@ -394,7 +394,13 @@ xi_url = "http://www.w3.org/2001/XInclude"
 ET.register_namespace('xi', xi_url)
 xi_include = "{%s}include" % xi_url
 
-mn = args.name_mux
+if args.type == 'logic':
+    mn = 'BEL_MUX-'+args.name_mux
+elif args.type == "routing":
+    mn = 'BEL_RUX-'+args.name_mux
+else:
+    assert False, "Unknown type {}".format(args.type)
+
 pb_type_xml = ET.Element(
     'pb_type', {
         'name': mn,
@@ -431,29 +437,17 @@ if args.type == 'logic':
                 pb_type_xml,
                 'delay_constant', {
                     'max': "10e-12",
-                    'in_port': "%s.%s" % (args.name_mux, iname),
-                    'out_port': "%s.%s" % (args.name_mux, oname),
+                    'in_port': "%s.%s" % (mn, iname),
+                    'out_port': "%s.%s" % (mn, oname),
                 },
             )
 elif args.type == "routing":
-    buf_model = os.path.join(buf_dir, "model.xml")
-    buf_pbtype = os.path.join(buf_dir, "pb_type.xml")
-    ET.SubElement(pb_type_xml, xi_include, {'href': buf_pbtype})
-
     interconnect = ET.SubElement(pb_type_xml, 'interconnect')
     ET.SubElement(
         interconnect,
         'mux', {
-            'name': '%s_IN' % (args.name_mux,),
+            'name': '%s' % (args.name_mux,),
             'input': ' '.join("%s.%s" % (mn,n) for t, n, _, _ in port_names if t in ('i',)),
-            'output': "BUF.I", #"%s.%s" % (mn,args.name_output),
-        },
-    )
-    ET.SubElement(
-        interconnect,
-        'direct', {
-            'name': '%s_OUT' % (args.name_mux,),
-            'input': "BUF.O",
             'output': "%s.%s" % (mn,args.name_output),
         },
     )
