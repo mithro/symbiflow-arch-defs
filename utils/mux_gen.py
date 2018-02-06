@@ -395,9 +395,9 @@ ET.register_namespace('xi', xi_url)
 xi_include = "{%s}include" % xi_url
 
 if args.type == 'logic':
-    mn = 'BEL_MUX-'+args.name_mux
+    mn = 'BEL_MX-'+args.name_mux
 elif args.type == "routing":
-    mn = 'BEL_RUX-'+args.name_mux
+    mn = 'BEL_RX-'+args.name_mux
 else:
     assert False, "Unknown type {}".format(args.type)
 

@@ -80,7 +80,7 @@ buf_dir = os.path.relpath(os.path.abspath(os.path.join(mydir, '..', '..', 'vpr',
 prjxray_part_db = os.path.join(prjxray_db, args.part)
 
 tile_type, tile_dir = args.tile.split('_')
-tile_name = "TILE_%s_%s" % (tile_type, tile_dir)
+tile_name = "BLK_BB-%s_%s" % (tile_type, tile_dir)
 
 ##########################################################################
 # Read in the Project X-Ray database and do some processing              #

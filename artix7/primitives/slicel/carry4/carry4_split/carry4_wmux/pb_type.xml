@@ -1,4 +1,4 @@
-<pb_type xmlns:xi="http://www.w3.org/2001/XInclude" name="BEL_MUX-CARRY4_{W}MUX" num_pb="1" blif_model=".subckt MUXCY">
+<pb_type xmlns:xi="http://www.w3.org/2001/XInclude" name="BEL_MX-CARRY4_{W}MUX" num_pb="1" blif_model=".subckt MUXCY">
   <!--
 Generated with ../../../../../../utils/mux_gen.py
 -->
@@ -6,7 +6,7 @@ Generated with ../../../../../../utils/mux_gen.py
   <input name="DI" num_pins="1"/>
   <input name="S" num_pins="1"/>
   <output name="O" num_pins="1"/>
-  <delay_constant in_port="BEL_MUX-CARRY4_{W}MUX.CI" max="10e-12" out_port="BEL_MUX-CARRY4_{W}MUX.O"/>
-  <delay_constant in_port="BEL_MUX-CARRY4_{W}MUX.DI" max="10e-12" out_port="BEL_MUX-CARRY4_{W}MUX.O"/>
-  <delay_constant in_port="BEL_MUX-CARRY4_{W}MUX.S" max="10e-12" out_port="BEL_MUX-CARRY4_{W}MUX.O"/>
+  <delay_constant in_port="BEL_MX-CARRY4_{W}MUX.CI" max="10e-12" out_port="BEL_MX-CARRY4_{W}MUX.O"/>
+  <delay_constant in_port="BEL_MX-CARRY4_{W}MUX.DI" max="10e-12" out_port="BEL_MX-CARRY4_{W}MUX.O"/>
+  <delay_constant in_port="BEL_MX-CARRY4_{W}MUX.S" max="10e-12" out_port="BEL_MX-CARRY4_{W}MUX.O"/>
 </pb_type>
