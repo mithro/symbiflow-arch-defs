@@ -127,21 +127,21 @@
    <direct name="WW2BEG" input="BLK_BB-INT_L.WW2BEG" output="BLK_MB-CLBLL_L-INT_L.WW2BEG" />
    <direct name="WW4BEG" input="BLK_BB-INT_L.WW4BEG" output="BLK_MB-CLBLL_L-INT_L.WW4BEG" />
    <!-- Local Interconnects -->
-   <direct name="BYP_L"  input="BLK_BB-INT_L.BYP_L"    output="BLK_BB-CLBLL_L.BYP" />
+   <direct name="BYP_L"  input="BLK_BB-INT_L.BYP_L"    output="BLK_TI-CLBLL_L.BYP" />
    <!--
-   <direct name="CLK_L"  input="BLK_BB-INT_L.CLK_L"    output="BLK_BB-CLBLL_L.CLK" />
+   <direct name="CLK_L"  input="BLK_BB-INT_L.CLK_L"    output="BLK_TI-CLBLL_L.CLK" />
    -->
-   <direct name="CTRL_L" input="BLK_BB-INT_L.CTRL_L"   output="BLK_BB-CLBLL_L.CTRL"/>
-   <direct name="FAN"    input="BLK_BB-INT_L.FAN_L"    output="BLK_BB-CLBLL_L.FAN" />
-   <direct name="IMUX_L" input="BLK_BB-INT_L.IMUX_L"   output="BLK_BB-CLBLL_L.IMUX"/>
-   <direct name="LOGIC_OUTS_L" input="BLK_BB-CLBLL_L.LOGIC_OUTS" output="BLK_BB-INT_L.LOGIC_OUTS_L" />
+   <direct name="CTRL_L" input="BLK_BB-INT_L.CTRL_L"   output="BLK_TI-CLBLL_L.CTRL"/>
+   <direct name="FAN"    input="BLK_BB-INT_L.FAN_L"    output="BLK_TI-CLBLL_L.FAN" />
+   <direct name="IMUX_L" input="BLK_BB-INT_L.IMUX_L"   output="BLK_TI-CLBLL_L.IMUX"/>
+   <direct name="LOGIC_OUTS_L" input="BLK_TI-CLBLL_L.LOGIC_OUTS" output="BLK_BB-INT_L.LOGIC_OUTS_L" />
    <!-- Carry chain -->
-   <direct name="L_CIN_N"  input="BLK_MB-CLBLL_L-INT_L.CIN_N[0]" output="BLK_BB-CLBLL_L.L_CIN_N"  ><!-- <pack_pattern name="carryl"  in_port="BLK_MB-CLBLL_L-INT_L.CIN_N[0]" out_port="BLK_BB-CLBLL_L.L_CIN_N"  /> --></direct>
-   <direct name="LL_CIN_N" input="BLK_MB-CLBLL_L-INT_L.CIN_N[1]" output="BLK_BB-CLBLL_L.LL_CIN_N" ><!-- <pack_pattern name="carryll" in_port="BLK_MB-CLBLL_L-INT_L.CIN_N[1]" out_port="BLK_BB-CLBLL_L.LL_CIN_N" /> --></direct>
-   <direct name="L_COUT_N"  input="BLK_BB-CLBLL_L.L_COUT_N"  output="BLK_MB-CLBLL_L-INT_L.COUT_N[0]"  />
-   <direct name="LL_COUT_N" input="BLK_BB-CLBLL_L.LL_COUT_N" output="BLK_MB-CLBLL_L-INT_L.COUT_N[1]" />
+   <direct name="L_CIN_N"  input="BLK_MB-CLBLL_L-INT_L.CIN_N[0]" output="BLK_TI-CLBLL_L.L_CIN_N"  ><!-- <pack_pattern name="carryl"  in_port="BLK_MB-CLBLL_L-INT_L.CIN_N[0]" out_port="BLK_TI-CLBLL_L.L_CIN_N"  /> --></direct>
+   <direct name="LL_CIN_N" input="BLK_MB-CLBLL_L-INT_L.CIN_N[1]" output="BLK_TI-CLBLL_L.LL_CIN_N" ><!-- <pack_pattern name="carryll" in_port="BLK_MB-CLBLL_L-INT_L.CIN_N[1]" out_port="BLK_TI-CLBLL_L.LL_CIN_N" /> --></direct>
+   <direct name="L_COUT_N"  input="BLK_TI-CLBLL_L.L_COUT_N"  output="BLK_MB-CLBLL_L-INT_L.COUT_N[0]"  />
+   <direct name="LL_COUT_N" input="BLK_TI-CLBLL_L.LL_COUT_N" output="BLK_MB-CLBLL_L-INT_L.COUT_N[1]" />
 
    <!-- FIXME: Temporary work around for packing failing due to the CLK connection above -->
-   <direct name="FIXME_CLK_L"  input="BLK_MB-CLBLL_L-INT_L.CLK_L"    output="BLK_BB-CLBLL_L.CLK" />
+   <direct name="FIXME_CLK_L"  input="BLK_MB-CLBLL_L-INT_L.CLK_L"    output="BLK_TI-CLBLL_L.CLK" />
   </interconnect>
 </pb_type>
