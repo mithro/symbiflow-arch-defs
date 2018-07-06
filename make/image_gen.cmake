@@ -5,7 +5,7 @@ set(IMAGE_GEN_DPI 300 CACHE STRING "DPI to use when generating images from Veril
 set(NETLISTSVG ${symbiflow-arch-defs_SOURCE_DIR}/third_party/netlistsvg
   CACHE STRING "Directory to netlistsvg.")
 set(NETLISTSVG_BIN ${NETLISTSVG}/bin/netlistsvg.js)
-set(NETLISTSVG_SKIN ${NETLISTSVG}/lib/default.svg)
+set(NETLISTSVG_SKIN ${symbiflow-arch-defs_SOURCE_DIR}/common/netlistsvg.svg)
 set(NETLISTSVG_LOCK ${NETLISTSVG}/package-lock.json)
 
 function(setup_netlistsvg)
