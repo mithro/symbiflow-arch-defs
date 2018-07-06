@@ -4,7 +4,7 @@ include make/inc/env.mk
 # Install netlistsvg in third_party
 NETLISTSVG_BIN  := $(NETLISTSVG)/bin/netlistsvg.js
 NETLISTSVG_LOCK := $(NETLISTSVG)/package-lock.json
-NETLISTSVG_SKIN ?= $(NETLISTSVG)/lib/default.svg
+NETLISTSVG_SKIN ?= $(TOP_DIR)/common/svg/default.svg
 
 $(NETLISTSVG_SKIN): $(NETLISTSVG_STAMP)
 	@true
