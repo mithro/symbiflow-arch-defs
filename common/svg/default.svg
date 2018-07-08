@@ -21,6 +21,13 @@ text {
   font-weight: bold;
   font-family: "Courier New", monospace;
 }
+text.smalltext {
+  font-size:8px;
+  alignment-baseline: middle;
+}
+text.rtext {
+  text-anchor: end;
+}
 .nodelabel {
   text-anchor: middle;
 }
@@ -31,7 +38,7 @@ text {
   fill:#000;
 }
 </style>
-  <g s:type="mux" transform="translate(50, 50)" s:width="20" s:height="40">
+  <g s:type="mux" transform="translate(50, 25)" s:width="20" s:height="40">
     <s:alias val="$pmux"/>
     <s:alias val="$mux"/>
     <s:alias val="$_MUX_"/>
@@ -45,7 +52,7 @@ text {
   </g>
 
   <!-- and -->
-  <g s:type="and" transform="translate(150,50)" s:width="30" s:height="25">
+  <g s:type="and" transform="translate(50,100)" s:width="30" s:height="25">
     <s:alias val="$and"/>
     <s:alias val="$logic_and"/>
     <s:alias val="$_AND_"/>
@@ -56,7 +63,7 @@ text {
     <g s:x="0" s:y="20" s:pid="B"/>
     <g s:x="30" s:y="12.5" s:pid="Y"/>
   </g>
-  <g s:type="nand" transform="translate(150,100)" s:width="30" s:height="25">
+  <g s:type="nand" transform="translate(50,150)" s:width="30" s:height="25">
     <s:alias val="$nand"/>
     <s:alias val="$logic_nand"/>
     <s:alias val="$_NAND_"/>
@@ -70,7 +77,7 @@ text {
   </g>
 
   <!-- or -->
-  <g s:type="or" transform="translate(250,50)" s:width="30" s:height="25">
+  <g s:type="or" transform="translate(100,100)" s:width="30" s:height="25">
     <s:alias val="$or"/>
     <s:alias val="$logic_or"/>
     <s:alias val="$_OR_"/>
@@ -82,7 +89,7 @@ text {
     <g s:x="3" s:y="20" s:pid="B"/>
     <g s:x="30" s:y="12.5" s:pid="Y"/>
   </g>
-  <g s:type="reduce_nor" transform="translate(250, 100)" s:width="33" s:height="25">
+  <g s:type="reduce_nor" transform="translate(100, 150)" s:width="33" s:height="25">
     <s:alias val="$nor"/>
     <s:alias val="$reduce_nor"/>
     <s:alias val="$_NOR_"/>
@@ -97,7 +104,7 @@ text {
   </g>
 
   <!--xor -->
-  <g s:type="reduce_xor" transform="translate(350, 50)" s:width="33" s:height="25">
+  <g s:type="reduce_xor" transform="translate(150, 100)" s:width="33" s:height="25">
     <s:alias val="$xor"/>
     <s:alias val="$reduce_xor"/>
     <s:alias val="$_XOR_"/>
@@ -109,7 +116,7 @@ text {
     <g s:x="3" s:y="20" s:pid="B"/>
     <g s:x="33" s:y="12.5" s:pid="Y"/>
   </g>
-  <g s:type="reduce_nxor" transform="translate(350, 100)" s:width="33" s:height="25">
+  <g s:type="reduce_nxor" transform="translate(150, 150)" s:width="33" s:height="25">
     <s:alias val="$xnor"/>
     <s:alias val="$reduce_xnor"/>
     <s:alias val="$_XNOR_"/>
@@ -124,7 +131,16 @@ text {
   </g>
 
   <!--buffer -->
-  <g s:type="not" transform="translate(450,100)" s:width="30" s:height="20">
+  <g s:type="buf" transform="translate(200,100)" s:width="30" s:height="20">
+    <s:alias val="$_BUF_"/>
+    <s:alias val="$buf"/>
+
+    <path d="M0,0 L0,20 L20,10 Z" />
+
+    <g s:x="0" s:y="10" s:pid="A"/>
+    <g s:x="25" s:y="10" s:pid="Y"/>
+  </g>
+  <g s:type="not" transform="translate(200,150)" s:width="30" s:height="20">
     <s:alias val="$_NOT_"/>
     <s:alias val="$not"/>
 
@@ -135,7 +151,8 @@ text {
     <g s:x="25" s:y="10" s:pid="Y"/>
   </g>
 
-  <g s:type="add" transform="translate(50, 150)" s:width="25" s:height="25">
+  <!-- Arithmetic -->
+  <g s:type="add" transform="translate(50, 200)" s:width="25" s:height="25">
     <s:alias val="$add"/>
 
     <circle r="12.5" cx="12.5" cy="12.5" />
@@ -147,7 +164,7 @@ text {
     <g s:x="25" s:y="12.5" s:pid="Y"/>
   </g>
 
-  <g s:type="sub" transform="translate(150,150)" s:width="25" s:height="25">
+  <g s:type="sub" transform="translate(100,200)" s:width="25" s:height="25">
     <s:alias val="$sub"/>
 
     <circle r="12.5" cx="12.5" cy="12.5" />
@@ -157,7 +174,7 @@ text {
     <g s:x="3" s:y="20" s:pid="B"/>
     <g s:x="25" s:y="12.5" s:pid="Y"/>
   </g>
-  <g s:type="eq" transform="translate(250,150)" s:width="25" s:height="25">
+  <g s:type="eq" transform="translate(150,200)" s:width="25" s:height="25">
     <s:alias val="$eq"/>
 
     <circle r="12.5" cx="12.5" cy="12.5" />
@@ -169,7 +186,8 @@ text {
     <g s:x="25" s:y="12.5" s:pid="Y"/>
   </g>
 
-  <g s:type="dff" transform="translate(350,150)" s:width="30" s:height="40">
+  <!-- D Flip Flops -->
+  <g s:type="dff" transform="translate(50,250)" s:width="30" s:height="40">
     <s:alias val="$dff"/>
     <s:alias val="$_DFF_"/>
 
@@ -179,16 +197,72 @@ text {
     <g s:x="30" s:y="10" s:pid="Q"/>
     <g s:x="0" s:y="30" s:pid="CLK"/>
     <g s:x="0" s:y="10" s:pid="D"/>
+
+    <text x="2.0" y="10" class="smalltext">D</text>
+    <text x="28.0" y="10" class="smalltext rtext">Q</text>
+    <text x="6.0" y="30" class="smalltext">CLK</text>
   </g>
 
-  <g s:type="inputExt" transform="translate(50,200)" s:width="30" s:height="20">
+  <g s:type="dffn" transform="translate(50,300)" s:width="30" s:height="40">
+    <s:alias val="$dffn"/>
+    <s:alias val="$_DFFN_"/>
+
+    <rect width="30" height="40" x="0" y="0"/>
+    <path d="M0,35 L5,30 L0,25"/>
+    <circle cx="-3" cy="30" r="3" />
+
+    <g s:x="30" s:y="10" s:pid="Q"/>
+    <g s:x="0" s:y="30" s:pid="CLK"/>
+    <g s:x="0" s:y="10" s:pid="D"/>
+
+    <text x="2.0" y="10" class="smalltext">D</text>
+    <text x="28.0" y="10" class="smalltext rtext">Q</text>
+    <text x="6.0" y="30" class="smalltext">CLK</text>
+  </g>
+
+  <!-- D Latches -->
+  <g s:type="dlatch" transform="translate(100,250)" s:width="30" s:height="40">
+    <s:alias val="$dlatch"/>
+    <s:alias val="$_DLATCH_"/>
+
+    <rect width="30" height="40" x="0" y="0"/>
+    <path d="M1,35 L4,35 L4,25 L9,25 L9,35 L12,35"/>
+
+    <g s:x="30" s:y="10" s:pid="Q"/>
+    <g s:x="0" s:y="30" s:pid="EN"/>
+    <g s:x="0" s:y="10" s:pid="D"/>
+
+    <text x="2.0" y="10" class="smalltext">D</text>
+    <text x="28.0" y="10" class="smalltext rtext">Q</text>
+    <text x="11.0" y="30" class="smalltext">EN</text>
+  </g>
+
+  <g s:type="dlatchn" transform="translate(100,300)" s:width="30" s:height="40">
+    <s:alias val="$dlatchn"/>
+    <s:alias val="$_DLATCHN_"/>
+
+    <rect width="30" height="40" x="0" y="0"/>
+    <path d="M1,25 L4,25 L4,35 L9,35 L9,25 L12,25"/>
+
+    <g s:x="30" s:y="10" s:pid="Q"/>
+    <g s:x="0" s:y="30" s:pid="CLK"/>
+    <g s:x="0" s:y="10" s:pid="D"/>
+
+    <text x="2.0" y="10" class="smalltext">D</text>
+    <text x="28.0" y="10" class="smalltext rtext">Q</text>
+    <text x="11.0" y="30" class="smalltext">EN</text>
+  </g>
+
+  <!-- Ports -->
+  <g s:type="inputExt" transform="translate(50,400)" s:width="30" s:height="20">
     <text x="15" y="-4" class="nodelabel" s:attribute="ref">input</text>
     <s:alias val="$_inputExt_"/>
     <path d="M0,0 L0,20 L15,20 L30,10 L15,0 Z" />
     <g s:x="28" s:y="10" s:pid="Y"/>
   </g>
 
-  <g s:type="constant" transform="translate(150,200)" s:width="30" s:height="20">
+  <g s:type="constant" transform="translate(100,400)" s:width="30" s:height="20">
+    <text x="15" y="-4" class="nodelabel" s:attribute="ref">constant</text>
     <text x="15" y="-4" class="nodelabel" s:attribute="ref">constant</text>
 
     <s:alias val="$_constant_"/>
@@ -197,7 +271,7 @@ text {
     <g s:x="30" s:y="10" s:pid="Y"/>
   </g>
 
-  <g s:type="outputExt" transform="translate(250,200)" s:width="30" s:height="20">
+  <g s:type="outputExt" transform="translate(150,400)" s:width="30" s:height="20">
     <text x="15" y="-4" class="nodelabel" s:attribute="ref">output</text>
     <s:alias val="$_outputExt_"/>
     <path d="M30,0 L30,20 L15,20 L0,10 L15,0 Z" />
@@ -205,7 +279,8 @@ text {
     <g s:x="0" s:y="10" s:pid="A"/>
   </g>
 
-  <g s:type="split" transform="translate(350,200)" s:width="5" s:height="40">
+  <!-- Nets -->
+  <g s:type="split" transform="translate(50,450)" s:width="5" s:height="40">
     <rect width="5" height="40" class="splitjoinBody" s:generic="body"/>
     <s:alias val="$_split_"/>
 
@@ -218,7 +293,7 @@ text {
     </g>
   </g>
 
-  <g s:type="join" transform="translate(450,200)" s:width="4" s:height="40">
+  <g s:type="join" transform="translate(150,450)" s:width="4" s:height="40">
     <rect width="5" height="40" class="splitjoinBody" s:generic="body"/>
     <s:alias val="$_join_"/>
     <g s:x="5" s:y="20"  s:pid="out"/>
@@ -230,7 +305,8 @@ text {
     </g>
   </g>
 
-  <g s:type="generic" transform="translate(550,200)" s:width="30" s:height="40">
+  <!-- Generic Black Box -->
+  <g s:type="generic" transform="translate(50,550)" s:width="30" s:height="40">
     <text x="15" y="-4" class="nodelabel" s:attribute="ref">generic</text>
     <rect width="30" height="40" s:generic="body"/>
 
