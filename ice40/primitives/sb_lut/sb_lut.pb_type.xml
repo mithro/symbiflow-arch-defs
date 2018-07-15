@@ -11,11 +11,25 @@
   <pb_type name="BLK_IG-LUT4" num_pb="1" class="lut" blif_model=".names">
    <input  name="in"  num_pins="4" port_class="lut_in" />
    <output name="out" num_pins="1" port_class="lut_out" />
+   <delay_matrix type="min" in_port="BLK_IG-LUT4.in" out_port="BLK_IG-LUT4.out">
+	293.136000e-12
+	259.313000e-12
+	248.039000e-12
+	214.215000e-12
+   </delay_matrix>
+   <!--
+   <delay_matrix type="typical" in_port="BLK_IG-LUT4.in" out_port="BLK_IG-LUT4.out">
+	324.149000e-12
+	286.747000e-12
+	274.280000e-12
+	236.878000e-12
+   </delay_matrix>
+    -->
    <delay_matrix type="max" in_port="BLK_IG-LUT4.in" out_port="BLK_IG-LUT4.out">
-    10e-12
-    10e-12
-    10e-12
-    10e-12
+	364.700000e-12
+	322.619000e-12
+	308.592000e-12
+	266.511000e-12
    </delay_matrix>
   </pb_type>
   <interconnect>
@@ -32,10 +46,10 @@
    <input  name="I2" num_pins="1" />
    <input  name="I3" num_pins="1" />
    <output name="O"  num_pins="1" />
-   <delay_constant max="10e-12" in_port="BLK_IG-SB_LUT4.I0" out_port="BLK_IG-SB_LUT4.O"/>
-   <delay_constant max="10e-12" in_port="BLK_IG-SB_LUT4.I1" out_port="BLK_IG-SB_LUT4.O"/>
-   <delay_constant max="10e-12" in_port="BLK_IG-SB_LUT4.I2" out_port="BLK_IG-SB_LUT4.O"/>
-   <delay_constant max="10e-12" in_port="BLK_IG-SB_LUT4.I3" out_port="BLK_IG-SB_LUT4.O"/>
+   <delay_constant min="293.136000e-12" max="364.700000e-12" in_port="BLK_IG-SB_LUT4.I0" out_port="BLK_IG-SB_LUT4.O"/>
+   <delay_constant min="259.313000e-12" max="322.619000e-12" in_port="BLK_IG-SB_LUT4.I1" out_port="BLK_IG-SB_LUT4.O"/>
+   <delay_constant min="248.039000e-12" max="308.592000e-12" in_port="BLK_IG-SB_LUT4.I2" out_port="BLK_IG-SB_LUT4.O"/>
+   <delay_constant min="214.215000e-12" max="266.511000e-12" in_port="BLK_IG-SB_LUT4.I3" out_port="BLK_IG-SB_LUT4.O"/>
   </pb_type>
   <interconnect>
    <direct><port type="input" name="in[0]"/><port type="output" from="BLK_IG-SB_LUT4" name="I0"/></direct>

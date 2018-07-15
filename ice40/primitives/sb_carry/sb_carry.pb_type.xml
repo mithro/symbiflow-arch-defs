@@ -5,9 +5,25 @@
  <input  name="CI" num_pins="1"/>
  <input  name="I0" num_pins="1"/>
  <output name="CO" num_pins="1"/>
- <delay_constant max="10e-12" in_port="SB_CARRY.CI" out_port="SB_CARRY.CO"/>
- <delay_constant max="10e-12" in_port="SB_CARRY.I1" out_port="SB_CARRY.CO"/>
- <delay_constant max="10e-12" in_port="SB_CARRY.I0" out_port="SB_CARRY.CO"/>
+
+ <!-- lc40_8_7_1 (LogicCell40) carryin -> carryout: 0.126 ns -->
+ <!-- TIMESCALE 1ps == 1e-12 Min:Typ:Max
+     Low-High Transition - [EDGE_IDENTIFIER] 01
+     High-Low Transition - [EDGE_IDENTIFIER] 10
+  -->
+
+ <!-- (IOPATH carryin carryout (101.47:112.205:126.242) (84.5586:93.5045:105.202)) -->
+      <delay_constant min="101.47e-12"  typical="112.205e-12" max="126.242e-12" in_port="SB_CARRY.CI" out_port="SB_CARRY.CO"/><!-- low to high -->
+ <!-- <delay_constant min="84.5586e-12" typical="93.5045e-12" max="105.202e-12" in_port="SB_CARRY.CI" out_port="SB_CARRY.CO"/> high to low -->
+
+ <!-- (IOPATH in1 carryout (208.578:230.644:259.498) (197.303:218.177:245.471)) -->
+      <delay_constant min="208.578e-12" typical="230.644e-12" max="259.498e-12" in_port="SB_CARRY.I0" out_port="SB_CARRY.CO"/><!-- low to high -->
+ <!-- <delay_constant min="197.303e-12" typical="218.177e-12" max="245.471e-12" in_port="SB_CARRY.I0" out_port="SB_CARRY.CO"/> high to low -->
+
+ <!-- (IOPATH in2 carryout (186.029:205.71:231.444) (107.108:118.439:133.256)) -->
+      <delay_constant min="208.578e-12" typical="230.644e-12" max="259.498e-12" in_port="SB_CARRY.I1" out_port="SB_CARRY.CO"/><!-- low to high -->
+ <!-- <delay_constant min="197.303e-12" typical="218.177e-12" max="245.471e-12" in_port="SB_CARRY.I1" out_port="SB_CARRY.CO"/> high to low -->
+
  <metadata>
   <meta name="hlc_property">enable_carry</meta>
  </metadata>
