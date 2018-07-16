@@ -1,0 +1,199 @@
+<!-- hx8k switch timing -->
+<switches>
+    <switch type="mux" name="CascadeBuf">
+        <Tdel type="01" min="118.382" typical="130.906" max="147.283" />
+        <Tdel type="10" min="146.568" typical="162.074" max="182.350" />
+    </switch>
+    <switch type="mux" name="CEMux">
+        <Tdel type="01" min="484.803" typical="536.092" max="603.157" />
+        <Tdel type="10" min="445.342" typical="492.457" max="554.063" />
+    </switch>
+    <switch type="mux" name="ClkMux">
+        <Tdel type="01" min="248.039" typical="274.280" max="308.592" />
+        <Tdel type="10" min="186.029" typical="205.710" max="231.444" />
+    </switch>
+    <switch type="mux" name="Glb2LocalMux">
+        <Tdel type="01" min="360.783" typical="398.952" max="448.861" />
+        <Tdel type="10" min="287.499" typical="317.915" max="357.686" />
+    </switch>
+    <switch type="mux" name="GlobalMux">
+        <Tdel type="01" min="124.019" typical="137.140" max="154.296" />
+        <Tdel type="10" min=" 62.010" typical=" 68.570" max=" 77.148" />
+    </switch>
+    <switch type="mux" name="InMux">
+        <Tdel type="01" min="208.578" typical="230.644" max="259.498" />
+        <Tdel type="10" min="174.754" typical="193.243" max="217.417" />
+    </switch>
+    <switch type="mux" name="IoInMux">
+        <Tdel type="01" min="208.578" typical="230.644" max="259.498" />
+        <Tdel type="10" min="174.754" typical="193.243" max="217.417" />
+    </switch>
+    <switch type="mux" name="IoSpan4Mux">
+        <Tdel type="01" min="231.127" typical="255.579" max="287.552" />
+        <Tdel type="10" min="259.313" typical="286.747" max="322.619" />
+    </switch>
+    <switch type="mux" name="LocalMux">
+        <Tdel type="01" min="264.950" typical="292.981" max="329.632" />
+        <Tdel type="10" min="248.039" typical="274.280" max="308.592" />
+    </switch>
+    <switch type="mux" name="Odrv4">
+        <Tdel type="01" min="281.862" typical="311.682" max="350.673" />
+        <Tdel type="10" min="298.774" typical="330.382" max="371.713" />
+    </switch>
+    <switch type="mux" name="Odrv12">
+        <Tdel type="01" min="394.607" typical="436.354" max="490.942" />
+        <Tdel type="10" min="434.067" typical="479.990" max="540.036" />
+    </switch>
+    <switch type="mux" name="Sp12to4">
+        <Tdel type="01" min="343.872" typical="380.251" max="427.821" />
+        <Tdel type="10" min="360.783" typical="398.952" max="448.861" />
+    </switch>
+    <switch type="mux" name="Span4Mux_h0">
+        <Tdel type="01" min="118.382" typical="130.906" max="147.283" />
+        <Tdel type="10" min="112.745" typical="124.673" max="140.269" />
+    </switch>
+    <switch type="mux" name="Span4Mux_h1">
+        <Tdel type="01" min="140.931" typical="155.841" max="175.336" />
+        <Tdel type="10" min="135.294" typical="149.607" max="168.323" />
+    </switch>
+    <switch type="mux" name="Span4Mux_h2">
+        <Tdel type="01" min="163.480" typical="180.775" max="203.390" />
+        <Tdel type="10" min="163.480" typical="180.775" max="203.390" />
+    </switch>
+    <switch type="mux" name="Span4Mux_h3">
+        <Tdel type="01" min="186.029" typical="205.710" max="231.444" />
+        <Tdel type="10" min="186.029" typical="205.710" max="231.444" />
+    </switch>
+    <switch type="mux" name="Span4Mux_h4">
+        <Tdel type="01" min="242.401" typical="268.046" max="301.579" />
+        <Tdel type="10" min="253.676" typical="280.513" max="315.606" />
+    </switch>
+    <switch type="mux" name="Span4Mux_v0">
+        <Tdel type="01" min="163.480" typical="180.775" max="203.390" />
+        <Tdel type="10" min="152.205" typical="168.308" max="189.363" />
+    </switch>
+    <switch type="mux" name="Span4Mux_v1">
+        <Tdel type="01" min="163.480" typical="180.775" max="203.390" />
+        <Tdel type="10" min="157.843" typical="174.542" max="196.377" />
+    </switch>
+    <switch type="mux" name="Span4Mux_v2">
+        <Tdel type="01" min="202.941" typical="224.411" max="252.484" />
+        <Tdel type="10" min="202.941" typical="224.411" max="252.484" />
+    </switch>
+    <switch type="mux" name="Span4Mux_v3">
+        <Tdel type="01" min="253.676" typical="280.513" max="315.606" />
+        <Tdel type="10" min="270.588" typical="299.214" max="336.646" />
+    </switch>
+    <switch type="mux" name="Span4Mux_v4">
+        <Tdel type="01" min="281.862" typical="311.682" max="350.673" />
+        <Tdel type="10" min="298.774" typical="330.382" max="371.713" />
+    </switch>
+    <switch type="mux" name="Span12Mux_h0">
+        <Tdel type="01" min="112.745" typical="124.673" max="140.269" />
+        <Tdel type="10" min="118.382" typical="130.906" max="147.283" />
+    </switch>
+    <switch type="mux" name="Span12Mux_h1">
+        <Tdel type="01" min="107.108" typical="118.439" max="133.256" />
+        <Tdel type="10" min="107.108" typical="118.439" max="133.256" />
+    </switch>
+    <switch type="mux" name="Span12Mux_h2">
+        <Tdel type="01" min="129.657" typical="143.374" max="161.310" />
+        <Tdel type="10" min="135.294" typical="149.607" max="168.323" />
+    </switch>
+    <switch type="mux" name="Span12Mux_h3">
+        <Tdel type="01" min="135.294" typical="149.607" max="168.323" />
+        <Tdel type="10" min="146.568" typical="162.074" max="182.350" />
+    </switch>
+    <switch type="mux" name="Span12Mux_h4">
+        <Tdel type="01" min="157.843" typical="174.542" max="196.377" />
+        <Tdel type="10" min="174.754" typical="193.243" max="217.417" />
+    </switch>
+    <switch type="mux" name="Span12Mux_h5">
+        <Tdel type="01" min="186.029" typical="205.710" max="231.444" />
+        <Tdel type="10" min="208.578" typical="230.644" max="259.498" />
+    </switch>
+    <switch type="mux" name="Span12Mux_h6">
+        <Tdel type="01" min="202.941" typical="224.411" max="252.484" />
+        <Tdel type="10" min="225.490" typical="249.345" max="280.538" />
+    </switch>
+    <switch type="mux" name="Span12Mux_h7">
+        <Tdel type="01" min="231.127" typical="255.579" max="287.552" />
+        <Tdel type="10" min="259.313" typical="286.747" max="322.619" />
+    </switch>
+    <switch type="mux" name="Span12Mux_h8">
+        <Tdel type="01" min="276.225" typical="305.448" max="343.659" />
+        <Tdel type="10" min="310.048" typical="342.850" max="385.740" />
+    </switch>
+    <switch type="mux" name="Span12Mux_h9">
+        <Tdel type="01" min="315.685" typical="349.083" max="392.754" />
+        <Tdel type="10" min="349.509" typical="386.485" max="434.834" />
+    </switch>
+    <switch type="mux" name="Span12Mux_h10">
+        <Tdel type="01" min="343.872" typical="380.251" max="427.821" />
+        <Tdel type="10" min="377.695" typical="417.653" max="469.902" />
+    </switch>
+    <switch type="mux" name="Span12Mux_h11">
+        <Tdel type="01" min="377.695" typical="417.653" max="469.902" />
+        <Tdel type="10" min="422.793" typical="467.522" max="526.009" />
+    </switch>
+    <switch type="mux" name="Span12Mux_h12">
+        <Tdel type="01" min="394.607" typical="436.354" max="490.942" />
+        <Tdel type="10" min="434.067" typical="479.990" max="540.036" />
+    </switch>
+    <switch type="mux" name="Span12Mux_v0">
+        <Tdel type="01" min=" 78.922" typical=" 87.271" max=" 98.189" />
+        <Tdel type="10" min=" 84.559" typical=" 93.505" max="105.202" />
+    </switch>
+    <switch type="mux" name="Span12Mux_v1">
+        <Tdel type="01" min=" 84.559" typical=" 93.505" max="105.202" />
+        <Tdel type="10" min=" 84.559" typical=" 93.505" max="105.202" />
+    </switch>
+    <switch type="mux" name="Span12Mux_v2">
+        <Tdel type="01" min="112.745" typical="124.673" max="140.269" />
+        <Tdel type="10" min="124.019" typical="137.140" max="154.296" />
+    </switch>
+    <switch type="mux" name="Span12Mux_v3">
+        <Tdel type="01" min="118.382" typical="130.906" max="147.283" />
+        <Tdel type="10" min="135.294" typical="149.607" max="168.323" />
+    </switch>
+    <switch type="mux" name="Span12Mux_v4">
+        <Tdel type="01" min="146.568" typical="162.074" max="182.350" />
+        <Tdel type="10" min="169.117" typical="187.009" max="210.404" />
+    </switch>
+    <switch type="mux" name="Span12Mux_v5">
+        <Tdel type="01" min="191.666" typical="211.943" max="238.458" />
+        <Tdel type="10" min="214.215" typical="236.878" max="266.511" />
+    </switch>
+    <switch type="mux" name="Span12Mux_v6">
+        <Tdel type="01" min="208.578" typical="230.644" max="259.498" />
+        <Tdel type="10" min="231.127" typical="255.579" max="287.552" />
+    </switch>
+    <switch type="mux" name="Span12Mux_v7">
+        <Tdel type="01" min="225.490" typical="249.345" max="280.538" />
+        <Tdel type="10" min="253.676" typical="280.513" max="315.606" />
+    </switch>
+    <switch type="mux" name="Span12Mux_v8">
+        <Tdel type="01" min="287.499" typical="317.915" max="357.686" />
+        <Tdel type="10" min="315.685" typical="349.083" max="392.754" />
+    </switch>
+    <switch type="mux" name="Span12Mux_v9">
+        <Tdel type="01" min="304.411" typical="336.616" max="378.727" />
+        <Tdel type="10" min="338.234" typical="374.018" max="420.807" />
+    </switch>
+    <switch type="mux" name="Span12Mux_v10">
+        <Tdel type="01" min="315.685" typical="349.083" max="392.754" />
+        <Tdel type="10" min="349.509" typical="386.485" max="434.834" />
+    </switch>
+    <switch type="mux" name="Span12Mux_v11">
+        <Tdel type="01" min="332.597" typical="367.784" max="413.794" />
+        <Tdel type="10" min="366.421" typical="405.186" max="455.875" />
+    </switch>
+    <switch type="mux" name="Span12Mux_v12">
+        <Tdel type="01" min="394.607" typical="436.354" max="490.942" />
+        <Tdel type="10" min="434.067" typical="479.990" max="540.036" />
+    </switch>
+    <switch type="mux" name="SRMux">
+        <Tdel type="01" min="372.058" typical="411.420" max="462.888" />
+        <Tdel type="10" min="287.499" typical="317.915" max="357.686" />
+    </switch>
+</switches>

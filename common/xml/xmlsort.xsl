@@ -63,6 +63,21 @@
     </xsl:text>
   </xsl:template>
 
+  <!--
+    Convert
+      <switch type="mux" name="CascadeBuf">
+        <Tdel type="01" min="118.382" typical="130.906" max="147.283" />
+        <Tdel type="10" min="146.568" typical="162.074" max="182.350" />
+      </switch>
+    to
+      <switch type="mux" name="CascadeBuf" Tdel="max(xxxx)" R="0" Cin="0" Cout="0" mux_trans_size="0" buf_size="0"/>
+    -->
+  <xsl:template match="switches/switch">
+    <switch type="mux" name="" Tdel="" R="0" Cin="0" Cout="0" mux_trans_size="0" buf_size="0"/>
+    <xsl:attribute name="name"><xsl:value-of select="Tdel[@type=01]@max"/></xsl:attribute>
+    <xsl:attribute name="Tdel"><xsl:value-of select=""/></xsl:attribute>
+  </xsl:template>
+
   <!-- Remove duplicate model nodes -->
   <xsl:key name="model-by-name" match="model" use="@name" />
   <xsl:template match="models">
