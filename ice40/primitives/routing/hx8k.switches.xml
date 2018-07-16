@@ -1,5 +1,5 @@
 <!-- hx8k switch timing -->
-<switches>
+<switchlist>
     <switch type="mux" name="CascadeBuf">
         <Tdel type="01" min="118.382" typical="130.906" max="147.283" />
         <Tdel type="10" min="146.568" typical="162.074" max="182.350" />
@@ -196,4 +196,4 @@
         <Tdel type="01" min="372.058" typical="411.420" max="462.888" />
         <Tdel type="10" min="287.499" typical="317.915" max="357.686" />
     </switch>
-</switches>
+</switchlist>

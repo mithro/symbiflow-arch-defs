@@ -72,10 +72,17 @@
     to
       <switch type="mux" name="CascadeBuf" Tdel="max(xxxx)" R="0" Cin="0" Cout="0" mux_trans_size="0" buf_size="0"/>
     -->
-  <xsl:template match="switches/switch">
-    <switch type="mux" name="" Tdel="" R="0" Cin="0" Cout="0" mux_trans_size="0" buf_size="0"/>
-    <xsl:attribute name="name"><xsl:value-of select="Tdel[@type=01]@max"/></xsl:attribute>
-    <xsl:attribute name="Tdel"><xsl:value-of select=""/></xsl:attribute>
+  <xsl:template match="switchlist/switch">
+    <xsl:element name="switch">
+     <xsl:attribute name="name"><xsl:value-of select="@name"/></xsl:attribute>
+     <xsl:attribute name="type">mux</xsl:attribute>
+     <xsl:attribute name="R">0</xsl:attribute>
+     <xsl:attribute name="Cin">0</xsl:attribute>
+     <xsl:attribute name="Cout">0</xsl:attribute>
+     <xsl:attribute name="mux_trans_size">0</xsl:attribute>
+     <xsl:attribute name="buf_size">0</xsl:attribute>
+     <xsl:attribute name="Tdel"><xsl:value-of select="Tdel[@type=01]/@max"/></xsl:attribute>
+    </xsl:element>
   </xsl:template>
 
   <!-- Remove duplicate model nodes -->
