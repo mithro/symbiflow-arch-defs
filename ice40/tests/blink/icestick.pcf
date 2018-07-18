@@ -4,8 +4,12 @@
 #set_io --warn-no-port RX 9
 #set_io --warn-no-port TX 8
 #set_io LED1 99
-set_io LED2 98
-set_io LED3 97
-set_io LED4 96
-set_io LED5 95
+set_io LED2_i 98
+set_io LED3_i 97
+set_io LED4_i 96
+set_io LED5_i 95
+set_io LED2_o 98
+set_io LED3_o 97
+set_io LED4_o 96
+set_io LED5_o 95
 set_io clk 21

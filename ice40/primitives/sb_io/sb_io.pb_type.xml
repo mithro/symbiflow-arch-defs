@@ -1,15 +1,17 @@
 <!-- set: ai sw=1 ts=1 sta et -->
 <pb_type name="IO_TILE">
- <output name="D_IN"    num_pins="2"/>
- <input  name="D_OUT"   num_pins="2"/>
  <input  name="OUT_ENB" num_pins="1"/>
- <input  name="CEN"     num_pins="1"/>
+	<input  name="LATCH"   num_pins="1"/>
+
  <clock  name="INCLK"   num_pins="1"/>
  <clock  name="OUTCLK"  num_pins="1"/>
- <input  name="LATCH"   num_pins="1"/>
+	<input  name="CEN"     num_pins="1"/>
+
+ <input  name="D_OUT"   num_pins="2"/>
+ <output name="D_IN"    num_pins="2"/>
 
  <!-- IO operating as an input -->
- <mode name="GENERIC-INPUT">
+ <mode name="MODE-GENERIC-INPUT">
   <pb_type name="input" blif_model=".input" num_pb="1">
    <output name="inpad" num_pins="1"/>
   </pb_type>
@@ -24,7 +26,7 @@
  </mode>
 
  <!-- IO operating as an output -->
- <mode name="GENERIC-OUTPUT">
+ <mode name="MODE-GENERIC-OUTPUT">
   <pb_type name="output" blif_model=".output" num_pb="1">
    <input name="outpad" num_pins="1"/>
   </pb_type>
@@ -38,7 +40,7 @@
   </metadata>
  </mode>
 
- <mode name="MODE_SB_IO">
+ <mode name="MODE-SB_IO">
   <pb_type name="PACKAGE_PIN_O" blif_model=".output" num_pb="1">
    <input name="outpad" num_pins="1"/>
 		</pb_type>
@@ -69,7 +71,7 @@
 			<output name="PACKAGE_PIN_OE"    num_pins="1"/>
 			-->
 
-			<!-- FIXME: Put real values here! -->
+			<!-- FIXME: Put real values here!
    <delay_constant in_port="SB_IO.PACKAGE_PIN_I"     max="10e-12" out_port="SB_IO.D_IN_0"/>
 			<delay_constant in_port="SB_IO.PACKAGE_PIN_I"     max="10e-12" out_port="SB_IO.D_IN_1"/>
 
@@ -79,33 +81,34 @@
    <delay_constant in_port="SB_IO.CLOCK_ENABLE"      max="10e-12" out_port="SB_IO.D_IN_0"/>
 			<delay_constant in_port="SB_IO.CLOCK_ENABLE"      max="10e-12" out_port="SB_IO.D_IN_1"/>
 			<delay_constant in_port="SB_IO.CLOCK_ENABLE"      max="10e-12" out_port="SB_IO.PACKAGE_PIN_O"/>
+								-->
  		<!--
 			<delay_constant in_port="SB_IO.CLOCK_ENABLE"      max="10e-12" out_port="SB_IO.PACKAGE_PIN_OE"/>
 			-->
 
+   <!--
    <delay_constant in_port="SB_IO.INPUT_CLK"         max="10e-12" out_port="SB_IO.D_IN_0"/>
 			<delay_constant in_port="SB_IO.INPUT_CLK"         max="10e-12" out_port="SB_IO.D_IN_1"/>
 			<delay_constant in_port="SB_IO.OUTPUT_CLK"        max="10e-12" out_port="SB_IO.PACKAGE_PIN_O"/>
- 		<!--
 			<delay_constant in_port="SB_IO.OUTPUT_CLK"        max="10e-12" out_port="SB_IO.PACKAGE_PIN_OE"/>
 			-->
 
- 		<!--
-			<delay_constant in_port="SB_IO.OUTPUT_ENABLE"     max="10e-12" out_port="SB_IO.PACKAGE_PIN_OE"/>
+   <!--
+			<delay_constant in_port="SB_IO.OUTPUT_ENABLE"     max="10e-12" out_port="SB_IO.PACKAGE_PIN_O"/>
 			<T_clock_to_Q      port="SB_IO.OUTPUT_ENABLE"     max="10e-12" clock="OUTPUT_CLK"/>
 			<T_setup           port="SB_IO.OUTPUT_ENABLE"   value="10e-12" clock="OUTPUT_CLK"/>
 			<T_hold            port="SB_IO.OUTPUT_ENABLE"   value="10e-12" clock="OUTPUT_CLK"/>
 			-->
 
-			<delay_constant in_port="SB_IO.D_OUT_0"           max="10e-12" out_port="SB_IO.PACKAGE_PIN_O"/>
 			<!--
+			<delay_constant in_port="SB_IO.D_OUT_0"           max="10e-12" out_port="SB_IO.PACKAGE_PIN_O"/>
 			<T_clock_to_Q      port="SB_IO.D_OUT_0"           max="10e-12" clock="OUTPUT_CLK"/>
 			<T_setup           port="SB_IO.D_OUT_0"         value="10e-12" clock="OUTPUT_CLK"/>
 			<T_hold            port="SB_IO.D_OUT_0"         value="10e-12" clock="OUTPUT_CLK"/>
 			-->
 
-			<delay_constant in_port="SB_IO.D_OUT_1"           max="10e-12" out_port="SB_IO.PACKAGE_PIN_O"/>
 			<!--
+			<delay_constant in_port="SB_IO.D_OUT_1"           max="10e-12" out_port="SB_IO.PACKAGE_PIN_O"/>
 			<T_clock_to_Q      port="SB_IO.D_OUT_1"           max="10e-12" clock="OUTPUT_CLK"/>
 			<T_setup           port="SB_IO.D_OUT_1"         value="10e-12" clock="OUTPUT_CLK"/>
 			<T_hold            port="SB_IO.D_OUT_1"         value="10e-12" clock="OUTPUT_CLK"/>
@@ -169,10 +172,12 @@
 			<direct>
 				<port name="inpad"             type="input"  from="PACKAGE_PIN_I"/>
 				<port name="PACKAGE_PIN_I"     type="output" from="SB_IO" />
+				<pack_pattern name="SB_IO" in_port="PACKAGE_PIN_I.inpad" out_port="SB_IO.PACKAGE_PIN_I" />
 			</direct>
 			<direct>
 				<port name="PACKAGE_PIN_O"     type="input"  from="SB_IO" />
 				<port name="outpad"            type="output" from="PACKAGE_PIN_O"/>
+				<pack_pattern name="SB_IO" out_port="PACKAGE_PIN_O.outpad" in_port="SB_IO.PACKAGE_PIN_O" />
 			</direct>
 			<!--
 			<direct>
