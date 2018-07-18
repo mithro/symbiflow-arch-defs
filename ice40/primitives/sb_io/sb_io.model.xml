@@ -1,0 +1,23 @@
+<models>
+ <model name="SB_IO">
+  <input_ports>
+   <port name="PACKAGE_PIN_I"                        combinational_sink_ports="D_IN_0 D_IN_1              "/>
+
+   <port name="LATCH_INPUT_VALUE"                    combinational_sink_ports="D_IN_0 D_IN_1              "/>
+
+   <port name="CLOCK_ENABLE"                         combinational_sink_ports="D_IN_0 D_IN_1 PACKAGE_PIN_O"/>
+   <port name="INPUT_CLK"         is_clock="1"       combinational_sink_ports="D_IN_0 D_IN_1              "/>
+   <port name="OUTPUT_CLK"        is_clock="1"       combinational_sink_ports="              PACKAGE_PIN_O"/>
+
+   <port name="OUTPUT_ENABLE"      combinational_sink_ports="                           "/>
+   <port name="D_OUT_0"            combinational_sink_ports="              PACKAGE_PIN_O"/>
+   <port name="D_OUT_1"            combinational_sink_ports="              PACKAGE_PIN_O"/>
+  </input_ports>
+  <output_ports>
+   <port name="D_IN_0"             />
+   <port name="D_IN_1"             />
+
+   <port name="PACKAGE_PIN_O"      />
+  </output_ports>
+ </model>
+</models>

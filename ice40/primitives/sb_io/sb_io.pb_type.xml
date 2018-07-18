@@ -1,5 +1,5 @@
 <!-- set: ai sw=1 ts=1 sta et -->
-<pb_type>
+<pb_type name="IO_TILE">
  <output name="D_IN"    num_pins="2"/>
  <input  name="D_OUT"   num_pins="2"/>
  <input  name="OUT_ENB" num_pins="1"/>
@@ -9,44 +9,178 @@
  <input  name="LATCH"   num_pins="1"/>
 
  <!-- IO operating as an input -->
- <mode name="PAD_IS_INPUT">
-  <pb_type name="PAD_IN-INPUT" num_pb="1">
-   <output name="D_IN" num_pins="2"/>
-   <pb_type name="input" blif_model=".input" num_pb="1">
-    <output name="inpad" num_pins="1"/>
-   </pb_type>
-   <interconnect>
-    <mux><port type="input" from="input" name="inpad"/><port type="output" from="PAD_IN-INPUT" name="D_IN[0]"/></mux>
-    <mux><port type="input" from="input" name="inpad"/><port type="output" from="PAD_IN-INPUT" name="D_IN[1]"/></mux>
-   </interconnect>
+ <mode name="GENERIC-INPUT">
+  <pb_type name="input" blif_model=".input" num_pb="1">
+   <output name="inpad" num_pins="1"/>
   </pb_type>
   <interconnect>
-   <direct><port type="input" from="PAD_IN-INPUT" name="D_IN"/><port type="output" name="D_IN"/></direct>
-  </interconnect>
+   <direct><port type="input" from="input" name="inpad"/><port type="output" name="D_IN" bit="0" /></direct>
+		</interconnect>
+	 <metadata>
+   <meta name="hlc_property">disable_pull_up</meta>
+   <meta name="hlc_property">enable_input</meta>
+   <meta name="hlc_property">input_pin_type = simple_input_pin</meta>
+  </metadata>
  </mode>
 
  <!-- IO operating as an output -->
- <mode name="PAD_IS_OUTPUT">
-  <pb_type name="PAD_IN-OUTPUT" num_pb="1">
-   <input name="D_OUT" num_pins="2"/>
-   <pb_type name="output" blif_model=".output" num_pb="1">
-    <input name="outpad" num_pins="1"/>
-   </pb_type>
-   <interconnect>
-    <mux>
-     <port type="input"  from="PAD_IN-OUTPUT" name="D_OUT[0]"/>
-     <port type="input"  from="PAD_IN-OUTPUT" name="D_OUT[1]"/>
-     <port type="output" from="output" name="outpad"/>
-    </mux>
-   </interconnect>
+ <mode name="GENERIC-OUTPUT">
+  <pb_type name="output" blif_model=".output" num_pb="1">
+   <input name="outpad" num_pins="1"/>
   </pb_type>
   <interconnect>
-   <direct><port type="input" name="D_OUT"/><port type="output" from="PAD_IN-OUTPUT" name="D_OUT"/></direct>
-  </interconnect>
+			<direct><port type="input" name="D_OUT" bit="0"/><port type="output" from="output" name="outpad"/></direct>
+		</interconnect>
+  <metadata>
+   <meta name="hlc_property">disable_pull_up</meta>
+   <meta name="hlc_property">output_pin_type = simple_output_pin</meta>
+   <meta name="hlc_property">input_pin_type = simple_input_pin</meta>
+  </metadata>
  </mode>
 
- <metadata>
-  <meta name="hlc_name">io</meta>
- </metadata>
+ <mode name="MODE_SB_IO">
+  <pb_type name="PACKAGE_PIN_O" blif_model=".output" num_pb="1">
+   <input name="outpad" num_pins="1"/>
+		</pb_type>
+		<!--
+  <pb_type name="PACKAGE_PIN_OE" blif_model=".output" num_pb="1">
+   <input name="outpad" num_pins="1"/>
+		</pb_type>
+		-->
+  <pb_type name="PACKAGE_PIN_I" blif_model=".input" num_pb="1">
+   <output name="inpad" num_pins="1"/>
+		</pb_type>
+
+  <pb_type name="SB_IO" blif_model=".subckt SB_IO" num_pb="1">
+		 <input  name="PACKAGE_PIN_I"     num_pins="1"/>
+		 <input  name="LATCH_INPUT_VALUE" num_pins="1"/>
+		 <input  name="CLOCK_ENABLE"      num_pins="1"/>
+   <clock  name="INPUT_CLK"         num_pins="1"/>
+   <clock  name="OUTPUT_CLK"        num_pins="1"/>
+   <input  name="OUTPUT_ENABLE"     num_pins="1"/>
+   <input  name="D_OUT_0"           num_pins="1"/>
+			<input  name="D_OUT_1"           num_pins="1"/>
+
+   <output name="D_IN_0"            num_pins="1"/>
+			<output name="D_IN_1"            num_pins="1"/>
+
+   <output name="PACKAGE_PIN_O"     num_pins="1"/>
+ 		<!--
+			<output name="PACKAGE_PIN_OE"    num_pins="1"/>
+			-->
+
+			<!-- FIXME: Put real values here! -->
+   <delay_constant in_port="SB_IO.PACKAGE_PIN_I"     max="10e-12" out_port="SB_IO.D_IN_0"/>
+			<delay_constant in_port="SB_IO.PACKAGE_PIN_I"     max="10e-12" out_port="SB_IO.D_IN_1"/>
+
+   <delay_constant in_port="SB_IO.LATCH_INPUT_VALUE" max="10e-12" out_port="SB_IO.D_IN_0"/>
+			<delay_constant in_port="SB_IO.LATCH_INPUT_VALUE" max="10e-12" out_port="SB_IO.D_IN_1"/>
+
+   <delay_constant in_port="SB_IO.CLOCK_ENABLE"      max="10e-12" out_port="SB_IO.D_IN_0"/>
+			<delay_constant in_port="SB_IO.CLOCK_ENABLE"      max="10e-12" out_port="SB_IO.D_IN_1"/>
+			<delay_constant in_port="SB_IO.CLOCK_ENABLE"      max="10e-12" out_port="SB_IO.PACKAGE_PIN_O"/>
+ 		<!--
+			<delay_constant in_port="SB_IO.CLOCK_ENABLE"      max="10e-12" out_port="SB_IO.PACKAGE_PIN_OE"/>
+			-->
+
+   <delay_constant in_port="SB_IO.INPUT_CLK"         max="10e-12" out_port="SB_IO.D_IN_0"/>
+			<delay_constant in_port="SB_IO.INPUT_CLK"         max="10e-12" out_port="SB_IO.D_IN_1"/>
+			<delay_constant in_port="SB_IO.OUTPUT_CLK"        max="10e-12" out_port="SB_IO.PACKAGE_PIN_O"/>
+ 		<!--
+			<delay_constant in_port="SB_IO.OUTPUT_CLK"        max="10e-12" out_port="SB_IO.PACKAGE_PIN_OE"/>
+			-->
+
+ 		<!--
+			<delay_constant in_port="SB_IO.OUTPUT_ENABLE"     max="10e-12" out_port="SB_IO.PACKAGE_PIN_OE"/>
+			<T_clock_to_Q      port="SB_IO.OUTPUT_ENABLE"     max="10e-12" clock="OUTPUT_CLK"/>
+			<T_setup           port="SB_IO.OUTPUT_ENABLE"   value="10e-12" clock="OUTPUT_CLK"/>
+			<T_hold            port="SB_IO.OUTPUT_ENABLE"   value="10e-12" clock="OUTPUT_CLK"/>
+			-->
+
+			<delay_constant in_port="SB_IO.D_OUT_0"           max="10e-12" out_port="SB_IO.PACKAGE_PIN_O"/>
+			<!--
+			<T_clock_to_Q      port="SB_IO.D_OUT_0"           max="10e-12" clock="OUTPUT_CLK"/>
+			<T_setup           port="SB_IO.D_OUT_0"         value="10e-12" clock="OUTPUT_CLK"/>
+			<T_hold            port="SB_IO.D_OUT_0"         value="10e-12" clock="OUTPUT_CLK"/>
+			-->
+
+			<delay_constant in_port="SB_IO.D_OUT_1"           max="10e-12" out_port="SB_IO.PACKAGE_PIN_O"/>
+			<!--
+			<T_clock_to_Q      port="SB_IO.D_OUT_1"           max="10e-12" clock="OUTPUT_CLK"/>
+			<T_setup           port="SB_IO.D_OUT_1"         value="10e-12" clock="OUTPUT_CLK"/>
+			<T_hold            port="SB_IO.D_OUT_1"         value="10e-12" clock="OUTPUT_CLK"/>
+
+			<T_clock_to_Q      port="SB_IO.D_IN_0"            max="10e-12" clock="INPUT_CLK"/>
+			<T_setup           port="SB_IO.D_IN_0"          value="10e-12" clock="INPUT_CLK"/>
+			<T_hold            port="SB_IO.D_IN_0"          value="10e-12" clock="INPUT_CLK"/>
+
+			<T_clock_to_Q      port="SB_IO.D_IN_1"            max="10e-12" clock="INPUT_CLK"/>
+			<T_setup           port="SB_IO.D_IN_1"          value="10e-12" clock="INPUT_CLK"/>
+			<T_hold            port="SB_IO.D_IN_1"          value="10e-12" clock="INPUT_CLK"/>
+
+			<T_clock_to_Q      port="SB_IO.PACKAGE_PIN_O"     max="10e-12" clock="OUTPUT_CLK"/>
+			<T_setup           port="SB_IO.PACKAGE_PIN_O"   value="10e-12" clock="OUTPUT_CLK"/>
+			<T_hold            port="SB_IO.PACKAGE_PIN_O"   value="10e-12" clock="OUTPUT_CLK"/>
+			-->
+
+ 		<!--
+			<T_clock_to_Q      port="SB_IO.PACKAGE_PIN_OE"    max="10e-12" clock="OUTPUT_CLK"/>
+			<T_setup           port="SB_IO.PACKAGE_PIN_OE"  value="10e-12" clock="OUTPUT_CLK"/>
+			<T_hold            port="SB_IO.PACKAGE_PIN_OE"  value="10e-12" clock="OUTPUT_CLK"/>
+			-->
+  </pb_type>
+		<interconnect>
+			<direct>
+				<port name="D_IN_0"           type="input" from="SB_IO"/>
+				<port name="D_IN"   bit="0"   type="output" />
+			</direct>
+			<direct>
+				<port name="D_IN_1"           type="input" from="SB_IO"/>
+				<port name="D_IN"   bit="1"   type="output" />
+			</direct>
+			<direct>
+				<port name="D_OUT"   bit="0"   type="input" />
+				<port name="D_OUT_0"           type="output" from="SB_IO"/>
+			</direct>
+			<direct>
+				<port name="D_OUT"   bit="1"   type="input" />
+				<port name="D_OUT_1"           type="output" from="SB_IO"/>
+			</direct>
+			<direct>
+				<port name="OUT_ENB"           type="input" />
+				<port name="OUTPUT_ENABLE"     type="output" from="SB_IO"/>
+			</direct>
+			<direct>
+				<port name="CEN"               type="input" />
+				<port name="CLOCK_ENABLE"      type="output" from="SB_IO"/>
+			</direct>
+			<direct>
+				<port name="INCLK"             type="input" />
+				<port name="INPUT_CLK"         type="output" from="SB_IO"/>
+			</direct>
+			<direct>
+				<port name="OUTCLK"            type="input" />
+				<port name="OUTPUT_CLK"        type="output" from="SB_IO"/>
+			</direct>
+			<direct>
+				<port name="LATCH"             type="input" />
+				<port name="LATCH_INPUT_VALUE" type="output" from="SB_IO"/>
+			</direct>
+			<direct>
+				<port name="inpad"             type="input"  from="PACKAGE_PIN_I"/>
+				<port name="PACKAGE_PIN_I"     type="output" from="SB_IO" />
+			</direct>
+			<direct>
+				<port name="PACKAGE_PIN_O"     type="input"  from="SB_IO" />
+				<port name="outpad"            type="output" from="PACKAGE_PIN_O"/>
+			</direct>
+			<!--
+			<direct>
+				<port name="PACKAGE_PIN_OE"    type="input"  from="SB_IO" />
+				<port name="outpad"            type="output" from="PACKAGE_PIN_OE"/>
+			</direct>
+			-->
+	 </interconnect>
+ </mode>
 
 </pb_type>
