@@ -8,16 +8,10 @@
 
 module top (
 	input  clk,
-
-	input LED2_i,
-	input LED3_i,
-	input LED4_i,
-	input LED5_i,
-
-	output LED2_o,
-	output LED3_o,
-	output LED4_o,
-	output LED5_o
+	inout LED2,
+	inout LED3,
+	inout LED4,
+	inout LED5
 );
 
 	wire flash_io0_di;
@@ -28,8 +22,7 @@ module top (
 		.PIN_TYPE(6'b 1010_01),
 		.PULLUP(1'b 0)
 	) io_buf [3:0] (
-		.PACKAGE_PIN_I({LED2_i, LED3_i, LED4_i, LED5_i}),
-		.PACKAGE_PIN_O({LED2_o, LED3_o, LED4_o, LED5_o}),
+		.PACKAGE_PIN({LED2, LED3, LED4, LED5}),
 		.OUTPUT_ENABLE({outcnt[0], outcnt[1], outcnt[2], outcnt[3]}),
 		.D_OUT_0({outcnt[2], outcnt[3], outcnt[4], outcnt[5]}),
 		.D_IN_0({flash_io3_di, flash_io2_di, flash_io1_di, flash_io0_di})
