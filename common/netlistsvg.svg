@@ -25,6 +25,10 @@ text.smalltext {
   font-size:8px;
   alignment-baseline: middle;
 }
+text.verysmalltext {
+  font-size:6px;
+  alignment-baseline: middle;
+}
 text.rtext {
   text-anchor: end;
 }
@@ -201,6 +205,7 @@ text.rtext {
     <text x="2.0" y="10" class="smalltext">D</text>
     <text x="28.0" y="10" class="smalltext rtext">Q</text>
     <text x="6.0" y="30" class="smalltext">CLK</text>
+    <text x="9.0" y="20" class="verysmalltext">dff</text>
   </g>
 
   <g s:type="dffn" transform="translate(50,300)" s:width="30" s:height="40">
@@ -218,6 +223,7 @@ text.rtext {
     <text x="2.0" y="10" class="smalltext">D</text>
     <text x="28.0" y="10" class="smalltext rtext">Q</text>
     <text x="6.0" y="30" class="smalltext">CLK</text>
+    <text x="9.0" y="20" class="verysmalltext">dff</text>
   </g>
 
   <!-- D Latches -->
@@ -235,6 +241,7 @@ text.rtext {
     <text x="2.0" y="10" class="smalltext">D</text>
     <text x="28.0" y="10" class="smalltext rtext">Q</text>
     <text x="11.0" y="30" class="smalltext">EN</text>
+    <text x="4.5" y="20" class="verysmalltext">dlatch</text>
   </g>
 
   <g s:type="dlatchn" transform="translate(100,300)" s:width="30" s:height="40">
@@ -251,6 +258,7 @@ text.rtext {
     <text x="2.0" y="10" class="smalltext">D</text>
     <text x="28.0" y="10" class="smalltext rtext">Q</text>
     <text x="11.0" y="30" class="smalltext">EN</text>
+    <text x="4.5" y="20" class="verysmalltext">dlatch</text>
   </g>
 
   <!-- Ports -->
