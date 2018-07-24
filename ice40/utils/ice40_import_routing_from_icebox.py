@@ -72,11 +72,8 @@ Then add globals, then neighbourhood
 import logging
 import operator
 import os.path
-import re
 import sys
-from collections import namedtuple, OrderedDict, defaultdict
-from functools import reduce
-from os.path import commonprefix
+from collections import defaultdict
 
 MYDIR = os.path.dirname(__file__)
 
@@ -534,6 +531,40 @@ def add_dummy_tracks(g, ic):
             segment=dummy,
             direction=channel.Track.Direction.BI,
             capacity=0)
+
+
+def mux_type(src_name, dst_name):
+    # Output drivers onto the span wires.
+    # if src is pin...
+    if "sp4" in dst_name:
+        return "Odrv4"
+    if "sp12" in dst_name:
+        return "Odrv12"
+
+    if "sp12" in src_name and "sp4" in dst_name:
+        return "Sp12to4"
+
+    if "glb" in src_name:
+        # Globals to direct pins (clock, clock enable, reset)
+        if "clk" in dst_name:
+            return "ClkMux"
+        if "ce" in dst_name:
+            return "CEMux"
+        if "s_r" in dst_name:
+            return "SRMux"
+
+        # Global to glb2local wires
+        if "glb2local" in dst_name:
+            return "Glb2LocalMux"
+
+
+    # Span or glb2local to local wires
+    if "local" in dst_name:
+        return "LocalMux"
+
+    # Local to pins
+    if "local" in src_name:
+        return "InMux"
 
 
 # FIXME: Currently unused.
