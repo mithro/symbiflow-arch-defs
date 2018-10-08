@@ -1259,49 +1259,83 @@
 		<!-- Fast Carry chain -->
 		<direct>
 			<port type="input"  name="FCIN"/>
-			<port type="output" name="fcin"  from="BLK_IG-LUT+CARRY[0]"/>
-   <pack_pattern name="CARRYCHAIN" in_port="BLK_TL-PLB.FCIN" out_port="BLK_IG-LUT+CARRY[0].fcin" />
+			<port type="output" name="fc-cin"  from="BLK_IG-LUT+CARRY[0]"/>
+   <pack_pattern name="CARRYCHAIN" in_port="BLK_TL-PLB.FCIN" out_port="BLK_IG-LUT+CARRY[0].fc-cin" />
   </direct>
 		<direct>
-			<port type="input"  name="fcout" from="BLK_IG-LUT+CARRY[0]"/>
-			<port type="output" name="fcin"  from="BLK_IG-LUT+CARRY[1]"/>
-   <pack_pattern name="CARRYCHAIN" in_port="BLK_IG-LUT+CARRY[0].fcout" out_port="BLK_IG-LUT+CARRY[1].fcin" />
+			<port type="input"  name="fc-cout" from="BLK_IG-LUT+CARRY[0]"/>
+			<port type="output" name="fc-cin"  from="BLK_IG-LUT+CARRY[1]"/>
+   <pack_pattern name="CARRYCHAIN" in_port="BLK_IG-LUT+CARRY[0].fc-cout" out_port="BLK_IG-LUT+CARRY[1].fc-cin" />
   </direct>
 		<direct>
-			<port type="input"  name="fcout" from="BLK_IG-LUT+CARRY[1]"/>
-			<port type="output" name="fcin"  from="BLK_IG-LUT+CARRY[2]"/>
-   <pack_pattern name="CARRYCHAIN" in_port="BLK_IG-LUT+CARRY[1].fcout" out_port="BLK_IG-LUT+CARRY[2].fcin" />
+			<port type="input"  name="fc-cout" from="BLK_IG-LUT+CARRY[1]"/>
+			<port type="output" name="fc-cin"  from="BLK_IG-LUT+CARRY[2]"/>
+   <pack_pattern name="CARRYCHAIN" in_port="BLK_IG-LUT+CARRY[1].fc-cout" out_port="BLK_IG-LUT+CARRY[2].fc-cin" />
   </direct>
 		<direct>
-			<port type="input"  name="fcout" from="BLK_IG-LUT+CARRY[2]"/>
-			<port type="output" name="fcin"  from="BLK_IG-LUT+CARRY[3]"/>
-   <pack_pattern name="CARRYCHAIN" in_port="BLK_IG-LUT+CARRY[2].fcout" out_port="BLK_IG-LUT+CARRY[3].fcin" />
+			<port type="input"  name="fc-cout" from="BLK_IG-LUT+CARRY[2]"/>
+			<port type="output" name="fc-cin"  from="BLK_IG-LUT+CARRY[3]"/>
+   <pack_pattern name="CARRYCHAIN" in_port="BLK_IG-LUT+CARRY[2].fc-cout" out_port="BLK_IG-LUT+CARRY[3].fc-cin" />
   </direct>
 		<direct>
-			<port type="input"  name="fcout" from="BLK_IG-LUT+CARRY[3]"/>
-			<port type="output" name="fcin"  from="BLK_IG-LUT+CARRY[4]"/>
-   <pack_pattern name="CARRYCHAIN" in_port="BLK_IG-LUT+CARRY[3].fcout" out_port="BLK_IG-LUT+CARRY[4].fcin" />
+			<port type="input"  name="fc-cout" from="BLK_IG-LUT+CARRY[3]"/>
+			<port type="output" name="fc-cin"  from="BLK_IG-LUT+CARRY[4]"/>
+   <pack_pattern name="CARRYCHAIN" in_port="BLK_IG-LUT+CARRY[3].fc-cout" out_port="BLK_IG-LUT+CARRY[4].fc-cin" />
   </direct>
 		<direct>
-			<port type="input"  name="fcout" from="BLK_IG-LUT+CARRY[4]"/>
-			<port type="output" name="fcin"  from="BLK_IG-LUT+CARRY[5]"/>
-   <pack_pattern name="CARRYCHAIN" in_port="BLK_IG-LUT+CARRY[4].fcout" out_port="BLK_IG-LUT+CARRY[5].fcin" />
+			<port type="input"  name="fc-cout" from="BLK_IG-LUT+CARRY[4]"/>
+			<port type="output" name="fc-cin"  from="BLK_IG-LUT+CARRY[5]"/>
+   <pack_pattern name="CARRYCHAIN" in_port="BLK_IG-LUT+CARRY[4].fc-cout" out_port="BLK_IG-LUT+CARRY[5].fc-cin" />
   </direct>
 		<direct>
-			<port type="input"  name="fcout" from="BLK_IG-LUT+CARRY[5]"/>
-			<port type="output" name="fcin"  from="BLK_IG-LUT+CARRY[6]"/>
-   <pack_pattern name="CARRYCHAIN" in_port="BLK_IG-LUT+CARRY[5].fcout" out_port="BLK_IG-LUT+CARRY[6].fcin" />
+			<port type="input"  name="fc-cout" from="BLK_IG-LUT+CARRY[5]"/>
+			<port type="output" name="fc-cin"  from="BLK_IG-LUT+CARRY[6]"/>
+   <pack_pattern name="CARRYCHAIN" in_port="BLK_IG-LUT+CARRY[5].fc-cout" out_port="BLK_IG-LUT+CARRY[6].fc-cin" />
   </direct>
 		<direct>
-			<port type="input"  name="fcout" from="BLK_IG-LUT+CARRY[6]"/>
-			<port type="output" name="fcin"  from="BLK_IG-LUT+CARRY[7]"/>
-   <pack_pattern name="CARRYCHAIN" in_port="BLK_IG-LUT+CARRY[6].fcout" out_port="BLK_IG-LUT+CARRY[7].fcin" />
+			<port type="input"  name="fc-cout" from="BLK_IG-LUT+CARRY[6]"/>
+			<port type="output" name="fc-cin"  from="BLK_IG-LUT+CARRY[7]"/>
+   <pack_pattern name="CARRYCHAIN" in_port="BLK_IG-LUT+CARRY[6].fc-cout" out_port="BLK_IG-LUT+CARRY[7].fc-cin" />
 		</direct>
   <direct>
-			<port type="input"  name="fcout" from="BLK_IG-LUT+CARRY[7]"/>
+			<port type="input"  name="fc-cout" from="BLK_IG-LUT+CARRY[7]"/>
 			<port type="output" name="FCOUT" />
-   <pack_pattern name="CARRYCHAIN" in_port="BLK_IG-LUT+CARRY[7].fcout" out_port="BLK_TL-PLB.FCOUT" />
+   <pack_pattern name="CARRYCHAIN" in_port="BLK_IG-LUT+CARRY[7].fc-cout" out_port="BLK_TL-PLB.FCOUT" />
+		</direct>
+
+		<!-- Fast Carry chain -->
+		<direct>
+			<port type="input"  name="FCIN"/>
+			<port type="output" name="fc-lin"  from="BLK_IG-LUT+CARRY[0]"/>
   </direct>
+		<direct>
+			<port type="input"  name="fc-lout" from="BLK_IG-LUT+CARRY[0]"/>
+			<port type="output" name="fc-lin"  from="BLK_IG-LUT+CARRY[1]"/>
+  </direct>
+		<direct>
+			<port type="input"  name="fc-lout" from="BLK_IG-LUT+CARRY[1]"/>
+			<port type="output" name="fc-lin"  from="BLK_IG-LUT+CARRY[2]"/>
+  </direct>
+		<direct>
+			<port type="input"  name="fc-lout" from="BLK_IG-LUT+CARRY[2]"/>
+			<port type="output" name="fc-lin"  from="BLK_IG-LUT+CARRY[3]"/>
+  </direct>
+		<direct>
+			<port type="input"  name="fc-lout" from="BLK_IG-LUT+CARRY[3]"/>
+			<port type="output" name="fc-lin"  from="BLK_IG-LUT+CARRY[4]"/>
+  </direct>
+		<direct>
+			<port type="input"  name="fc-lout" from="BLK_IG-LUT+CARRY[4]"/>
+			<port type="output" name="fc-lin"  from="BLK_IG-LUT+CARRY[5]"/>
+  </direct>
+		<direct>
+			<port type="input"  name="fc-lout" from="BLK_IG-LUT+CARRY[5]"/>
+			<port type="output" name="fc-lin"  from="BLK_IG-LUT+CARRY[6]"/>
+  </direct>
+		<direct>
+			<port type="input"  name="fc-lout" from="BLK_IG-LUT+CARRY[6]"/>
+			<port type="output" name="fc-lin"  from="BLK_IG-LUT+CARRY[7]"/>
+		</direct>
 
  </interconnect>
  <pinlocations pattern="custom">

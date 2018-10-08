@@ -247,11 +247,11 @@ VPR_CMD = \
 		--routing_failure_predictor off \
 		--clock_modeling route \
 		--router_algorithm breadth_first \
-		--constant_net_method route
+		--clustering_pin_feasibility_filter off \
+		--constant_net_method route \
+		--debug_clustering on \
 
-#		--debug_clustering on \
 #		--router_algorithm breadth_first \
-#		--clustering_pin_feasibility_filter off \
 #		--target_ext_pin_util 0.7 \
 
 VPR_ARGS_FILE=$(OUT_LOCAL)/vpr.args
