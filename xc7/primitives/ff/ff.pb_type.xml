@@ -25,8 +25,8 @@
       <direct name="D" input="BLK_BB-SLICE_FF.D" output="BEL_FF-NO_FF.D"/>
     </interconnect>
   </mode>
-  <mode name="FDSE_or_FDRE">
-    <pb_type name="BEL_FF-FDSE_or_FDRE" num_pb="8">
+  <mode name="FF_SYNC">
+    <pb_type name="BEL_FF-FF_SYNC" num_pb="8">
       <input  name="D" num_pins="1"/>
       <input  name="CE" num_pins="1"/>
       <clock  name="C" num_pins="1"/>
@@ -53,17 +53,17 @@
         </pb_type>
 
         <interconnect>
-          <direct name="D" input="BEL_FF-FDSE_or_FDRE.D" output="BEL_FF-FDSE.D" />
-          <direct name="CE" input="BEL_FF-FDSE_or_FDRE.CE" output="BEL_FF-FDSE.CE" >
-            <pack_pattern name="CE_FF_FDSE" in_port="BEL_FF-FDSE_or_FDRE.CE" out_port="BEL_FF-FDSE.CE"/>
-            <pack_pattern name="CESR_FF_FDSE" in_port="BEL_FF-FDSE_or_FDRE.CE" out_port="BEL_FF-FDSE.CE"/>
+          <direct name="D" input="BEL_FF-FF_SYNC.D" output="BEL_FF-FDSE.D" />
+          <direct name="CE" input="BEL_FF-FF_SYNC.CE" output="BEL_FF-FDSE.CE" >
+            <pack_pattern name="CE_FF_FDSE" in_port="BEL_FF-FF_SYNC.CE" out_port="BEL_FF-FDSE.CE"/>
+            <pack_pattern name="CESR_FF_FDSE" in_port="BEL_FF-FF_SYNC.CE" out_port="BEL_FF-FDSE.CE"/>
           </direct>
-          <direct name="C" input="BEL_FF-FDSE_or_FDRE.C" output="BEL_FF-FDSE.C" />
-          <direct name="S" input="BEL_FF-FDSE_or_FDRE.SR" output="BEL_FF-FDSE.S" >
-            <pack_pattern name="SR_FF_FDSE" in_port="BEL_FF-FDSE_or_FDRE.SR" out_port="BEL_FF-FDSE.S"/>
-            <pack_pattern name="CESR_FF_FDSE" in_port="BEL_FF-FDSE_or_FDRE.SR" out_port="BEL_FF-FDSE.S"/>
+          <direct name="C" input="BEL_FF-FF_SYNC.C" output="BEL_FF-FDSE.C" />
+          <direct name="S" input="BEL_FF-FF_SYNC.SR" output="BEL_FF-FDSE.S" >
+            <pack_pattern name="SR_FF_FDSE" in_port="BEL_FF-FF_SYNC.SR" out_port="BEL_FF-FDSE.S"/>
+            <pack_pattern name="CESR_FF_FDSE" in_port="BEL_FF-FF_SYNC.SR" out_port="BEL_FF-FDSE.S"/>
           </direct>
-          <direct name="Q" input="BEL_FF-FDSE.Q" output="BEL_FF-FDSE_or_FDRE.Q" />
+          <direct name="Q" input="BEL_FF-FDSE.Q" output="BEL_FF-FF_SYNC.Q" />
         </interconnect>
       </mode>
       <mode name="FDRE">
@@ -87,17 +87,17 @@
         </pb_type>
 
         <interconnect>
-          <direct name="D" input="BEL_FF-FDSE_or_FDRE.D" output="BEL_FF-FDRE.D" />
-          <direct name="CE" input="BEL_FF-FDSE_or_FDRE.CE" output="BEL_FF-FDRE.CE" >
-            <pack_pattern name="CE_FF_FDRE" in_port="BEL_FF-FDSE_or_FDRE.CE" out_port="BEL_FF-FDRE.CE"/>
-            <pack_pattern name="CESR_FF_FDRE" in_port="BEL_FF-FDSE_or_FDRE.CE" out_port="BEL_FF-FDRE.CE"/>
+          <direct name="D" input="BEL_FF-FF_SYNC.D" output="BEL_FF-FDRE.D" />
+          <direct name="CE" input="BEL_FF-FF_SYNC.CE" output="BEL_FF-FDRE.CE" >
+            <pack_pattern name="CE_FF_FDRE" in_port="BEL_FF-FF_SYNC.CE" out_port="BEL_FF-FDRE.CE"/>
+            <pack_pattern name="CESR_FF_FDRE" in_port="BEL_FF-FF_SYNC.CE" out_port="BEL_FF-FDRE.CE"/>
           </direct>
-          <direct name="C" input="BEL_FF-FDSE_or_FDRE.C" output="BEL_FF-FDRE.C" />
-          <direct name="R" input="BEL_FF-FDSE_or_FDRE.SR" output="BEL_FF-FDRE.R" >
-            <pack_pattern name="SR_FF_FDRE" in_port="BEL_FF-FDSE_or_FDRE.SR" out_port="BEL_FF-FDRE.R"/>
-            <pack_pattern name="CESR_FF_FDRE" in_port="BEL_FF-FDSE_or_FDRE.SR" out_port="BEL_FF-FDRE.R"/>
+          <direct name="C" input="BEL_FF-FF_SYNC.C" output="BEL_FF-FDRE.C" />
+          <direct name="R" input="BEL_FF-FF_SYNC.SR" output="BEL_FF-FDRE.R" >
+            <pack_pattern name="SR_FF_FDRE" in_port="BEL_FF-FF_SYNC.SR" out_port="BEL_FF-FDRE.R"/>
+            <pack_pattern name="CESR_FF_FDRE" in_port="BEL_FF-FF_SYNC.SR" out_port="BEL_FF-FDRE.R"/>
           </direct>
-          <direct name="Q" input="BEL_FF-FDRE.Q" output="BEL_FF-FDSE_or_FDRE.Q" />
+          <direct name="Q" input="BEL_FF-FDRE.Q" output="BEL_FF-FF_SYNC.Q" />
         </interconnect>
       </mode>
       <metadata>
@@ -106,22 +106,22 @@
     </pb_type>
 
     <interconnect>
-      <direct name="CE" input="BLK_BB-SLICE_FF.CE" output="BEL_FF-FDSE_or_FDRE.CE" />
-      <complete name="C" input="BLK_BB-SLICE_FF.CK" output="BEL_FF-FDSE_or_FDRE.C" />
-      <direct name="SR" input="BLK_BB-SLICE_FF.SR" output="BEL_FF-FDSE_or_FDRE.SR" />
+      <direct name="CE" input="BLK_BB-SLICE_FF.CE" output="BEL_FF-FF_SYNC.CE" />
+      <complete name="C" input="BLK_BB-SLICE_FF.CK" output="BEL_FF-FF_SYNC.C" />
+      <direct name="SR" input="BLK_BB-SLICE_FF.SR" output="BEL_FF-FF_SYNC.SR" />
 
-      <direct name="D" input="BLK_BB-SLICE_FF.D[3:0]" output="BEL_FF-FDSE_or_FDRE[3:0].D" />
-      <direct name="Q" input="BEL_FF-FDSE_or_FDRE[3:0].Q" output="BLK_BB-SLICE_FF.Q[3:0]" />
+      <direct name="D" input="BLK_BB-SLICE_FF.D[3:0]" output="BEL_FF-FF_SYNC[3:0].D" />
+      <direct name="Q" input="BEL_FF-FF_SYNC[3:0].Q" output="BLK_BB-SLICE_FF.Q[3:0]" />
 
-      <direct name="D5" input="BLK_BB-SLICE_FF.D5[3:0]" output="BEL_FF-FDSE_or_FDRE[7:4].D" />
-      <direct name="Q5" input="BEL_FF-FDSE_or_FDRE[7:4].Q" output="BLK_BB-SLICE_FF.Q5[3:0]" />
+      <direct name="D5" input="BLK_BB-SLICE_FF.D5[3:0]" output="BEL_FF-FF_SYNC[7:4].D" />
+      <direct name="Q5" input="BEL_FF-FF_SYNC[7:4].Q" output="BLK_BB-SLICE_FF.Q5[3:0]" />
     </interconnect>
     <metadata>
       <meta name="fasm_features">FFSYNC</meta>
     </metadata>
   </mode>
-  <mode name="FDPE_or_FDCE">
-    <pb_type name="BEL_FF-FDPE_or_FDCE" num_pb="8">
+  <mode name="FF_ASYNC">
+    <pb_type name="BEL_FF-FF_ASYNC" num_pb="8">
       <input  name="D" num_pins="1"/>
       <input  name="CE" num_pins="1"/>
       <clock  name="C" num_pins="1"/>
@@ -135,7 +135,7 @@
           <clock  name="C" num_pins="1"/>
           <input  name="PRE" num_pins="1"/>
           <output name="Q" num_pins="1"/>
-          <T_setup    value="10e-12" port="BEL_FF-FDPE.D" clock="C" />
+          <T_setup    value="10e-12" port="BEL_FF-FDPE.D"  clock="C" />
           <T_setup    value="10e-12" port="BEL_FF-FDPE.CE" clock="C" />
           <T_setup    value="10e-12" port="BEL_FF-FDPE.PRE" clock="C" />
           <T_clock_to_Q max="10e-12" port="BEL_FF-FDPE.Q" clock="C" />
@@ -148,17 +148,17 @@
         </pb_type>
 
         <interconnect>
-          <direct name="D" input="BEL_FF-FDPE_or_FDCE.D" output="BEL_FF-FDPE.D" />
-          <direct name="CE" input="BEL_FF-FDPE_or_FDCE.CE" output="BEL_FF-FDPE.CE" >
-            <pack_pattern name="CE_FF_FDPE" in_port="BEL_FF-FDPE_or_FDCE.CE" out_port="BEL_FF-FDPE.CE"/>
-            <pack_pattern name="CESR_FF_FDPE" in_port="BEL_FF-FDPE_or_FDCE.CE" out_port="BEL_FF-FDPE.CE"/>
+          <direct name="D" input="BEL_FF-FF_ASYNC.D" output="BEL_FF-FDPE.D" />
+          <direct name="CE" input="BEL_FF-FF_ASYNC.CE" output="BEL_FF-FDPE.CE" >
+            <pack_pattern name="CE_FF_FDPE" in_port="BEL_FF-FF_ASYNC.CE" out_port="BEL_FF-FDPE.CE"/>
+            <pack_pattern name="CESR_FF_FDPE" in_port="BEL_FF-FF_ASYNC.CE" out_port="BEL_FF-FDPE.CE"/>
           </direct>
-          <direct name="C" input="BEL_FF-FDPE_or_FDCE.C" output="BEL_FF-FDPE.C" />
-          <direct name="PRE" input="BEL_FF-FDPE_or_FDCE.SR" output="BEL_FF-FDPE.PRE" >
-            <pack_pattern name="SR_FF_FDPE" in_port="BEL_FF-FDPE_or_FDCE.SR" out_port="BEL_FF-FDPE.PRE"/>
-            <pack_pattern name="CESR_FF_FDPE" in_port="BEL_FF-FDPE_or_FDCE.SR" out_port="BEL_FF-FDPE.PRE"/>
+          <direct name="C" input="BEL_FF-FF_ASYNC.C" output="BEL_FF-FDPE.C" />
+          <direct name="PRE" input="BEL_FF-FF_ASYNC.SR" output="BEL_FF-FDPE.PRE" >
+            <pack_pattern name="SR_FF_FDPE" in_port="BEL_FF-FF_ASYNC.SR" out_port="BEL_FF-FDPE.PRE"/>
+            <pack_pattern name="CESR_FF_FDPE" in_port="BEL_FF-FF_ASYNC.SR" out_port="BEL_FF-FDPE.PRE"/>
           </direct>
-          <direct name="Q" input="BEL_FF-FDPE.Q" output="BEL_FF-FDPE_or_FDCE.Q" />
+          <direct name="Q" input="BEL_FF-FDPE.Q" output="BEL_FF-FF_ASYNC.Q" />
         </interconnect>
       </mode>
       <mode name="FDCE">
@@ -182,17 +182,17 @@
         </pb_type>
 
         <interconnect>
-          <direct name="D" input="BEL_FF-FDPE_or_FDCE.D" output="BEL_FF-FDCE.D" />
-          <direct name="CE" input="BEL_FF-FDPE_or_FDCE.CE" output="BEL_FF-FDCE.CE" >
-            <pack_pattern name="CE_FF_FDCE" in_port="BEL_FF-FDPE_or_FDCE.CE" out_port="BEL_FF-FDCE.CE"/>
-            <pack_pattern name="CESR_FF_FDCE" in_port="BEL_FF-FDPE_or_FDCE.CE" out_port="BEL_FF-FDCE.CE"/>
+          <direct name="D" input="BEL_FF-FF_ASYNC.D" output="BEL_FF-FDCE.D" />
+          <direct name="CE" input="BEL_FF-FF_ASYNC.CE" output="BEL_FF-FDCE.CE" >
+            <pack_pattern name="CE_FF_FDCE" in_port="BEL_FF-FF_ASYNC.CE" out_port="BEL_FF-FDCE.CE"/>
+            <pack_pattern name="CESR_FF_FDCE" in_port="BEL_FF-FF_ASYNC.CE" out_port="BEL_FF-FDCE.CE"/>
           </direct>
-          <direct name="C" input="BEL_FF-FDPE_or_FDCE.C" output="BEL_FF-FDCE.C" />
-          <direct name="CLR" input="BEL_FF-FDPE_or_FDCE.SR" output="BEL_FF-FDCE.CLR" >
-            <pack_pattern name="SR_FF_FDCE" in_port="BEL_FF-FDPE_or_FDCE.SR" out_port="BEL_FF-FDCE.CLR"/>
-            <pack_pattern name="CESR_FF_FDCE" in_port="BEL_FF-FDPE_or_FDCE.SR" out_port="BEL_FF-FDCE.CLR"/>
+          <direct name="C" input="BEL_FF-FF_ASYNC.C" output="BEL_FF-FDCE.C" />
+          <direct name="CLR" input="BEL_FF-FF_ASYNC.SR" output="BEL_FF-FDCE.CLR" >
+            <pack_pattern name="SR_FF_FDCE" in_port="BEL_FF-FF_ASYNC.SR" out_port="BEL_FF-FDCE.CLR"/>
+            <pack_pattern name="CESR_FF_FDCE" in_port="BEL_FF-FF_ASYNC.SR" out_port="BEL_FF-FDCE.CLR"/>
           </direct>
-          <direct name="Q" input="BEL_FF-FDCE.Q" output="BEL_FF-FDPE_or_FDCE.Q" />
+          <direct name="Q" input="BEL_FF-FDCE.Q" output="BEL_FF-FF_ASYNC.Q" />
         </interconnect>
       </mode>
       <metadata>
@@ -201,19 +201,19 @@
     </pb_type>
 
     <interconnect>
-      <direct name="CE" input="BLK_BB-SLICE_FF.CE" output="BEL_FF-FDPE_or_FDCE.CE" />
-      <complete name="C" input="BLK_BB-SLICE_FF.CK" output="BEL_FF-FDPE_or_FDCE.C" />
-      <direct name="SR" input="BLK_BB-SLICE_FF.SR" output="BEL_FF-FDPE_or_FDCE.SR" />
+      <direct name="CE" input="BLK_BB-SLICE_FF.CE" output="BEL_FF-FF_ASYNC.CE" />
+      <complete name="C" input="BLK_BB-SLICE_FF.CK" output="BEL_FF-FF_ASYNC.C" />
+      <direct name="SR" input="BLK_BB-SLICE_FF.SR" output="BEL_FF-FF_ASYNC.SR" />
 
-      <direct name="D" input="BLK_BB-SLICE_FF.D[3:0]" output="BEL_FF-FDPE_or_FDCE[3:0].D" />
-      <direct name="Q" input="BEL_FF-FDPE_or_FDCE[3:0].Q" output="BLK_BB-SLICE_FF.Q[3:0]" />
+      <direct name="D" input="BLK_BB-SLICE_FF.D[3:0]" output="BEL_FF-FF_ASYNC[3:0].D" />
+      <direct name="Q" input="BEL_FF-FF_ASYNC[3:0].Q" output="BLK_BB-SLICE_FF.Q[3:0]" />
 
-      <direct name="D5" input="BLK_BB-SLICE_FF.D5[3:0]" output="BEL_FF-FDPE_or_FDCE[7:4].D" />
-      <direct name="Q5" input="BEL_FF-FDPE_or_FDCE[7:4].Q" output="BLK_BB-SLICE_FF.Q5[3:0]" />
+      <direct name="D5" input="BLK_BB-SLICE_FF.D5[3:0]" output="BEL_FF-FF_ASYNC[7:4].D" />
+      <direct name="Q5" input="BEL_FF-FF_ASYNC[7:4].Q" output="BLK_BB-SLICE_FF.Q5[3:0]" />
     </interconnect>
   </mode>
-  <mode name="LDPE_or_LDCE">
-    <pb_type name="BEL_FF-LDPE_or_LDCE" num_pb="4">
+  <mode name="LATCH">
+    <pb_type name="BEL_FF-LATCH" num_pb="4">
       <input  name="D" num_pins="1"/>
       <input  name="CE" num_pins="1"/>
       <clock  name="C" num_pins="1"/>
@@ -240,11 +240,11 @@
         </pb_type>
 
         <interconnect>
-          <direct name="D" input="BEL_FF-LDPE_or_LDCE.D" output="BEL_FF-LDPE.D" />
-          <direct name="CE" input="BEL_FF-LDPE_or_LDCE.CE" output="BEL_FF-LDPE.GE" />
-          <direct name="C" input="BEL_FF-LDPE_or_LDCE.C" output="BEL_FF-LDPE.G" />
-          <direct name="SR" input="BEL_FF-LDPE_or_LDCE.SR" output="BEL_FF-LDPE.PRE" />
-          <direct name="Q" input="BEL_FF-LDPE.Q" output="BEL_FF-LDPE_or_LDCE.Q" />
+          <direct name="D" input="BEL_FF-LATCH.D" output="BEL_FF-LDPE.D" />
+          <direct name="CE" input="BEL_FF-LATCH.CE" output="BEL_FF-LDPE.GE" />
+          <direct name="C" input="BEL_FF-LATCH.C" output="BEL_FF-LDPE.G" />
+          <direct name="SR" input="BEL_FF-LATCH.SR" output="BEL_FF-LDPE.PRE" />
+          <direct name="Q" input="BEL_FF-LDPE.Q" output="BEL_FF-LATCH.Q" />
         </interconnect>
       </mode>
       <mode name="LDCE">
@@ -268,11 +268,11 @@
         </pb_type>
 
         <interconnect>
-          <direct name="D" input="BEL_FF-LDPE_or_LDCE.D" output="BEL_FF-LDCE.D" />
-          <direct name="CE" input="BEL_FF-LDPE_or_LDCE.CE" output="BEL_FF-LDCE.GE" />
-          <direct name="C" input="BEL_FF-LDPE_or_LDCE.C" output="BEL_FF-LDCE.G" />
-          <direct name="SR" input="BEL_FF-LDPE_or_LDCE.SR" output="BEL_FF-LDCE.CLR" />
-          <direct name="Q" input="BEL_FF-LDCE.Q" output="BEL_FF-LDPE_or_LDCE.Q" />
+          <direct name="D" input="BEL_FF-LATCH.D" output="BEL_FF-LDCE.D" />
+          <direct name="CE" input="BEL_FF-LATCH.CE" output="BEL_FF-LDCE.GE" />
+          <direct name="C" input="BEL_FF-LATCH.C" output="BEL_FF-LDCE.G" />
+          <direct name="SR" input="BEL_FF-LATCH.SR" output="BEL_FF-LDCE.CLR" />
+          <direct name="Q" input="BEL_FF-LDCE.Q" output="BEL_FF-LATCH.Q" />
         </interconnect>
       </mode>
       <metadata>
@@ -281,12 +281,13 @@
     </pb_type>
 
     <interconnect>
-      <direct name="CE_TO_LD" input="BLK_BB-SLICE_FF.CE[0:3]" output="BEL_FF-LDPE_or_LDCE.CE" />
-      <complete name="C_TO_LD"  input="BLK_BB-SLICE_FF.CK" output="BEL_FF-LDPE_or_LDCE.C" />
-      <direct name="SR_TO_LD" input="BLK_BB-SLICE_FF.SR[0:3]" output="BEL_FF-LDPE_or_LDCE.SR" />
+      <direct name="CE_TO_LD" input="BLK_BB-SLICE_FF.CE[0:3]" output="BEL_FF-LATCH.CE" />
+      <complete name="C_TO_LD"  input="BLK_BB-SLICE_FF.CK" output="BEL_FF-LATCH.C" />
+      <direct name="SR_TO_LD" input="BLK_BB-SLICE_FF.SR[0:3]" output="BEL_FF-LATCH.SR" />
 
-      <direct name="D" input="BLK_BB-SLICE_FF.D" output="BEL_FF-LDPE_or_LDCE.D" />
-      <direct name="Q" input="BEL_FF-LDPE_or_LDCE.Q" output="BLK_BB-SLICE_FF.Q" />
+      <direct name="D" input="BLK_BB-SLICE_FF.D" output="BEL_FF-LATCH.D" />
+      <direct name="Q" input="BEL_FF-LATCH.Q" output="BLK_BB-SLICE_FF.Q" />
+
     </interconnect>
     <metadata>
       <meta name="fasm_features">LATCH</meta>
