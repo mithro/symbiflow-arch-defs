@@ -55,7 +55,7 @@
   <output name="AQ"   num_pins="1"/>
 
 
-  <xi:include href="../ff/ff.pb_type.xml" />
+  <xi:include href="ff/ff.pb_type.xml" />
 
   <!-- CARRY4 logic -->
   <xi:include href="carry/carry0.pb_type.xml" />

@@ -1,5 +1,4 @@
 add_subdirectory(dsp48e1)
-add_subdirectory(ff)
 add_subdirectory(iob33)
 add_subdirectory(common_slice)
 add_subdirectory(slicel)

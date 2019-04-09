@@ -6,6 +6,8 @@
 `include "../common_slice/muxes/f7bmux/f7bmux.sim.v"
 `include "../common_slice/muxes/f8mux/f8mux.sim.v"
 
+`include "../common_slice/ff/slice_ff.sim.v"
+
 `include "../common_slice/routing/affmux/affmux.sim.v"
 `include "../common_slice/routing/bffmux/bffmux.sim.v"
 `include "../common_slice/routing/cffmux/cffmux.sim.v"
@@ -175,7 +177,7 @@ module SLICEL(
 	wire [3:0] CARRY4_CO;
 	wire [3:0] CARRY4_O;
 
-	CARRY4_MODES carry4 (
+	CARRY carry (
 		.CO(CARRY4_CO),
 		.O(CARRY4_O),
 		.DI({ACY0_OUT, BCY0_OUT, CCY0_OUT, DCY0_OUT}),
@@ -225,23 +227,22 @@ module SLICEL(
 	wire CLKINV_OUT;
 
 	CLKINV clkinv (.CLK(CLK), .OUT(CLKINV_OUT));
+	CEUSEDMUX ceusedmux (.IN(CE), .OUT(CEUSEDMUX_OUT));
+	SRUSEDMUX srusedmux (.IN(SR), .OUT(SRUSEDMUX_OUT));
 
-	A5FF a5ff (.CE(CEUSEDMUX_OUT), .CK(CLKINV_OUT), .SR(SRUSEDMUX_OUT), .D(A5FFMUX_OUT), .Q(A5FF_Q));
-	B5FF b5ff (.CE(CEUSEDMUX_OUT), .CK(CLKINV_OUT), .SR(SRUSEDMUX_OUT), .D(B5FFMUX_OUT), .Q(B5FF_Q));
-	C5FF c5ff (.CE(CEUSEDMUX_OUT), .CK(CLKINV_OUT), .SR(SRUSEDMUX_OUT), .D(C5FFMUX_OUT), .Q(C5FF_Q));
-	D5FF d5ff (.CE(CEUSEDMUX_OUT), .CK(CLKINV_OUT), .SR(SRUSEDMUX_OUT), .D(D5FFMUX_OUT), .Q(D5FF_Q));
-
-	A5FF aff  (.CE(CEUSEDMUX_OUT), .CK(CLKINV_OUT), .SR(SRUSEDMUX_OUT), .D(AFFMUX_OUT),  .Q(AQ));
-	B5FF bff  (.CE(CEUSEDMUX_OUT), .CK(CLKINV_OUT), .SR(SRUSEDMUX_OUT), .D(BFFMUX_OUT),  .Q(BQ));
-	C5FF cff  (.CE(CEUSEDMUX_OUT), .CK(CLKINV_OUT), .SR(SRUSEDMUX_OUT), .D(CFFMUX_OUT),  .Q(CQ));
-	D5FF dff  (.CE(CEUSEDMUX_OUT), .CK(CLKINV_OUT), .SR(SRUSEDMUX_OUT), .D(DFFMUX_OUT),  .Q(DQ));
+	SLICE_FF slice_ff (
+		.C(CLKINV_OUT),
+		.CE(CEUSEDMUX_OUT),
+		.SR(SRUSEDMUX_OUT),
+		.D5({A5FFMUX_OUT, B5FFMUX_OUT, C5FFMUX_OUT, D5FFMUX_OUT}),
+		.Q5({A5FF_Q, B5FF_Q, C5FF_Q, D5FF_Q}),
+		.D({AFFMUX_OUT, BFFMUX_OUT, CFFMUX_OUT, DFFMUX_OUT}),
+		.Q({AQ, BQ, CQ, DQ}),
+	);
 
 	AUSED aused (.I0(A6LUT_O6), .O(A));
 	BUSED bused (.I0(B6LUT_O6), .O(B));
 	CUSED cused (.I0(C6LUT_O6), .O(C));
 	DUSED dused (.I0(D6LUT_O6), .O(D));
-
-	CEUSEDMUX ceusedmux (.IN(CE), .OUT(CEUSEDMUX_OUT));
-	SRUSEDMUX srusedmux (.IN(SR), .OUT(SRUSEDMUX_OUT));
 
 endmodule
