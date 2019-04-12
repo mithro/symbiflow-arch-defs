@@ -14,20 +14,22 @@
 
 # Table
 
-| Type     | Value |
-| -------- | ----- |
-| Data     | **D** |
-| Clock    | **C** |
-| Enable   | **E** |
-| Set      | **S** |
-| Reset    | **R** |
-| Data Out | **Q** |
+| Type           | Value |
+| -------------- | ----- |
+| Data           | **D** |
+| Gate           | **D** |
+| Clock          | **C** |
+| Clock Enable   | **E** |
+| Enable (Latch) | **E** |
+| Set            | **S** |
+| Reset          | **R** |
+| Data Out       | **Q** |
 
 | Type              | Type          | Features           | **D** | **C** | **E** | **S** | **R** | **Q** |
 | ----------------- | ------------- | ------------------ | ----- | ----- | ----- | ----- | ----- | ----- |
 | `$_SR_XX_`        | Latch         | Set-Reset          |       |       |       |   X   |   X   |   X   |
-| `$_DLATCH_X_`     | Latch         | Enable             |   X   |       |   X   |       |       |   X   |
-| `$_DLATCHSR_XXX_` | Latch         | Enable, Set-Reset  |   X   |       |   X   |   X   |   X   |   X   |
+| `$_DLATCH_X_`     | Latch         |                    |   X   |       |   X   |       |       |   X   |
+| `$_DLATCHSR_XXX_` | Latch         | Set-Reset          |   X   |       |   X   |   X   |   X   |   X   |
 | `$_DFF_X_`        | Flipflop      |                    |   X   |   X   |       |       |       |   X   |
 | `$_DFF_XXX_`      | Flipflop      | Reset              |   X   |   X   |       |       |   X   |   X   |
 | `$_DFFSR_XXX_`    | Flipflop      | Set-Reset          |   X   |   X   |       |   X   |   X   |   X   |
@@ -177,8 +179,8 @@ endmodule
 
 ### Parameters
 
-| Parameter         | Values  | Used for                 |
-| ----------------- | ------- | ------------------------ |
-| `$_DFFSR_**X**X_` | `N`/`P` | Edge of the clock signal |
-| `$_DFFSR_X**X**_` | `N`/`P` | Polarity of ENABLE       |
+| Parameter        | Values  | Used for                 |
+| ---------------- | ------- | ------------------------ |
+| `$_DFFE_**X**X_` | `N`/`P` | Edge of the clock signal |
+| `$_DFFE_X**X**_` | `N`/`P` | Polarity of ENABLE       |
 
