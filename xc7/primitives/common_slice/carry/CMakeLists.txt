@@ -9,6 +9,10 @@ v2x(
 )
 
 add_file_target(
+  FILE carry0.sim.v
+  SCANNER_TYPE verilog
+  )
+add_file_target(
   FILE carry0.pb_type.xml
   SCANNER_TYPE xml
   )
