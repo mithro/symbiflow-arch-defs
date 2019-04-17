@@ -3,7 +3,7 @@
 module SRUSEDMUX(IN, OUT);
 	input wire IN;
 
-	parameter S = 0;
+	parameter S = 1;
 	output wire OUT;
 
 	MUX2 mux (
