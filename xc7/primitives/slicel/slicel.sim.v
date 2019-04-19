@@ -37,9 +37,12 @@
 `include "../common_slice/routing/Nused/cused.sim.v"
 `include "../common_slice/routing/Nused/dused.sim.v"
 
+`include "../common_slice/carry/carry0.sim.v"
 `include "../common_slice/carry/carry.sim.v"
 
 `include "../common_slice/routing/clkinv/clkinv.sim.v"
+
+`include "../ff/slice_ff.sim.v"
 
 module SLICEL(
 	DX, D1, D2, D3, D4, D5, D6, DMUX, D, DQ,	// D port
@@ -47,7 +50,7 @@ module SLICEL(
 	BX, B1, B2, B3, B4, B5, B6, BMUX, B, BQ,	// B port
 	AX, A1, A2, A3, A4, A5, A6, AMUX, A, AQ,	// A port
 	SR, CE, CLK, 		// Flip flop signals
-	CIN, CYINIT, COUT,	// Carry to/from adjacent slices
+	CIN, COUT,		// Carry to/from adjacent slices
 );
 	// D port
 	input wire DX;
@@ -121,7 +124,6 @@ module SLICEL(
 
 	// Carry to/from adjacent slices
 	input wire CIN;
-	input wire CYINIT;
 	output wire COUT;
 
 	// Internal routing configuration
@@ -163,26 +165,54 @@ module SLICEL(
 	DCY0 dcy0 (.O5(D5LUT_O5), .DX(DX), .O(DCY0_OUT));
 
 	wire F7BMUX_OUT;
-	F7BMUX f7bmux (.I0(D6LUT_O6), .I1(C6LUT_O6), .OUT(F7BMUX_OUT), .S0(CX));
+	F7BMUX f7bmux (.I0(D6LUT_O6), .I1(C6LUT_O6), .O(F7BMUX_OUT), .S(CX));
 	wire F7AMUX_OUT;
-	F7BMUX f7amux (.I0(B6LUT_O6), .I1(A6LUT_O6), .OUT(F7AMUX_OUT), .S0(AX));
+	F7BMUX f7amux (.I0(B6LUT_O6), .I1(A6LUT_O6), .O(F7AMUX_OUT), .S(AX));
 	wire F8MUX_OUT;
-	F8MUX f8mux (.I0(F7BMUX_OUT), .I1(F7AMUX_OUT), .OUT(F8MUX_OUT), .S0(BX));
+	F8MUX f8mux (.I0(F7BMUX_OUT), .I1(F7AMUX_OUT), .O(F8MUX_OUT), .S(BX));
 
-	wire PRECYINIT_OUT;
-	PRECYINIT_MUX precyinit_mux (.C0(0), .C1(1), .CI(CIN), .CYINIT(CYINIT), .OUT(PRECYINIT_OUT));
+	wire CI_INIT;
+	PRECYINIT_MUX precyinit_mux (.I(AX), .O(CI_INIT));
 
-	wire [3:0] CARRY4_CO;
-	wire [3:0] CARRY4_O;
+	wire [3:0] CARRY_CO_CHAIN;
+	wire [3:0] CARRY_CO_FABRIC;
+	wire [3:0] CARRY_O;
 
-	CARRY4_MODES carry4 (
-		.CO(CARRY4_CO),
-		.O(CARRY4_O),
-		.DI({ACY0_OUT, BCY0_OUT, CCY0_OUT, DCY0_OUT}),
-		.S({A6LUT_O6, B6LUT_O6, C6LUT_O6, D6LUT_O6}),
-		.CIN(PRECYINIT_OUT));
+	CARRY0_CONST carry0 (
+		.CI_INIT(CI_INIT),
+		.CI(CIN),
+		.DI(ACY0_OUT),
+		.S(A6LUT_O6),
+		.CO_CHAIN(CARRY_CO_CHAIN[0]),
+		.CO_FABRIC(CARRY_CO_FABRIC[0]),
+		.O(CARRY_O[0])
+	);
+	CARRY carry_0 (
+		.CI(CARRY_CO_CHAIN[0]),
+		.DI(BCY0_OUT),
+		.S(B6LUT_O6),
+		.CO_CHAIN(CARRY_CO_CHAIN[1]),
+		.CO_FABRIC(CARRY_CO_FABRIC[1]),
+		.O(CARRY_O[1])
+	);
+	CARRY carry_1 (
+		.CI(CARRY_CO_CHAIN[1]),
+		.DI(CCY0_OUT),
+		.S(C6LUT_O6),
+		.CO_CHAIN(CARRY_CO_CHAIN[2]),
+		.CO_FABRIC(CARRY_CO_FABRIC[2]),
+		.O(CARRY_O[2])
+	);
+	CARRY carry_2 (
+		.CI(CARRY_CO_CHAIN[2]),
+		.DI(DCY0_OUT),
+		.S(D6LUT_O6),
+		.CO_CHAIN(CARRY_CO_CHAIN[3]),
+		.CO_FABRIC(CARRY_CO_FABRIC[3]),
+		.O(CARRY_O[3])
+	);
 
-	COUTUSED coutused (.IN(CARRY4_O[3]), .OUT(COUT));
+	COUTUSED coutused (.IN(CARRY_CO_CHAIN[3]), .OUT(COUT));
 
 	wire A5FF_Q;
 	wire B5FF_Q;
@@ -190,16 +220,16 @@ module SLICEL(
 	wire D5FF_Q;
 
 	AOUTMUX aoutmux (
-		.A5Q(A5FF_Q), .XOR(CARRY4_O[0]), .O6(A6LUT_O6), .O5(A5LUT_O5), .CY(CARRY4_CO[0]), .F7(F7AMUX_OUT),
+		.A5Q(A5FF_Q), .XOR(CARRY_O[0]), .O6(A6LUT_O6), .O5(A5LUT_O5), .CY(CARRY_CO_FABRIC[0]), .F7(F7AMUX_OUT),
 		.OUT(AMUX));
 	BOUTMUX boutmux (
-		.B5Q(B5FF_Q), .XOR(CARRY4_O[1]), .O6(B6LUT_O6), .O5(B5LUT_O5), .CY(CARRY4_CO[1]), .F8(F8MUX_OUT),
+		.B5Q(B5FF_Q), .XOR(CARRY_O[1]), .O6(B6LUT_O6), .O5(B5LUT_O5), .CY(CARRY_CO_FABRIC[1]), .F8(F8MUX_OUT),
 		.OUT(BMUX));
 	COUTMUX coutmux (
-		.C5Q(C5FF_Q), .XOR(CARRY4_O[2]), .O6(C6LUT_O6), .O5(C5LUT_O5), .CY(CARRY4_CO[2]), .F7(F7BMUX_OUT),
+		.C5Q(C5FF_Q), .XOR(CARRY_O[2]), .O6(C6LUT_O6), .O5(C5LUT_O5), .CY(CARRY_CO_FABRIC[2]), .F7(F7BMUX_OUT),
 		.OUT(CMUX));
 	DOUTMUX doutmux (
-		.D5Q(D5FF_Q), .XOR(CARRY4_O[3]), .O6(D6LUT_O6), .O5(D5LUT_O5), .CY(CARRY4_CO[3]),
+		.D5Q(D5FF_Q), .XOR(CARRY_O[3]), .O6(D6LUT_O6), .O5(D5LUT_O5), .CY(CARRY_CO_FABRIC[3]),
 		.OUT(DMUX));
 
 	wire AFFMUX_OUT;
@@ -208,16 +238,16 @@ module SLICEL(
 	wire DFFMUX_OUT;
 
 	AFFMUX affmux (
-		.AX(AX), .XOR(CARRY4_O[0]), .O6(A6LUT_O6), .O5(A5LUT_O5), .CY(CARRY4_CO[0]), .F7(F7AMUX_OUT),
+		.AX(AX), .XOR(CARRY_O[0]), .O6(A6LUT_O6), .O5(A5LUT_O5), .CY(CARRY_CO_FABRIC[0]), .F7(F7AMUX_OUT),
 		.OUT(AFFMUX_OUT));
 	BFFMUX bffmux (
-		.BX(BX), .XOR(CARRY4_O[1]), .O6(B6LUT_O6), .O5(B5LUT_O5), .CY(CARRY4_CO[1]), .F8(F8MUX_OUT),
+		.BX(BX), .XOR(CARRY_O[1]), .O6(B6LUT_O6), .O5(B5LUT_O5), .CY(CARRY_CO_FABRIC[1]), .F8(F8MUX_OUT),
 		.OUT(BFFMUX_OUT));
 	CFFMUX cffmux (
-		.CX(CX), .XOR(CARRY4_O[2]), .O6(C6LUT_O6), .O5(C5LUT_O5), .CY(CARRY4_CO[2]), .F7(F7BMUX_OUT),
+		.CX(CX), .XOR(CARRY_O[2]), .O6(C6LUT_O6), .O5(C5LUT_O5), .CY(CARRY_CO_FABRIC[2]), .F7(F7BMUX_OUT),
 		.OUT(CFFMUX_OUT));
 	DFFMUX dffmux (
-		.DX(DX), .XOR(CARRY4_O[3]), .O6(D6LUT_O6), .O5(D5LUT_O5), .CY(CARRY4_CO[3]),
+		.DX(DX), .XOR(CARRY_O[3]), .O6(D6LUT_O6), .O5(D5LUT_O5), .CY(CARRY_CO_FABRIC[3]),
 		.OUT(DFFMUX_OUT));
 
 	wire CEUSEDMUX_OUT;
@@ -225,23 +255,22 @@ module SLICEL(
 	wire CLKINV_OUT;
 
 	CLKINV clkinv (.CLK(CLK), .OUT(CLKINV_OUT));
+	CEUSEDMUX ceusedmux (.IN(CE), .OUT(CEUSEDMUX_OUT));
+	SRUSEDMUX srusedmux (.IN(SR), .OUT(SRUSEDMUX_OUT));
 
-	A5FF a5ff (.CE(CEUSEDMUX_OUT), .CK(CLKINV_OUT), .SR(SRUSEDMUX_OUT), .D(A5FFMUX_OUT), .Q(A5FF_Q));
-	B5FF b5ff (.CE(CEUSEDMUX_OUT), .CK(CLKINV_OUT), .SR(SRUSEDMUX_OUT), .D(B5FFMUX_OUT), .Q(B5FF_Q));
-	C5FF c5ff (.CE(CEUSEDMUX_OUT), .CK(CLKINV_OUT), .SR(SRUSEDMUX_OUT), .D(C5FFMUX_OUT), .Q(C5FF_Q));
-	D5FF d5ff (.CE(CEUSEDMUX_OUT), .CK(CLKINV_OUT), .SR(SRUSEDMUX_OUT), .D(D5FFMUX_OUT), .Q(D5FF_Q));
-
-	A5FF aff  (.CE(CEUSEDMUX_OUT), .CK(CLKINV_OUT), .SR(SRUSEDMUX_OUT), .D(AFFMUX_OUT),  .Q(AQ));
-	B5FF bff  (.CE(CEUSEDMUX_OUT), .CK(CLKINV_OUT), .SR(SRUSEDMUX_OUT), .D(BFFMUX_OUT),  .Q(BQ));
-	C5FF cff  (.CE(CEUSEDMUX_OUT), .CK(CLKINV_OUT), .SR(SRUSEDMUX_OUT), .D(CFFMUX_OUT),  .Q(CQ));
-	D5FF dff  (.CE(CEUSEDMUX_OUT), .CK(CLKINV_OUT), .SR(SRUSEDMUX_OUT), .D(DFFMUX_OUT),  .Q(DQ));
+	SLICE_FF slice_ff (
+		.C(CLKINV_OUT),
+		.CE(CEUSEDMUX_OUT),
+		.SR(SRUSEDMUX_OUT),
+		.D5({A5FFMUX_OUT, B5FFMUX_OUT, C5FFMUX_OUT, D5FFMUX_OUT}),
+		.Q5({A5FF_Q, B5FF_Q, C5FF_Q, D5FF_Q}),
+		.D({AFFMUX_OUT, BFFMUX_OUT, CFFMUX_OUT, DFFMUX_OUT}),
+		.Q({AQ, BQ, CQ, DQ}),
+	);
 
 	AUSED aused (.I0(A6LUT_O6), .O(A));
 	BUSED bused (.I0(B6LUT_O6), .O(B));
 	CUSED cused (.I0(C6LUT_O6), .O(C));
 	DUSED dused (.I0(D6LUT_O6), .O(D));
-
-	CEUSEDMUX ceusedmux (.IN(CE), .OUT(CEUSEDMUX_OUT));
-	SRUSEDMUX srusedmux (.IN(SR), .OUT(SRUSEDMUX_OUT));
 
 endmodule
