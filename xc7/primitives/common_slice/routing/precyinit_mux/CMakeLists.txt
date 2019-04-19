@@ -1,9 +1,1 @@
-mux_gen(
-  NAME precyinit_mux
-  INPUTS CI,CYINIT,C0,C1
-  MUX_NAME PRECYINIT_MUX
-  OUTPUT OUT
-  SPLIT_INPUTS 1
-  TYPE routing
-  WIDTH 4
-)
+add_file_target(FILE precyinit_mux.sim.v SCANNER_TYPE verilog)
