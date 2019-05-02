@@ -1,13 +1,64 @@
-<pb_type xmlns:xi="http://www.w3.org/2001/XInclude" name="adder" blif_model=".subckt adder" num_pb="1">
+<?xml version='1.0' encoding='utf-8'?>
+<pb_type xmlns:xi="http://www.w3.org/2001/XInclude" name="adder" num_pb="1">
   <input name="a" num_pins="1"/>
   <input name="b" num_pins="1"/>
   <input name="cin" num_pins="1"/>
   <output name="cout" num_pins="1"/>
   <output name="sum" num_pins="1"/>
-  <delay_constant max="300e-12" in_port="adder.a" out_port="adder.cout"/>
-  <delay_constant max="300e-12" in_port="adder.b" out_port="adder.cout"/>
-  <delay_constant max="10e-12" in_port="adder.cin" out_port="adder.cout"/>
-  <delay_constant max="300e-12" in_port="adder.a" out_port="adder.sum"/>
-  <delay_constant max="300e-12" in_port="adder.b" out_port="adder.sum"/>
-  <delay_constant max="300e-12" in_port="adder.cin" out_port="adder.sum"/>
+  <interconnect>
+    <direct>
+      <port from="$xor[0]" name="Y" type="input"/>
+      <port from="$and[0]" name="A" type="output"/>
+    </direct>
+    <direct>
+      <port name="cin" type="input"/>
+      <port from="$and[0]" name="B" type="output"/>
+    </direct>
+    <direct>
+      <port name="a" type="input"/>
+      <port from="$and[1]" name="A" type="output"/>
+    </direct>
+    <direct>
+      <port name="b" type="input"/>
+      <port from="$and[1]" name="B" type="output"/>
+    </direct>
+    <direct>
+      <port from="$and[0]" name="Y" type="input"/>
+      <port from="$or" name="A" type="output"/>
+    </direct>
+    <direct>
+      <port from="$and[1]" name="Y" type="input"/>
+      <port from="$or" name="B" type="output"/>
+    </direct>
+    <direct>
+      <port from="$or" name="Y" type="input"/>
+      <port name="cout" type="output"/>
+    </direct>
+    <direct>
+      <port name="a" type="input"/>
+      <port from="$xor[0]" name="A" type="output"/>
+    </direct>
+    <direct>
+      <port name="b" type="input"/>
+      <port from="$xor[0]" name="B" type="output"/>
+    </direct>
+    <direct>
+      <port from="$xor[0]" name="Y" type="input"/>
+      <port from="$xor[1]" name="A" type="output"/>
+    </direct>
+    <direct>
+      <port name="cin" type="input"/>
+      <port from="$xor[1]" name="B" type="output"/>
+    </direct>
+    <direct>
+      <port from="$xor[1]" name="Y" type="input"/>
+      <port name="sum" type="output"/>
+    </direct>
+  </interconnect>
+  <delay_constant in_port="adder.a" max="300e-12" out_port="adder.cout"/>
+  <delay_constant in_port="adder.b" max="300e-12" out_port="adder.cout"/>
+  <delay_constant in_port="adder.cin" max="10e-12" out_port="adder.cout"/>
+  <delay_constant in_port="adder.a" max="300e-12" out_port="adder.sum"/>
+  <delay_constant in_port="adder.b" max="300e-12" out_port="adder.sum"/>
+  <delay_constant in_port="adder.cin" max="300e-12" out_port="adder.sum"/>
 </pb_type>

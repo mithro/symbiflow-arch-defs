@@ -8,6 +8,522 @@
   <xi:include href="../dsp_combinational/dsp_combinational.pb_type.xml"/>
   <interconnect>
     <direct>
+      <port name="clk" type="input"/>
+      <port from="$dff" name="CLK" type="output"/>
+    </direct>
+    <direct>
+      <port from="dsp_combinational" name="out[0]" type="input"/>
+      <port from="$dff" name="D[0]" type="output"/>
+    </direct>
+    <direct>
+      <port from="dsp_combinational" name="out[1]" type="input"/>
+      <port from="$dff" name="D[1]" type="output"/>
+    </direct>
+    <direct>
+      <port from="dsp_combinational" name="out[2]" type="input"/>
+      <port from="$dff" name="D[2]" type="output"/>
+    </direct>
+    <direct>
+      <port from="dsp_combinational" name="out[3]" type="input"/>
+      <port from="$dff" name="D[3]" type="output"/>
+    </direct>
+    <direct>
+      <port from="dsp_combinational" name="out[4]" type="input"/>
+      <port from="$dff" name="D[4]" type="output"/>
+    </direct>
+    <direct>
+      <port from="dsp_combinational" name="out[5]" type="input"/>
+      <port from="$dff" name="D[5]" type="output"/>
+    </direct>
+    <direct>
+      <port from="dsp_combinational" name="out[6]" type="input"/>
+      <port from="$dff" name="D[6]" type="output"/>
+    </direct>
+    <direct>
+      <port from="dsp_combinational" name="out[7]" type="input"/>
+      <port from="$dff" name="D[7]" type="output"/>
+    </direct>
+    <direct>
+      <port from="dsp_combinational" name="out[8]" type="input"/>
+      <port from="$dff" name="D[8]" type="output"/>
+    </direct>
+    <direct>
+      <port from="dsp_combinational" name="out[9]" type="input"/>
+      <port from="$dff" name="D[9]" type="output"/>
+    </direct>
+    <direct>
+      <port from="dsp_combinational" name="out[10]" type="input"/>
+      <port from="$dff" name="D[10]" type="output"/>
+    </direct>
+    <direct>
+      <port from="dsp_combinational" name="out[11]" type="input"/>
+      <port from="$dff" name="D[11]" type="output"/>
+    </direct>
+    <direct>
+      <port from="dsp_combinational" name="out[12]" type="input"/>
+      <port from="$dff" name="D[12]" type="output"/>
+    </direct>
+    <direct>
+      <port from="dsp_combinational" name="out[13]" type="input"/>
+      <port from="$dff" name="D[13]" type="output"/>
+    </direct>
+    <direct>
+      <port from="dsp_combinational" name="out[14]" type="input"/>
+      <port from="$dff" name="D[14]" type="output"/>
+    </direct>
+    <direct>
+      <port from="dsp_combinational" name="out[15]" type="input"/>
+      <port from="$dff" name="D[15]" type="output"/>
+    </direct>
+    <direct>
+      <port from="dsp_combinational" name="out[16]" type="input"/>
+      <port from="$dff" name="D[16]" type="output"/>
+    </direct>
+    <direct>
+      <port from="dsp_combinational" name="out[17]" type="input"/>
+      <port from="$dff" name="D[17]" type="output"/>
+    </direct>
+    <direct>
+      <port from="dsp_combinational" name="out[18]" type="input"/>
+      <port from="$dff" name="D[18]" type="output"/>
+    </direct>
+    <direct>
+      <port from="dsp_combinational" name="out[19]" type="input"/>
+      <port from="$dff" name="D[19]" type="output"/>
+    </direct>
+    <direct>
+      <port from="dsp_combinational" name="out[20]" type="input"/>
+      <port from="$dff" name="D[20]" type="output"/>
+    </direct>
+    <direct>
+      <port from="dsp_combinational" name="out[21]" type="input"/>
+      <port from="$dff" name="D[21]" type="output"/>
+    </direct>
+    <direct>
+      <port from="dsp_combinational" name="out[22]" type="input"/>
+      <port from="$dff" name="D[22]" type="output"/>
+    </direct>
+    <direct>
+      <port from="dsp_combinational" name="out[23]" type="input"/>
+      <port from="$dff" name="D[23]" type="output"/>
+    </direct>
+    <direct>
+      <port from="dsp_combinational" name="out[24]" type="input"/>
+      <port from="$dff" name="D[24]" type="output"/>
+    </direct>
+    <direct>
+      <port from="dsp_combinational" name="out[25]" type="input"/>
+      <port from="$dff" name="D[25]" type="output"/>
+    </direct>
+    <direct>
+      <port from="dsp_combinational" name="out[26]" type="input"/>
+      <port from="$dff" name="D[26]" type="output"/>
+    </direct>
+    <direct>
+      <port from="dsp_combinational" name="out[27]" type="input"/>
+      <port from="$dff" name="D[27]" type="output"/>
+    </direct>
+    <direct>
+      <port from="dsp_combinational" name="out[28]" type="input"/>
+      <port from="$dff" name="D[28]" type="output"/>
+    </direct>
+    <direct>
+      <port from="dsp_combinational" name="out[29]" type="input"/>
+      <port from="$dff" name="D[29]" type="output"/>
+    </direct>
+    <direct>
+      <port from="dsp_combinational" name="out[30]" type="input"/>
+      <port from="$dff" name="D[30]" type="output"/>
+    </direct>
+    <direct>
+      <port from="dsp_combinational" name="out[31]" type="input"/>
+      <port from="$dff" name="D[31]" type="output"/>
+    </direct>
+    <direct>
+      <port from="dsp_combinational" name="out[32]" type="input"/>
+      <port from="$dff" name="D[32]" type="output"/>
+    </direct>
+    <direct>
+      <port from="dsp_combinational" name="out[33]" type="input"/>
+      <port from="$dff" name="D[33]" type="output"/>
+    </direct>
+    <direct>
+      <port from="dsp_combinational" name="out[34]" type="input"/>
+      <port from="$dff" name="D[34]" type="output"/>
+    </direct>
+    <direct>
+      <port from="dsp_combinational" name="out[35]" type="input"/>
+      <port from="$dff" name="D[35]" type="output"/>
+    </direct>
+    <direct>
+      <port from="dsp_combinational" name="out[36]" type="input"/>
+      <port from="$dff" name="D[36]" type="output"/>
+    </direct>
+    <direct>
+      <port from="dsp_combinational" name="out[37]" type="input"/>
+      <port from="$dff" name="D[37]" type="output"/>
+    </direct>
+    <direct>
+      <port from="dsp_combinational" name="out[38]" type="input"/>
+      <port from="$dff" name="D[38]" type="output"/>
+    </direct>
+    <direct>
+      <port from="dsp_combinational" name="out[39]" type="input"/>
+      <port from="$dff" name="D[39]" type="output"/>
+    </direct>
+    <direct>
+      <port from="dsp_combinational" name="out[40]" type="input"/>
+      <port from="$dff" name="D[40]" type="output"/>
+    </direct>
+    <direct>
+      <port from="dsp_combinational" name="out[41]" type="input"/>
+      <port from="$dff" name="D[41]" type="output"/>
+    </direct>
+    <direct>
+      <port from="dsp_combinational" name="out[42]" type="input"/>
+      <port from="$dff" name="D[42]" type="output"/>
+    </direct>
+    <direct>
+      <port from="dsp_combinational" name="out[43]" type="input"/>
+      <port from="$dff" name="D[43]" type="output"/>
+    </direct>
+    <direct>
+      <port from="dsp_combinational" name="out[44]" type="input"/>
+      <port from="$dff" name="D[44]" type="output"/>
+    </direct>
+    <direct>
+      <port from="dsp_combinational" name="out[45]" type="input"/>
+      <port from="$dff" name="D[45]" type="output"/>
+    </direct>
+    <direct>
+      <port from="dsp_combinational" name="out[46]" type="input"/>
+      <port from="$dff" name="D[46]" type="output"/>
+    </direct>
+    <direct>
+      <port from="dsp_combinational" name="out[47]" type="input"/>
+      <port from="$dff" name="D[47]" type="output"/>
+    </direct>
+    <direct>
+      <port from="dsp_combinational" name="out[48]" type="input"/>
+      <port from="$dff" name="D[48]" type="output"/>
+    </direct>
+    <direct>
+      <port from="dsp_combinational" name="out[49]" type="input"/>
+      <port from="$dff" name="D[49]" type="output"/>
+    </direct>
+    <direct>
+      <port from="dsp_combinational" name="out[50]" type="input"/>
+      <port from="$dff" name="D[50]" type="output"/>
+    </direct>
+    <direct>
+      <port from="dsp_combinational" name="out[51]" type="input"/>
+      <port from="$dff" name="D[51]" type="output"/>
+    </direct>
+    <direct>
+      <port from="dsp_combinational" name="out[52]" type="input"/>
+      <port from="$dff" name="D[52]" type="output"/>
+    </direct>
+    <direct>
+      <port from="dsp_combinational" name="out[53]" type="input"/>
+      <port from="$dff" name="D[53]" type="output"/>
+    </direct>
+    <direct>
+      <port from="dsp_combinational" name="out[54]" type="input"/>
+      <port from="$dff" name="D[54]" type="output"/>
+    </direct>
+    <direct>
+      <port from="dsp_combinational" name="out[55]" type="input"/>
+      <port from="$dff" name="D[55]" type="output"/>
+    </direct>
+    <direct>
+      <port from="dsp_combinational" name="out[56]" type="input"/>
+      <port from="$dff" name="D[56]" type="output"/>
+    </direct>
+    <direct>
+      <port from="dsp_combinational" name="out[57]" type="input"/>
+      <port from="$dff" name="D[57]" type="output"/>
+    </direct>
+    <direct>
+      <port from="dsp_combinational" name="out[58]" type="input"/>
+      <port from="$dff" name="D[58]" type="output"/>
+    </direct>
+    <direct>
+      <port from="dsp_combinational" name="out[59]" type="input"/>
+      <port from="$dff" name="D[59]" type="output"/>
+    </direct>
+    <direct>
+      <port from="dsp_combinational" name="out[60]" type="input"/>
+      <port from="$dff" name="D[60]" type="output"/>
+    </direct>
+    <direct>
+      <port from="dsp_combinational" name="out[61]" type="input"/>
+      <port from="$dff" name="D[61]" type="output"/>
+    </direct>
+    <direct>
+      <port from="dsp_combinational" name="out[62]" type="input"/>
+      <port from="$dff" name="D[62]" type="output"/>
+    </direct>
+    <direct>
+      <port from="dsp_combinational" name="out[63]" type="input"/>
+      <port from="$dff" name="D[63]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$dff" name="Q[0]" type="input"/>
+      <port name="out[0]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$dff" name="Q[1]" type="input"/>
+      <port name="out[1]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$dff" name="Q[2]" type="input"/>
+      <port name="out[2]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$dff" name="Q[3]" type="input"/>
+      <port name="out[3]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$dff" name="Q[4]" type="input"/>
+      <port name="out[4]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$dff" name="Q[5]" type="input"/>
+      <port name="out[5]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$dff" name="Q[6]" type="input"/>
+      <port name="out[6]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$dff" name="Q[7]" type="input"/>
+      <port name="out[7]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$dff" name="Q[8]" type="input"/>
+      <port name="out[8]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$dff" name="Q[9]" type="input"/>
+      <port name="out[9]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$dff" name="Q[10]" type="input"/>
+      <port name="out[10]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$dff" name="Q[11]" type="input"/>
+      <port name="out[11]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$dff" name="Q[12]" type="input"/>
+      <port name="out[12]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$dff" name="Q[13]" type="input"/>
+      <port name="out[13]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$dff" name="Q[14]" type="input"/>
+      <port name="out[14]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$dff" name="Q[15]" type="input"/>
+      <port name="out[15]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$dff" name="Q[16]" type="input"/>
+      <port name="out[16]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$dff" name="Q[17]" type="input"/>
+      <port name="out[17]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$dff" name="Q[18]" type="input"/>
+      <port name="out[18]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$dff" name="Q[19]" type="input"/>
+      <port name="out[19]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$dff" name="Q[20]" type="input"/>
+      <port name="out[20]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$dff" name="Q[21]" type="input"/>
+      <port name="out[21]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$dff" name="Q[22]" type="input"/>
+      <port name="out[22]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$dff" name="Q[23]" type="input"/>
+      <port name="out[23]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$dff" name="Q[24]" type="input"/>
+      <port name="out[24]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$dff" name="Q[25]" type="input"/>
+      <port name="out[25]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$dff" name="Q[26]" type="input"/>
+      <port name="out[26]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$dff" name="Q[27]" type="input"/>
+      <port name="out[27]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$dff" name="Q[28]" type="input"/>
+      <port name="out[28]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$dff" name="Q[29]" type="input"/>
+      <port name="out[29]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$dff" name="Q[30]" type="input"/>
+      <port name="out[30]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$dff" name="Q[31]" type="input"/>
+      <port name="out[31]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$dff" name="Q[32]" type="input"/>
+      <port name="out[32]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$dff" name="Q[33]" type="input"/>
+      <port name="out[33]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$dff" name="Q[34]" type="input"/>
+      <port name="out[34]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$dff" name="Q[35]" type="input"/>
+      <port name="out[35]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$dff" name="Q[36]" type="input"/>
+      <port name="out[36]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$dff" name="Q[37]" type="input"/>
+      <port name="out[37]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$dff" name="Q[38]" type="input"/>
+      <port name="out[38]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$dff" name="Q[39]" type="input"/>
+      <port name="out[39]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$dff" name="Q[40]" type="input"/>
+      <port name="out[40]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$dff" name="Q[41]" type="input"/>
+      <port name="out[41]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$dff" name="Q[42]" type="input"/>
+      <port name="out[42]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$dff" name="Q[43]" type="input"/>
+      <port name="out[43]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$dff" name="Q[44]" type="input"/>
+      <port name="out[44]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$dff" name="Q[45]" type="input"/>
+      <port name="out[45]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$dff" name="Q[46]" type="input"/>
+      <port name="out[46]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$dff" name="Q[47]" type="input"/>
+      <port name="out[47]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$dff" name="Q[48]" type="input"/>
+      <port name="out[48]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$dff" name="Q[49]" type="input"/>
+      <port name="out[49]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$dff" name="Q[50]" type="input"/>
+      <port name="out[50]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$dff" name="Q[51]" type="input"/>
+      <port name="out[51]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$dff" name="Q[52]" type="input"/>
+      <port name="out[52]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$dff" name="Q[53]" type="input"/>
+      <port name="out[53]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$dff" name="Q[54]" type="input"/>
+      <port name="out[54]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$dff" name="Q[55]" type="input"/>
+      <port name="out[55]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$dff" name="Q[56]" type="input"/>
+      <port name="out[56]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$dff" name="Q[57]" type="input"/>
+      <port name="out[57]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$dff" name="Q[58]" type="input"/>
+      <port name="out[58]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$dff" name="Q[59]" type="input"/>
+      <port name="out[59]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$dff" name="Q[60]" type="input"/>
+      <port name="out[60]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$dff" name="Q[61]" type="input"/>
+      <port name="out[61]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$dff" name="Q[62]" type="input"/>
+      <port name="out[62]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$dff" name="Q[63]" type="input"/>
+      <port name="out[63]" type="output"/>
+    </direct>
+    <direct>
       <port name="a[0]" type="input"/>
       <port from="dsp_combinational" name="a[0]" type="output"/>
     </direct>

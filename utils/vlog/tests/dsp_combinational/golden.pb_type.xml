@@ -1,6 +1,1293 @@
-<pb_type xmlns:xi="http://www.w3.org/2001/XInclude" name="dsp_combinational" blif_model=".subckt dsp_combinational" num_pb="1">
+<?xml version='1.0' encoding='utf-8'?>
+<pb_type xmlns:xi="http://www.w3.org/2001/XInclude" name="dsp_combinational" num_pb="1">
   <input name="a" num_pins="32"/>
   <input name="b" num_pins="32"/>
   <input name="m" num_pins="1"/>
   <output name="out" num_pins="64"/>
+  <interconnect>
+    <direct>
+      <port name="a[0]" type="input"/>
+      <port from="$div" name="A[0]" type="output"/>
+    </direct>
+    <direct>
+      <port name="a[1]" type="input"/>
+      <port from="$div" name="A[1]" type="output"/>
+    </direct>
+    <direct>
+      <port name="a[2]" type="input"/>
+      <port from="$div" name="A[2]" type="output"/>
+    </direct>
+    <direct>
+      <port name="a[3]" type="input"/>
+      <port from="$div" name="A[3]" type="output"/>
+    </direct>
+    <direct>
+      <port name="a[4]" type="input"/>
+      <port from="$div" name="A[4]" type="output"/>
+    </direct>
+    <direct>
+      <port name="a[5]" type="input"/>
+      <port from="$div" name="A[5]" type="output"/>
+    </direct>
+    <direct>
+      <port name="a[6]" type="input"/>
+      <port from="$div" name="A[6]" type="output"/>
+    </direct>
+    <direct>
+      <port name="a[7]" type="input"/>
+      <port from="$div" name="A[7]" type="output"/>
+    </direct>
+    <direct>
+      <port name="a[8]" type="input"/>
+      <port from="$div" name="A[8]" type="output"/>
+    </direct>
+    <direct>
+      <port name="a[9]" type="input"/>
+      <port from="$div" name="A[9]" type="output"/>
+    </direct>
+    <direct>
+      <port name="a[10]" type="input"/>
+      <port from="$div" name="A[10]" type="output"/>
+    </direct>
+    <direct>
+      <port name="a[11]" type="input"/>
+      <port from="$div" name="A[11]" type="output"/>
+    </direct>
+    <direct>
+      <port name="a[12]" type="input"/>
+      <port from="$div" name="A[12]" type="output"/>
+    </direct>
+    <direct>
+      <port name="a[13]" type="input"/>
+      <port from="$div" name="A[13]" type="output"/>
+    </direct>
+    <direct>
+      <port name="a[14]" type="input"/>
+      <port from="$div" name="A[14]" type="output"/>
+    </direct>
+    <direct>
+      <port name="a[15]" type="input"/>
+      <port from="$div" name="A[15]" type="output"/>
+    </direct>
+    <direct>
+      <port name="a[16]" type="input"/>
+      <port from="$div" name="A[16]" type="output"/>
+    </direct>
+    <direct>
+      <port name="a[17]" type="input"/>
+      <port from="$div" name="A[17]" type="output"/>
+    </direct>
+    <direct>
+      <port name="a[18]" type="input"/>
+      <port from="$div" name="A[18]" type="output"/>
+    </direct>
+    <direct>
+      <port name="a[19]" type="input"/>
+      <port from="$div" name="A[19]" type="output"/>
+    </direct>
+    <direct>
+      <port name="a[20]" type="input"/>
+      <port from="$div" name="A[20]" type="output"/>
+    </direct>
+    <direct>
+      <port name="a[21]" type="input"/>
+      <port from="$div" name="A[21]" type="output"/>
+    </direct>
+    <direct>
+      <port name="a[22]" type="input"/>
+      <port from="$div" name="A[22]" type="output"/>
+    </direct>
+    <direct>
+      <port name="a[23]" type="input"/>
+      <port from="$div" name="A[23]" type="output"/>
+    </direct>
+    <direct>
+      <port name="a[24]" type="input"/>
+      <port from="$div" name="A[24]" type="output"/>
+    </direct>
+    <direct>
+      <port name="a[25]" type="input"/>
+      <port from="$div" name="A[25]" type="output"/>
+    </direct>
+    <direct>
+      <port name="a[26]" type="input"/>
+      <port from="$div" name="A[26]" type="output"/>
+    </direct>
+    <direct>
+      <port name="a[27]" type="input"/>
+      <port from="$div" name="A[27]" type="output"/>
+    </direct>
+    <direct>
+      <port name="a[28]" type="input"/>
+      <port from="$div" name="A[28]" type="output"/>
+    </direct>
+    <direct>
+      <port name="a[29]" type="input"/>
+      <port from="$div" name="A[29]" type="output"/>
+    </direct>
+    <direct>
+      <port name="a[30]" type="input"/>
+      <port from="$div" name="A[30]" type="output"/>
+    </direct>
+    <direct>
+      <port name="a[31]" type="input"/>
+      <port from="$div" name="A[31]" type="output"/>
+    </direct>
+    <direct>
+      <port name="b[0]" type="input"/>
+      <port from="$div" name="B[0]" type="output"/>
+    </direct>
+    <direct>
+      <port name="b[1]" type="input"/>
+      <port from="$div" name="B[1]" type="output"/>
+    </direct>
+    <direct>
+      <port name="b[2]" type="input"/>
+      <port from="$div" name="B[2]" type="output"/>
+    </direct>
+    <direct>
+      <port name="b[3]" type="input"/>
+      <port from="$div" name="B[3]" type="output"/>
+    </direct>
+    <direct>
+      <port name="b[4]" type="input"/>
+      <port from="$div" name="B[4]" type="output"/>
+    </direct>
+    <direct>
+      <port name="b[5]" type="input"/>
+      <port from="$div" name="B[5]" type="output"/>
+    </direct>
+    <direct>
+      <port name="b[6]" type="input"/>
+      <port from="$div" name="B[6]" type="output"/>
+    </direct>
+    <direct>
+      <port name="b[7]" type="input"/>
+      <port from="$div" name="B[7]" type="output"/>
+    </direct>
+    <direct>
+      <port name="b[8]" type="input"/>
+      <port from="$div" name="B[8]" type="output"/>
+    </direct>
+    <direct>
+      <port name="b[9]" type="input"/>
+      <port from="$div" name="B[9]" type="output"/>
+    </direct>
+    <direct>
+      <port name="b[10]" type="input"/>
+      <port from="$div" name="B[10]" type="output"/>
+    </direct>
+    <direct>
+      <port name="b[11]" type="input"/>
+      <port from="$div" name="B[11]" type="output"/>
+    </direct>
+    <direct>
+      <port name="b[12]" type="input"/>
+      <port from="$div" name="B[12]" type="output"/>
+    </direct>
+    <direct>
+      <port name="b[13]" type="input"/>
+      <port from="$div" name="B[13]" type="output"/>
+    </direct>
+    <direct>
+      <port name="b[14]" type="input"/>
+      <port from="$div" name="B[14]" type="output"/>
+    </direct>
+    <direct>
+      <port name="b[15]" type="input"/>
+      <port from="$div" name="B[15]" type="output"/>
+    </direct>
+    <direct>
+      <port name="b[16]" type="input"/>
+      <port from="$div" name="B[16]" type="output"/>
+    </direct>
+    <direct>
+      <port name="b[17]" type="input"/>
+      <port from="$div" name="B[17]" type="output"/>
+    </direct>
+    <direct>
+      <port name="b[18]" type="input"/>
+      <port from="$div" name="B[18]" type="output"/>
+    </direct>
+    <direct>
+      <port name="b[19]" type="input"/>
+      <port from="$div" name="B[19]" type="output"/>
+    </direct>
+    <direct>
+      <port name="b[20]" type="input"/>
+      <port from="$div" name="B[20]" type="output"/>
+    </direct>
+    <direct>
+      <port name="b[21]" type="input"/>
+      <port from="$div" name="B[21]" type="output"/>
+    </direct>
+    <direct>
+      <port name="b[22]" type="input"/>
+      <port from="$div" name="B[22]" type="output"/>
+    </direct>
+    <direct>
+      <port name="b[23]" type="input"/>
+      <port from="$div" name="B[23]" type="output"/>
+    </direct>
+    <direct>
+      <port name="b[24]" type="input"/>
+      <port from="$div" name="B[24]" type="output"/>
+    </direct>
+    <direct>
+      <port name="b[25]" type="input"/>
+      <port from="$div" name="B[25]" type="output"/>
+    </direct>
+    <direct>
+      <port name="b[26]" type="input"/>
+      <port from="$div" name="B[26]" type="output"/>
+    </direct>
+    <direct>
+      <port name="b[27]" type="input"/>
+      <port from="$div" name="B[27]" type="output"/>
+    </direct>
+    <direct>
+      <port name="b[28]" type="input"/>
+      <port from="$div" name="B[28]" type="output"/>
+    </direct>
+    <direct>
+      <port name="b[29]" type="input"/>
+      <port from="$div" name="B[29]" type="output"/>
+    </direct>
+    <direct>
+      <port name="b[30]" type="input"/>
+      <port from="$div" name="B[30]" type="output"/>
+    </direct>
+    <direct>
+      <port name="b[31]" type="input"/>
+      <port from="$div" name="B[31]" type="output"/>
+    </direct>
+    <direct>
+      <port name="a[0]" type="input"/>
+      <port from="$mul" name="A[0]" type="output"/>
+    </direct>
+    <direct>
+      <port name="a[1]" type="input"/>
+      <port from="$mul" name="A[1]" type="output"/>
+    </direct>
+    <direct>
+      <port name="a[2]" type="input"/>
+      <port from="$mul" name="A[2]" type="output"/>
+    </direct>
+    <direct>
+      <port name="a[3]" type="input"/>
+      <port from="$mul" name="A[3]" type="output"/>
+    </direct>
+    <direct>
+      <port name="a[4]" type="input"/>
+      <port from="$mul" name="A[4]" type="output"/>
+    </direct>
+    <direct>
+      <port name="a[5]" type="input"/>
+      <port from="$mul" name="A[5]" type="output"/>
+    </direct>
+    <direct>
+      <port name="a[6]" type="input"/>
+      <port from="$mul" name="A[6]" type="output"/>
+    </direct>
+    <direct>
+      <port name="a[7]" type="input"/>
+      <port from="$mul" name="A[7]" type="output"/>
+    </direct>
+    <direct>
+      <port name="a[8]" type="input"/>
+      <port from="$mul" name="A[8]" type="output"/>
+    </direct>
+    <direct>
+      <port name="a[9]" type="input"/>
+      <port from="$mul" name="A[9]" type="output"/>
+    </direct>
+    <direct>
+      <port name="a[10]" type="input"/>
+      <port from="$mul" name="A[10]" type="output"/>
+    </direct>
+    <direct>
+      <port name="a[11]" type="input"/>
+      <port from="$mul" name="A[11]" type="output"/>
+    </direct>
+    <direct>
+      <port name="a[12]" type="input"/>
+      <port from="$mul" name="A[12]" type="output"/>
+    </direct>
+    <direct>
+      <port name="a[13]" type="input"/>
+      <port from="$mul" name="A[13]" type="output"/>
+    </direct>
+    <direct>
+      <port name="a[14]" type="input"/>
+      <port from="$mul" name="A[14]" type="output"/>
+    </direct>
+    <direct>
+      <port name="a[15]" type="input"/>
+      <port from="$mul" name="A[15]" type="output"/>
+    </direct>
+    <direct>
+      <port name="a[16]" type="input"/>
+      <port from="$mul" name="A[16]" type="output"/>
+    </direct>
+    <direct>
+      <port name="a[17]" type="input"/>
+      <port from="$mul" name="A[17]" type="output"/>
+    </direct>
+    <direct>
+      <port name="a[18]" type="input"/>
+      <port from="$mul" name="A[18]" type="output"/>
+    </direct>
+    <direct>
+      <port name="a[19]" type="input"/>
+      <port from="$mul" name="A[19]" type="output"/>
+    </direct>
+    <direct>
+      <port name="a[20]" type="input"/>
+      <port from="$mul" name="A[20]" type="output"/>
+    </direct>
+    <direct>
+      <port name="a[21]" type="input"/>
+      <port from="$mul" name="A[21]" type="output"/>
+    </direct>
+    <direct>
+      <port name="a[22]" type="input"/>
+      <port from="$mul" name="A[22]" type="output"/>
+    </direct>
+    <direct>
+      <port name="a[23]" type="input"/>
+      <port from="$mul" name="A[23]" type="output"/>
+    </direct>
+    <direct>
+      <port name="a[24]" type="input"/>
+      <port from="$mul" name="A[24]" type="output"/>
+    </direct>
+    <direct>
+      <port name="a[25]" type="input"/>
+      <port from="$mul" name="A[25]" type="output"/>
+    </direct>
+    <direct>
+      <port name="a[26]" type="input"/>
+      <port from="$mul" name="A[26]" type="output"/>
+    </direct>
+    <direct>
+      <port name="a[27]" type="input"/>
+      <port from="$mul" name="A[27]" type="output"/>
+    </direct>
+    <direct>
+      <port name="a[28]" type="input"/>
+      <port from="$mul" name="A[28]" type="output"/>
+    </direct>
+    <direct>
+      <port name="a[29]" type="input"/>
+      <port from="$mul" name="A[29]" type="output"/>
+    </direct>
+    <direct>
+      <port name="a[30]" type="input"/>
+      <port from="$mul" name="A[30]" type="output"/>
+    </direct>
+    <direct>
+      <port name="a[31]" type="input"/>
+      <port from="$mul" name="A[31]" type="output"/>
+    </direct>
+    <direct>
+      <port name="b[0]" type="input"/>
+      <port from="$mul" name="B[0]" type="output"/>
+    </direct>
+    <direct>
+      <port name="b[1]" type="input"/>
+      <port from="$mul" name="B[1]" type="output"/>
+    </direct>
+    <direct>
+      <port name="b[2]" type="input"/>
+      <port from="$mul" name="B[2]" type="output"/>
+    </direct>
+    <direct>
+      <port name="b[3]" type="input"/>
+      <port from="$mul" name="B[3]" type="output"/>
+    </direct>
+    <direct>
+      <port name="b[4]" type="input"/>
+      <port from="$mul" name="B[4]" type="output"/>
+    </direct>
+    <direct>
+      <port name="b[5]" type="input"/>
+      <port from="$mul" name="B[5]" type="output"/>
+    </direct>
+    <direct>
+      <port name="b[6]" type="input"/>
+      <port from="$mul" name="B[6]" type="output"/>
+    </direct>
+    <direct>
+      <port name="b[7]" type="input"/>
+      <port from="$mul" name="B[7]" type="output"/>
+    </direct>
+    <direct>
+      <port name="b[8]" type="input"/>
+      <port from="$mul" name="B[8]" type="output"/>
+    </direct>
+    <direct>
+      <port name="b[9]" type="input"/>
+      <port from="$mul" name="B[9]" type="output"/>
+    </direct>
+    <direct>
+      <port name="b[10]" type="input"/>
+      <port from="$mul" name="B[10]" type="output"/>
+    </direct>
+    <direct>
+      <port name="b[11]" type="input"/>
+      <port from="$mul" name="B[11]" type="output"/>
+    </direct>
+    <direct>
+      <port name="b[12]" type="input"/>
+      <port from="$mul" name="B[12]" type="output"/>
+    </direct>
+    <direct>
+      <port name="b[13]" type="input"/>
+      <port from="$mul" name="B[13]" type="output"/>
+    </direct>
+    <direct>
+      <port name="b[14]" type="input"/>
+      <port from="$mul" name="B[14]" type="output"/>
+    </direct>
+    <direct>
+      <port name="b[15]" type="input"/>
+      <port from="$mul" name="B[15]" type="output"/>
+    </direct>
+    <direct>
+      <port name="b[16]" type="input"/>
+      <port from="$mul" name="B[16]" type="output"/>
+    </direct>
+    <direct>
+      <port name="b[17]" type="input"/>
+      <port from="$mul" name="B[17]" type="output"/>
+    </direct>
+    <direct>
+      <port name="b[18]" type="input"/>
+      <port from="$mul" name="B[18]" type="output"/>
+    </direct>
+    <direct>
+      <port name="b[19]" type="input"/>
+      <port from="$mul" name="B[19]" type="output"/>
+    </direct>
+    <direct>
+      <port name="b[20]" type="input"/>
+      <port from="$mul" name="B[20]" type="output"/>
+    </direct>
+    <direct>
+      <port name="b[21]" type="input"/>
+      <port from="$mul" name="B[21]" type="output"/>
+    </direct>
+    <direct>
+      <port name="b[22]" type="input"/>
+      <port from="$mul" name="B[22]" type="output"/>
+    </direct>
+    <direct>
+      <port name="b[23]" type="input"/>
+      <port from="$mul" name="B[23]" type="output"/>
+    </direct>
+    <direct>
+      <port name="b[24]" type="input"/>
+      <port from="$mul" name="B[24]" type="output"/>
+    </direct>
+    <direct>
+      <port name="b[25]" type="input"/>
+      <port from="$mul" name="B[25]" type="output"/>
+    </direct>
+    <direct>
+      <port name="b[26]" type="input"/>
+      <port from="$mul" name="B[26]" type="output"/>
+    </direct>
+    <direct>
+      <port name="b[27]" type="input"/>
+      <port from="$mul" name="B[27]" type="output"/>
+    </direct>
+    <direct>
+      <port name="b[28]" type="input"/>
+      <port from="$mul" name="B[28]" type="output"/>
+    </direct>
+    <direct>
+      <port name="b[29]" type="input"/>
+      <port from="$mul" name="B[29]" type="output"/>
+    </direct>
+    <direct>
+      <port name="b[30]" type="input"/>
+      <port from="$mul" name="B[30]" type="output"/>
+    </direct>
+    <direct>
+      <port name="b[31]" type="input"/>
+      <port from="$mul" name="B[31]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$div" name="Y[0]" type="input"/>
+      <port from="$mux" name="A[0]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$div" name="Y[1]" type="input"/>
+      <port from="$mux" name="A[1]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$div" name="Y[2]" type="input"/>
+      <port from="$mux" name="A[2]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$div" name="Y[3]" type="input"/>
+      <port from="$mux" name="A[3]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$div" name="Y[4]" type="input"/>
+      <port from="$mux" name="A[4]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$div" name="Y[5]" type="input"/>
+      <port from="$mux" name="A[5]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$div" name="Y[6]" type="input"/>
+      <port from="$mux" name="A[6]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$div" name="Y[7]" type="input"/>
+      <port from="$mux" name="A[7]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$div" name="Y[8]" type="input"/>
+      <port from="$mux" name="A[8]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$div" name="Y[9]" type="input"/>
+      <port from="$mux" name="A[9]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$div" name="Y[10]" type="input"/>
+      <port from="$mux" name="A[10]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$div" name="Y[11]" type="input"/>
+      <port from="$mux" name="A[11]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$div" name="Y[12]" type="input"/>
+      <port from="$mux" name="A[12]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$div" name="Y[13]" type="input"/>
+      <port from="$mux" name="A[13]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$div" name="Y[14]" type="input"/>
+      <port from="$mux" name="A[14]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$div" name="Y[15]" type="input"/>
+      <port from="$mux" name="A[15]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$div" name="Y[16]" type="input"/>
+      <port from="$mux" name="A[16]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$div" name="Y[17]" type="input"/>
+      <port from="$mux" name="A[17]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$div" name="Y[18]" type="input"/>
+      <port from="$mux" name="A[18]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$div" name="Y[19]" type="input"/>
+      <port from="$mux" name="A[19]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$div" name="Y[20]" type="input"/>
+      <port from="$mux" name="A[20]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$div" name="Y[21]" type="input"/>
+      <port from="$mux" name="A[21]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$div" name="Y[22]" type="input"/>
+      <port from="$mux" name="A[22]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$div" name="Y[23]" type="input"/>
+      <port from="$mux" name="A[23]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$div" name="Y[24]" type="input"/>
+      <port from="$mux" name="A[24]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$div" name="Y[25]" type="input"/>
+      <port from="$mux" name="A[25]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$div" name="Y[26]" type="input"/>
+      <port from="$mux" name="A[26]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$div" name="Y[27]" type="input"/>
+      <port from="$mux" name="A[27]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$div" name="Y[28]" type="input"/>
+      <port from="$mux" name="A[28]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$div" name="Y[29]" type="input"/>
+      <port from="$mux" name="A[29]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$div" name="Y[30]" type="input"/>
+      <port from="$mux" name="A[30]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$div" name="Y[31]" type="input"/>
+      <port from="$mux" name="A[31]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$div" name="Y[32]" type="input"/>
+      <port from="$mux" name="A[32]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$div" name="Y[33]" type="input"/>
+      <port from="$mux" name="A[33]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$div" name="Y[34]" type="input"/>
+      <port from="$mux" name="A[34]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$div" name="Y[35]" type="input"/>
+      <port from="$mux" name="A[35]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$div" name="Y[36]" type="input"/>
+      <port from="$mux" name="A[36]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$div" name="Y[37]" type="input"/>
+      <port from="$mux" name="A[37]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$div" name="Y[38]" type="input"/>
+      <port from="$mux" name="A[38]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$div" name="Y[39]" type="input"/>
+      <port from="$mux" name="A[39]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$div" name="Y[40]" type="input"/>
+      <port from="$mux" name="A[40]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$div" name="Y[41]" type="input"/>
+      <port from="$mux" name="A[41]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$div" name="Y[42]" type="input"/>
+      <port from="$mux" name="A[42]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$div" name="Y[43]" type="input"/>
+      <port from="$mux" name="A[43]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$div" name="Y[44]" type="input"/>
+      <port from="$mux" name="A[44]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$div" name="Y[45]" type="input"/>
+      <port from="$mux" name="A[45]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$div" name="Y[46]" type="input"/>
+      <port from="$mux" name="A[46]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$div" name="Y[47]" type="input"/>
+      <port from="$mux" name="A[47]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$div" name="Y[48]" type="input"/>
+      <port from="$mux" name="A[48]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$div" name="Y[49]" type="input"/>
+      <port from="$mux" name="A[49]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$div" name="Y[50]" type="input"/>
+      <port from="$mux" name="A[50]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$div" name="Y[51]" type="input"/>
+      <port from="$mux" name="A[51]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$div" name="Y[52]" type="input"/>
+      <port from="$mux" name="A[52]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$div" name="Y[53]" type="input"/>
+      <port from="$mux" name="A[53]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$div" name="Y[54]" type="input"/>
+      <port from="$mux" name="A[54]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$div" name="Y[55]" type="input"/>
+      <port from="$mux" name="A[55]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$div" name="Y[56]" type="input"/>
+      <port from="$mux" name="A[56]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$div" name="Y[57]" type="input"/>
+      <port from="$mux" name="A[57]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$div" name="Y[58]" type="input"/>
+      <port from="$mux" name="A[58]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$div" name="Y[59]" type="input"/>
+      <port from="$mux" name="A[59]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$div" name="Y[60]" type="input"/>
+      <port from="$mux" name="A[60]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$div" name="Y[61]" type="input"/>
+      <port from="$mux" name="A[61]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$div" name="Y[62]" type="input"/>
+      <port from="$mux" name="A[62]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$div" name="Y[63]" type="input"/>
+      <port from="$mux" name="A[63]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mul" name="Y[0]" type="input"/>
+      <port from="$mux" name="B[0]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mul" name="Y[1]" type="input"/>
+      <port from="$mux" name="B[1]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mul" name="Y[2]" type="input"/>
+      <port from="$mux" name="B[2]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mul" name="Y[3]" type="input"/>
+      <port from="$mux" name="B[3]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mul" name="Y[4]" type="input"/>
+      <port from="$mux" name="B[4]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mul" name="Y[5]" type="input"/>
+      <port from="$mux" name="B[5]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mul" name="Y[6]" type="input"/>
+      <port from="$mux" name="B[6]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mul" name="Y[7]" type="input"/>
+      <port from="$mux" name="B[7]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mul" name="Y[8]" type="input"/>
+      <port from="$mux" name="B[8]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mul" name="Y[9]" type="input"/>
+      <port from="$mux" name="B[9]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mul" name="Y[10]" type="input"/>
+      <port from="$mux" name="B[10]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mul" name="Y[11]" type="input"/>
+      <port from="$mux" name="B[11]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mul" name="Y[12]" type="input"/>
+      <port from="$mux" name="B[12]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mul" name="Y[13]" type="input"/>
+      <port from="$mux" name="B[13]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mul" name="Y[14]" type="input"/>
+      <port from="$mux" name="B[14]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mul" name="Y[15]" type="input"/>
+      <port from="$mux" name="B[15]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mul" name="Y[16]" type="input"/>
+      <port from="$mux" name="B[16]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mul" name="Y[17]" type="input"/>
+      <port from="$mux" name="B[17]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mul" name="Y[18]" type="input"/>
+      <port from="$mux" name="B[18]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mul" name="Y[19]" type="input"/>
+      <port from="$mux" name="B[19]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mul" name="Y[20]" type="input"/>
+      <port from="$mux" name="B[20]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mul" name="Y[21]" type="input"/>
+      <port from="$mux" name="B[21]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mul" name="Y[22]" type="input"/>
+      <port from="$mux" name="B[22]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mul" name="Y[23]" type="input"/>
+      <port from="$mux" name="B[23]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mul" name="Y[24]" type="input"/>
+      <port from="$mux" name="B[24]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mul" name="Y[25]" type="input"/>
+      <port from="$mux" name="B[25]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mul" name="Y[26]" type="input"/>
+      <port from="$mux" name="B[26]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mul" name="Y[27]" type="input"/>
+      <port from="$mux" name="B[27]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mul" name="Y[28]" type="input"/>
+      <port from="$mux" name="B[28]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mul" name="Y[29]" type="input"/>
+      <port from="$mux" name="B[29]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mul" name="Y[30]" type="input"/>
+      <port from="$mux" name="B[30]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mul" name="Y[31]" type="input"/>
+      <port from="$mux" name="B[31]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mul" name="Y[32]" type="input"/>
+      <port from="$mux" name="B[32]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mul" name="Y[33]" type="input"/>
+      <port from="$mux" name="B[33]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mul" name="Y[34]" type="input"/>
+      <port from="$mux" name="B[34]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mul" name="Y[35]" type="input"/>
+      <port from="$mux" name="B[35]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mul" name="Y[36]" type="input"/>
+      <port from="$mux" name="B[36]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mul" name="Y[37]" type="input"/>
+      <port from="$mux" name="B[37]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mul" name="Y[38]" type="input"/>
+      <port from="$mux" name="B[38]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mul" name="Y[39]" type="input"/>
+      <port from="$mux" name="B[39]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mul" name="Y[40]" type="input"/>
+      <port from="$mux" name="B[40]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mul" name="Y[41]" type="input"/>
+      <port from="$mux" name="B[41]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mul" name="Y[42]" type="input"/>
+      <port from="$mux" name="B[42]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mul" name="Y[43]" type="input"/>
+      <port from="$mux" name="B[43]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mul" name="Y[44]" type="input"/>
+      <port from="$mux" name="B[44]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mul" name="Y[45]" type="input"/>
+      <port from="$mux" name="B[45]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mul" name="Y[46]" type="input"/>
+      <port from="$mux" name="B[46]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mul" name="Y[47]" type="input"/>
+      <port from="$mux" name="B[47]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mul" name="Y[48]" type="input"/>
+      <port from="$mux" name="B[48]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mul" name="Y[49]" type="input"/>
+      <port from="$mux" name="B[49]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mul" name="Y[50]" type="input"/>
+      <port from="$mux" name="B[50]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mul" name="Y[51]" type="input"/>
+      <port from="$mux" name="B[51]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mul" name="Y[52]" type="input"/>
+      <port from="$mux" name="B[52]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mul" name="Y[53]" type="input"/>
+      <port from="$mux" name="B[53]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mul" name="Y[54]" type="input"/>
+      <port from="$mux" name="B[54]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mul" name="Y[55]" type="input"/>
+      <port from="$mux" name="B[55]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mul" name="Y[56]" type="input"/>
+      <port from="$mux" name="B[56]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mul" name="Y[57]" type="input"/>
+      <port from="$mux" name="B[57]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mul" name="Y[58]" type="input"/>
+      <port from="$mux" name="B[58]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mul" name="Y[59]" type="input"/>
+      <port from="$mux" name="B[59]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mul" name="Y[60]" type="input"/>
+      <port from="$mux" name="B[60]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mul" name="Y[61]" type="input"/>
+      <port from="$mux" name="B[61]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mul" name="Y[62]" type="input"/>
+      <port from="$mux" name="B[62]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mul" name="Y[63]" type="input"/>
+      <port from="$mux" name="B[63]" type="output"/>
+    </direct>
+    <direct>
+      <port name="m" type="input"/>
+      <port from="$mux" name="S" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mux" name="Y[0]" type="input"/>
+      <port name="out[0]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mux" name="Y[1]" type="input"/>
+      <port name="out[1]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mux" name="Y[2]" type="input"/>
+      <port name="out[2]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mux" name="Y[3]" type="input"/>
+      <port name="out[3]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mux" name="Y[4]" type="input"/>
+      <port name="out[4]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mux" name="Y[5]" type="input"/>
+      <port name="out[5]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mux" name="Y[6]" type="input"/>
+      <port name="out[6]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mux" name="Y[7]" type="input"/>
+      <port name="out[7]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mux" name="Y[8]" type="input"/>
+      <port name="out[8]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mux" name="Y[9]" type="input"/>
+      <port name="out[9]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mux" name="Y[10]" type="input"/>
+      <port name="out[10]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mux" name="Y[11]" type="input"/>
+      <port name="out[11]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mux" name="Y[12]" type="input"/>
+      <port name="out[12]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mux" name="Y[13]" type="input"/>
+      <port name="out[13]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mux" name="Y[14]" type="input"/>
+      <port name="out[14]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mux" name="Y[15]" type="input"/>
+      <port name="out[15]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mux" name="Y[16]" type="input"/>
+      <port name="out[16]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mux" name="Y[17]" type="input"/>
+      <port name="out[17]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mux" name="Y[18]" type="input"/>
+      <port name="out[18]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mux" name="Y[19]" type="input"/>
+      <port name="out[19]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mux" name="Y[20]" type="input"/>
+      <port name="out[20]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mux" name="Y[21]" type="input"/>
+      <port name="out[21]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mux" name="Y[22]" type="input"/>
+      <port name="out[22]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mux" name="Y[23]" type="input"/>
+      <port name="out[23]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mux" name="Y[24]" type="input"/>
+      <port name="out[24]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mux" name="Y[25]" type="input"/>
+      <port name="out[25]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mux" name="Y[26]" type="input"/>
+      <port name="out[26]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mux" name="Y[27]" type="input"/>
+      <port name="out[27]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mux" name="Y[28]" type="input"/>
+      <port name="out[28]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mux" name="Y[29]" type="input"/>
+      <port name="out[29]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mux" name="Y[30]" type="input"/>
+      <port name="out[30]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mux" name="Y[31]" type="input"/>
+      <port name="out[31]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mux" name="Y[32]" type="input"/>
+      <port name="out[32]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mux" name="Y[33]" type="input"/>
+      <port name="out[33]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mux" name="Y[34]" type="input"/>
+      <port name="out[34]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mux" name="Y[35]" type="input"/>
+      <port name="out[35]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mux" name="Y[36]" type="input"/>
+      <port name="out[36]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mux" name="Y[37]" type="input"/>
+      <port name="out[37]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mux" name="Y[38]" type="input"/>
+      <port name="out[38]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mux" name="Y[39]" type="input"/>
+      <port name="out[39]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mux" name="Y[40]" type="input"/>
+      <port name="out[40]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mux" name="Y[41]" type="input"/>
+      <port name="out[41]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mux" name="Y[42]" type="input"/>
+      <port name="out[42]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mux" name="Y[43]" type="input"/>
+      <port name="out[43]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mux" name="Y[44]" type="input"/>
+      <port name="out[44]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mux" name="Y[45]" type="input"/>
+      <port name="out[45]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mux" name="Y[46]" type="input"/>
+      <port name="out[46]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mux" name="Y[47]" type="input"/>
+      <port name="out[47]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mux" name="Y[48]" type="input"/>
+      <port name="out[48]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mux" name="Y[49]" type="input"/>
+      <port name="out[49]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mux" name="Y[50]" type="input"/>
+      <port name="out[50]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mux" name="Y[51]" type="input"/>
+      <port name="out[51]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mux" name="Y[52]" type="input"/>
+      <port name="out[52]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mux" name="Y[53]" type="input"/>
+      <port name="out[53]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mux" name="Y[54]" type="input"/>
+      <port name="out[54]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mux" name="Y[55]" type="input"/>
+      <port name="out[55]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mux" name="Y[56]" type="input"/>
+      <port name="out[56]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mux" name="Y[57]" type="input"/>
+      <port name="out[57]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mux" name="Y[58]" type="input"/>
+      <port name="out[58]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mux" name="Y[59]" type="input"/>
+      <port name="out[59]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mux" name="Y[60]" type="input"/>
+      <port name="out[60]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mux" name="Y[61]" type="input"/>
+      <port name="out[61]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mux" name="Y[62]" type="input"/>
+      <port name="out[62]" type="output"/>
+    </direct>
+    <direct>
+      <port from="$mux" name="Y[63]" type="input"/>
+      <port name="out[63]" type="output"/>
+    </direct>
+  </interconnect>
 </pb_type>
